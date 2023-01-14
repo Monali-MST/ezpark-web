@@ -1,8 +1,8 @@
 import React from "react";
-import Logo from "../../Assets/logo.png";
-import "./";
+import Logo from "../../Assets/logo_without_text.png";
+import "./Navbar.css";
 
-const Navbar = () =>{
+const Navbar = () => {
   return (
     <section>
       <nav class="navbar">

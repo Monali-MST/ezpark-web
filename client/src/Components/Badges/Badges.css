@@ -1,0 +1,101 @@
+.badge{
+    height: 100vh;
+}
+.title-bar{
+    background-color: #D9D9D9;
+    padding: 10px;
+}
+.title{
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    
+}
+.badge-list{
+    background: #F8F5F5;
+}
+
+ .card{
+    
+    margin-left: 200px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 10px;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.badge-img{
+    width: 231px;
+    height: 269px;
+    display: block;
+    object-fit: contain;
+}
+
+.bronze{
+    color: #964D0B;
+}
+
+.gold{
+    color: #FF8A1F;
+}
+
+.silver{
+    color: #5510AD;
+}
+
+
+.table-section{
+    background-color: white;
+}
+
+.table-title{
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+padding-left: 100px;
+padding-top: 20px;
+}
+
+.badge-table{
+    background-color: #F5F5F5;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    margin-left: 300px;
+
+}
+
+.table-caption{
+    font-size: 10px;
+    color: #bbbbbb;
+    background-color: transparent;
+}
+
+th, tr {
+    padding: 10px;
+    text-align: center;
+    
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+.hint{
+    color: #bbbbbb;
+    font-size: 15px;
+
+}
+
+.normal-title{
+    background-color: white;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding-right: 100px;
+}
+
+.hint-area{
+    border: none;
+}
