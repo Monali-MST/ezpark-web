@@ -10,7 +10,7 @@ const Badges = () => {
     <div className="badge">
       <div className="title-bar">
         <div className="title">
-EZ Badges
+            EZ Badges
         </div>
       </div>
 
@@ -25,58 +25,40 @@ EZ Badges
         <div className="card">
           <img className='badge-img' src= {Gold}/>
           <div className="badge-title gold ">
-          Gold Badge
+           Gold Badge
           </div>
         </div>
 
         <div className="card">
           <img className='badge-img' src= {Silver}/>
           <div className="badge-title silver ">
-          Silver Badge
+            Silver Badge
           </div>
         </div>
       </div>
 
+      <div className="level-section">
+        <div className="level-title">
+          How Can I get these Badges?
+        </div>
 
-      <div className="table-section">
-      <div className="table-title">
-        How Can I get these Badges?
-      </div>
-      <table className='badge-table'>
-        <caption className='table-caption'>Level of Badge</caption>
-        <tr className='hint-area'>
-          <th className="hint"></th>
-          <th className="hint">A</th>
-          <th className="hint">B</th>
-        </tr>
-
-        <tr>
-          <th className="hint">1</th>
-          <th className="bold-title">Badge Level</th>
-          <th className="bold-title">Earn EZ points at least</th>
-        </tr>
-
-        <tr>
-          <td className="hint">2</td>
-          <td className="normal-title">Gold Badge</td>
-          <td className="normal-title">70</td>
-        </tr>
-
-        <tr>
-          <td className="hint">3</td>
-          <td className="normal-title">Silver Badge</td>
-          <td className="normal-title">30</td>
-        </tr>
-
-        <tr>
-          <td className="hint">4</td>
-          <td className="normal-title">Bronze Badge</td>
-          <td className="normal-title">10</td>
-        </tr>
-      </table>
+        <div className="badge-levels">
+          <div className="gold-badge-level">
+            <h3>Gold Badge</h3>
+            <h3>At least 70</h3>
+          </div>
+          <div className="silver-badge-level">
+            <h3>Silver Badge</h3>
+            <h3>At least 30</h3>
+          </div>
+          <div className="bronze-badge-level">
+            <h3>Bronze Badge</h3>
+            <h3>At least 10</h3>
+          </div>
+        </div>   
       </div>
     </div>
   )
 }
 
-export default Badges
+export default Badges;
