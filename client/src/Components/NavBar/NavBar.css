@@ -2,59 +2,60 @@
 .navbar{
     width: 100%;
     z-index: 999;
-    margin-left: 50px;
-    padding: 10px 10px;
+    padding-left: 50px;
     padding-right: 100px;
     font-family: 'Ubuntu', sans-serif;
     transition: all 0.3s ease;
-  }
+}
 
-  .navbar .navbar-container{
+.navbar .navbar-container{
     display: flex;
     align-items: center;
     justify-content: space-between;
     
-  }
+}
 
-  .logo-section{
+.logo-section{
     display: flex;
-  }
+}
   
 .logo{
-    width: 77px;
-    height: 77px;
+    width: 70px;
+    height: 70px;
 }
 .logo-name{
     list-style: none;
     display: inline-block;
-    margin-left: 10px;
-    padding-top: 40px;
+    padding-left: 10px;
+    padding-top: 20px;
     font-size: 40px;
-    margin-top: 0;
     font-weight: bold;
-  }
-  .yell{
+}
+
+.yell{
     color: #FAA41E;
-  }
-  .blk{
+}
+  
+.blk{
     color: #000;
-  }
-ul {
+}
+
+ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
-  }
+}
 
-  .navbar .menu li{
+.navbar .menu li{
     list-style: none;
     display: inline-block;
-  }
+}
 
-  .navbar .menu li a{
+.navbar .menu li a{
     display: block;
     color: #000;
     font-size: 18px;
     font-weight: bold;
     margin-left: 25px;
     transition: color 0.3s ease;
-  }
+}

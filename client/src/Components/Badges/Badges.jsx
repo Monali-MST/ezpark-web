@@ -25,7 +25,7 @@ const Badges = () => {
         <div className="card">
           <img className='badge-img' src= {Gold}/>
           <div className="badge-title gold ">
-           Gold Badge
+            Gold Badge
           </div>
         </div>
 
