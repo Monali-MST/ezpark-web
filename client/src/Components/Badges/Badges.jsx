@@ -16,21 +16,21 @@ const Badges = () => {
 
       <div className="badge-list">
         <div className="card">
-          <img className='badge-img' src= {Bronze}/>
+          <img className='badge-img' src= {Bronze} alt='Bronze'/>
           <div className="badge-title bronze ">
             Bronze Badge
           </div>
         </div>
 
         <div className="card">
-          <img className='badge-img' src= {Gold}/>
+          <img className='badge-img' src= {Gold} alt='Gold'/>
           <div className="badge-title gold ">
             Gold Badge
           </div>
         </div>
 
         <div className="card">
-          <img className='badge-img' src= {Silver}/>
+          <img className='badge-img' src= {Silver} alt='Silver'/>
           <div className="badge-title silver ">
             Silver Badge
           </div>
