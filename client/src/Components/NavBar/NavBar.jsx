@@ -1,8 +1,8 @@
 import React from "react";
 import Logo from "../../Assets/logo_without_text.png";
-import "./NavBar.css";
+import "./Navbar.css";
 
-const NavBar = () => {
+const Navbar = () => {
   return (
     <section>
       <nav class="navbar">
@@ -47,4 +47,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Navbar;
