@@ -1,0 +1,22 @@
+.img1{
+    width: 1140px;
+    height: 720px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.h1{
+    color: white;
+    font-style: bold;
+}
+
+.btn1{
+
+}
+
+.text{
+ color: #FAA41E;
+ text-align: center;
+ font-style: bold;
+}
