@@ -1,9 +1,12 @@
-import HomePage from "./Pages/HomePage/HomePage";
+//import HomePage from "./Pages/HomePage/HomePage";
+import DashBoardAdmin from "./Pages/DashboardPage/DashboardPage";
+
 
 function App() {
   return (
     <div>
-      <HomePage/>
+      <DashBoardAdmin/>
+      
     </div>
   );
 }
