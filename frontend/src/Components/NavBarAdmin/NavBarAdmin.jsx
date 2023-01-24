@@ -26,7 +26,7 @@ const NavBarAdmin = () => {
               </li>
               <li className="navbar-item">
                 <a href="#" class="menu-btn">
-                User Management 2
+                User Management
                 </a>
               </li>
               <li className="navbar-item">
