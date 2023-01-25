@@ -58,6 +58,9 @@ h1{
 
 section{
     margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+
 }
 section >h2, section >h5{
     text-align: center;
