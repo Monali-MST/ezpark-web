@@ -1,4 +1,3 @@
-import HomePage from "./Pages/HomePage/HomePage";
 import PointSystem from "./Pages/PointSystem/PointSystem";
 
 function App() {
