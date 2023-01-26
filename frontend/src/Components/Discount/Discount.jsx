@@ -1,11 +1,20 @@
-import React from 'react'
+import React from "react";
+import "./Discount.css"
 
 const Discount = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <section>
+      <div className="discounts">
+        <div className="title-bar">
+          <div className="title">Discounts</div>
+        </div>
 
-export default Discount
+        <div className="cont">
+          
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Discount;

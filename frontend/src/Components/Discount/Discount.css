@@ -1,0 +1,23 @@
+.discounts{
+    height: 100vh;
+    margin-top: 350px;
+
+}
+.title-bar{
+    background-color: #1f1d1d;
+    padding: 10px;
+   
+}
+.title{
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    
+}
+
+.cont{
+    font-weight: bold;
+    font-size: 25px;
+    
+}
