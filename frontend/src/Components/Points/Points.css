@@ -1,0 +1,106 @@
+.points{
+    height: 100vh;
+    margin-top: 150px;
+
+}
+.title-bar{
+    background-color: #1f1d1d;
+    padding: 10px;
+   
+}
+.title{
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    
+}
+
+.cont{
+    font-weight: bold;
+    font-size: 25px;
+    
+}
+
+.point-img{
+    width: 110px;
+    height: 110px;
+    display: block;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    
+}
+
+
+.description-title{
+    background-color: white;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 30px;
+}
+
+.description{
+    font-weight: 600;
+    font-size: 20px;
+    font-style: inherit;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 30px;
+    margin-left: 100px;
+}
+
+.pointAction{
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 30px;
+}
+
+.gold-point{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #fdaf06;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.silver-point{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #8740e4;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.bronze-point{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #cf782c;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
