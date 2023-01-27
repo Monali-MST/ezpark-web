@@ -3,6 +3,7 @@ import NavBar from "../../Components/NavBar/NavBar";
 import Badges from "../../Components/Badges/Badges";
 import Points from "../../Components/Points/Points";
 import Discount from "../../Components/Discount/Discount";
+import Refunds from "../../Components/Refunds/Refunds";
 import Footer from "../../Components/Footer/Footer";
 
 const PointSystem = () => {
@@ -12,6 +13,7 @@ const PointSystem = () => {
       <Badges />
       <Points />
       <Discount />
+      <Refunds />
       <Footer />
     </div>
   );

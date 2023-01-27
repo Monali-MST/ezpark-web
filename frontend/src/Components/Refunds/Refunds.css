@@ -1,6 +1,6 @@
-.discounts{
+.Refunds{
     height: 100vh;
-    margin-top: 350px;
+    margin-top: 150px;
 
 }
 .title-bar{
@@ -22,9 +22,9 @@
     
 }
 
-.discount-img{
-    width: 493px;
-    height: 276px;
+.Refunds-img{
+    width: 577px;
+    height: 181px;
     display: block;
     object-fit: contain;
     margin-left: auto;
