@@ -1,0 +1,36 @@
+.Timer{
+    width: 100%;
+    height: 100vh;
+    background-color: skyblue;
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    padding-top: 100px;
+}
+
+.Timer_container{
+    background-color: #fff;
+    width: 20vw;
+    padding: 1rem 6rem;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 1rem --0.7rem rgb(0,0,0,4);
+}
+
+.stop,.restart{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 18px;
+    background-color: skyblue;
+    width: 130px;
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.stop{
+    margin-left: 15px;
+}
