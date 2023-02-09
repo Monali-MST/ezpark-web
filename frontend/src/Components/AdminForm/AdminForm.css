@@ -1,0 +1,149 @@
+.logo-section{
+    display: flex;
+}
+  
+.logo{
+    width: 70px;
+    height: 70px;
+}
+.logo-name{
+    list-style: none;
+    display: inline-block;
+    padding-left: 10px;
+    padding-top: 20px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.yell{
+    color: #FAA41E;
+}
+  
+.blk{
+    color: #000;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+*{
+    box-sizing: border-box;
+}
+
+
+.container{
+    background-color: white;
+    border: 2px solid black;
+    width: 600px;
+    border-radius: 25px;
+}
+
+.header{
+	border-top-right-radius: 25px ;
+    border-top-left-radius: 25px ;
+    background-color:black;
+    border-bottom: 1px solid black;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    padding-left: 40px;
+
+}
+
+
+.form{
+    padding: 20px 30px;
+}
+
+.form-control{
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.form-control label{
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-control input[type=text],input[type=password],input[type=date] ,input[type=email],input[type=file]{
+       width: 90%;
+       padding: 12px;
+       border: 1px solid #009688;
+       margin-top: 6px;
+       margin-bottom: 16px;
+       border-radius: 25px;
+       font-style: oblique;
+}
+
+.form-control.success input{
+    border-color: green;
+}
+
+.form-control.error input{
+    border-color: red;
+}
+
+
+.check{
+    font-size: 14px;
+}
+
+.form-control span{
+    padding-left: 10px;
+    color: red;
+    font-size: small;
+    
+}
+
+
+.form-control input[type=submit],input[type=reset]{
+    border: 1px solid #009688;
+    border-radius: 25px;
+    padding: 15px 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+i{
+    color: #2ecc71;
+    border-color: #2ecc71;
+}
+
+#submit:hover{
+    background-color: #009688;
+}
+
+
+#Error{
+    font-size: small;
+    font-weight: lighter;
+    text-align: left;
+    color: red;
+}
+
+
+#address{
+    width: 100%;
+}
+
+#age{
+    color: #818e9c;
+}
+
+
+  
+
+
+
+
+

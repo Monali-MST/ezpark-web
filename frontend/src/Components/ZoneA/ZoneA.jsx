@@ -1,10 +1,9 @@
 import React from "react";
 import Logo from "../../Assets/logo_without_text.png";
-import "./AdminForm.css";
+import "./ZoneA.css";
 
 export default function SlotsAdmin() {
   return (
-
     <div className="box">
       <div>
         <nav class="navbar">
@@ -25,8 +24,20 @@ export default function SlotsAdmin() {
         </nav>
       </div>
 
+      <div class="container">
+        <p>Zone-A</p>
+        <ul>         
+            <div className="devide-1">
+            
+          <li><div className="slot"></div></li>
+           
+            </div>
 
+            <div class="form-control">
+
+            </div>
+        </ul>
+      </div>
     </div>
-    
   );
 }
