@@ -66,8 +66,17 @@
     flex-direction: column;
     padding-top: 20px;
 }
-
-.gold-badge-level{
+.badge-levels div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #fdaf06;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+/* .gold-badge-level{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -99,4 +108,4 @@
     padding-left: 50px;
     padding-right: 50px;
 }
-
+ */
