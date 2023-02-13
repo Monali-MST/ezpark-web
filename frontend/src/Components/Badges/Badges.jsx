@@ -19,11 +19,6 @@ const Badges = () => {
     fetchAllBadges();
   }, []);
 
-  var bgColors = { "gold": "#fdaf06",
-                    "silver": "#8740e4",
-                    "bronze": "#cf782c",
-};
-
   const colorList = [
     "#fdaf06","#8740e4","#cf782c"
    ];

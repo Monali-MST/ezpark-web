@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./Points.css";
 import pointImg from "../../Assets/point_picture.png";
 
 const Points = () => {
+  const [pointActions, setpointActions] = useState([]);
+  useEffect(() => {
+    const fetchAllPoints = async () => {
+      try {
+        const res = await axios.get("http://localhost:8800/pointActions");
+        setpointActions(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchAllPoints();
+  }, []);
+
+  const colorList = ["#fdaf06", "#8740e4", "#8740e4", "#8740e4", "#cf782c"];
+
   return (
     <section>
       <div className="points">
@@ -29,30 +45,17 @@ const Points = () => {
             <p>How can I earn EZ Points?</p>
           </div>
           <div className="pointAction">
-            <div className="gold-point">
-              <h3>Register</h3>
-              <h3>2 Points</h3>
-            </div>
-            <div className="silver-point">
-              <h3>One review</h3>
-              <h3>1 Points</h3>
-            </div>
-            <div className="bronze-point">
-              <h3>One Book Hour</h3>
-              <h3>1 Points</h3>
-            </div>
-            <div className="gold-point">
-              <h3>One Book Cancelation </h3>
-              <h3>-1 Points</h3>
-            </div>
-            <div className="silver-point">
-              <h3>One Rating</h3>
-              <h3>1 Points</h3>
-            </div>
-            <div className="bronze-point">
-              <h3>penalty fee</h3>
-              <h3>-5 Points</h3>
-            </div>
+            {pointActions.map((pointAction, index) => (
+              <div className="b-list" key="pointAction.Action_ID">
+                <div
+                  className="bronze-badge-level"
+                  style={{ backgroundColor: colorList[index] }}
+                >
+                  <h3>{pointAction.UserAction}</h3>
+                  <h3>{pointAction.NoOfPoints_PerHour} Points</h3>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
