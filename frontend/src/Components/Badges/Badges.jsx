@@ -19,9 +19,7 @@ const Badges = () => {
     fetchAllBadges();
   }, []);
 
-  const colorList = [
-    "#fdaf06","#8740e4","#cf782c"
-   ];
+  const colorList = ["#fdaf06", "#8740e4", "#cf782c"];
 
   return (
     <div className="badge">
@@ -48,10 +46,13 @@ const Badges = () => {
 
       <div className="level-section">
         <div className="level-title">How Can I get these Badges?</div>
-        {badges.map((badge,index) => (
-          <div className="b-list" key="badge.Badge_ID">
+        {badges.map((badge, index) => (
+          <div key="badge.Badge_ID">
             <div className="badge-levels">
-              <div className="bronze-badge-level" style={{backgroundColor: colorList[index]}}>
+              <div
+                className="bronze-badge-level"
+                style={{ backgroundColor: colorList[index] }}
+              >
                 <h3>{badge.Badge_Name}</h3>
                 <h3>At least {badge.Minimum_Points}</h3>
               </div>

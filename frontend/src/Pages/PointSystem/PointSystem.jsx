@@ -3,7 +3,7 @@ import NavBar from "../../Components/NavBar/NavBar";
 import Badges from "../../Components/Badges/Badges";
 import Points from "../../Components/Points/Points";
 import Discount from "../../Components/Discount/Discount";
-import Refunds from "../../Components/Refunds/Refunds";
+import Refund_Levels from "../../Components/Refund_Levels/Refund_Levels";
 import Footer from "../../Components/Footer/Footer";
 
 const PointSystem = () => {
@@ -12,9 +12,9 @@ const PointSystem = () => {
       <NavBar />
       <Badges />
       <Points />
-      {/* <Discount />
-      <Refunds />
-      <Footer /> */}
+      <Discount />
+      <Refund_Levels />
+      <Footer />
     </div>
   );
 };
