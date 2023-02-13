@@ -17,8 +17,8 @@ const Points = () => {
           </div>
           <div className="description">
             <p>
-              EZ Points are EZ Park currency to get Discounts and to level up
-              your Badges. When you register on EZ Park, you are immediately
+              EZ Points are EZ Park currency to level up your Badges and to get
+              Discounts. When you register on EZ Park, you are immediately
               awarded with 2 EZ Points. As you continue to Book more parking
               slots, you earn more EZ Points. Earn more EZ Points and Enjoy the
               parking.

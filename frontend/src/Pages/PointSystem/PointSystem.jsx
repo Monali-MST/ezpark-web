@@ -12,9 +12,9 @@ const PointSystem = () => {
       <NavBar />
       <Badges />
       <Points />
-      <Discount />
+      {/* <Discount />
       <Refunds />
-      <Footer />
+      <Footer /> */}
     </div>
   );
 };
