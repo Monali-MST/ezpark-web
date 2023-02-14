@@ -31,7 +31,7 @@ const Refund_Levels = () => {
           <div className="level-section">
             <div className="level-title">How much refund can I get?</div>
             {Refund_Levels.map((Refund_Level, index) => (
-              <div key="Refund_Level.Refund_level_id">
+              <div key={Refund_Level.Refund_level_id}>
                 <div className="badge-levels">
                   <div
                     className="bronze-badge-level"

@@ -47,7 +47,7 @@ const Badges = () => {
       <div className="level-section">
         <div className="level-title">How Can I get these Badges?</div>
         {badges.map((badge, index) => (
-          <div key="badge.Badge_ID">
+          <div key={badge.Badge_ID}>
             <div className="badge-levels">
               <div
                 className="bronze-badge-level"

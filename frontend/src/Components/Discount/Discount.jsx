@@ -32,7 +32,7 @@ const Discount = () => {
           <div className="level-section">
             <div className="level-title">How Can I get Discounts?</div>
             {discounts.map((discount, index) => (
-              <div key="discount.Discount_ID">
+              <div key={discount.Discount_ID}>
                 <div className="badge-levels">
                   <div
                     className="bronze-badge-level"

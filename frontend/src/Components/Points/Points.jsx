@@ -46,7 +46,7 @@ const Points = () => {
           </div>
           <div className="pointAction">
             {pointActions.map((pointAction, index) => (
-              <div key="pointAction.Action_ID">
+              <div key={pointAction.Action_ID}>
                 <div
                   className="bronze-badge-level"
                   style={{ backgroundColor: colorList[index] }}
