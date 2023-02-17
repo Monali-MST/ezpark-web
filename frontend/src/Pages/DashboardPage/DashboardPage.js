@@ -1,5 +1,5 @@
 //import React from 'react'
-import NavBarAdmin from '../../Components/NavBarAdmin/NavBarAdmin'
+import NavBarAdmin from '../../Components/NavBarAdmin/Navbar'
 
 
 

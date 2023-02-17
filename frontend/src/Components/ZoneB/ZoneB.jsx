@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../../Assets/logo_without_text.png";
-import "./ZoneA.css";
+import "./ZoneB.css";
 
 export default function SlotsAdmin() {
   return (
@@ -37,7 +37,6 @@ export default function SlotsAdmin() {
   <div class="line"></div>
   <div class="point"></div>
 </div>
-
           <br></br>
           <br></br>
           <div className="devide">

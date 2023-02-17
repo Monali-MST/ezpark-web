@@ -1,14 +1,20 @@
-//import HomePage from "./Pages/HomePage/HomePage";
-import DashBoardAdmin from "./Pages/DashboardPage/DashboardPage";
-import SlotsAdmin from "./Components/SlotsAdmin/SlotsAdmin"
-import ZoneA from "./Components/ZoneA/ZoneA"
-import AdminForm from "./Components/AdminForm/AdminForm"
+import "./App.css";
+import NavBarAdmin from "./Components/NavBarAdmin/NavBarAdmin";
+import SlotAdmin from "./Components/SlotsAdmin/SlotsAdmin";
+import ZoneA from "./Components/ZoneA/ZoneA";
+import { BrowserRouter as Router,Routes, Route}from 'react-router-dom';
+
 
 
 function App() {
   return (
     <div>
-      <AdminForm/>
+      <Router>
+      <ZoneA/>
+      <Routes>
+        <Route path="/"> </Route>
+      </Routes>
+      </Router>
       
     </div>
   );

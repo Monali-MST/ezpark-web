@@ -1,66 +1,52 @@
 import React from "react";
-import Logo from "../../Assets/logo_without_text.png";
 import "./NavBarAdmin.css";
 
-export default function SlotsAdmin() {
+export default function NavBarAdmin() {
   return (
-   
-      <div className="box">
-        <div>
-          <nav class="navbar">
-            <div className="navbar-container">
-              <div className="logo-section">
-                <div className="logo-img">
-                  <img className="logo" src={Logo} />
-                </div>
-                <div className="logo-name">
-                  <span className="yell">EZ </span>
-                  <span className="blk">Park</span>
-                </div>
-              </div>
-              <div className="item-list">
-                <ul className="menu">
-                  <li className="navbar-item">
-                    <a href="#" class="menu-btn active">
-                      Manual Booking
-                    </a>
-                  </li>
-                  <li className="navbar-item">
-                    <a href="#" class="menu-btn">
-                      User Management
-                    </a>
-                  </li>
-                  <li className="navbar-item">
-                    <a href="#" class="menu-btn">
-                      Slot Management
-                    </a>
-                  </li>
-                  <li className="navbar-item">
-                    <a href="#" class="menu-btn">
-                      Refund Requests
-                    </a>
-                  </li>
-                  <li className="navbar-item">
-                    <a href="#" class="menu-btn">
-                      Set Values
-                    </a>
-                  </li>
-                  <li className="navbar-item">
-                    <a href="#" class="menu-btn">
-                      Chat
-                    </a>
-                  </li>
-                  <li className="navbar-item">
-                    <a href="#" class="menu-btn">
-                      My account
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+    <div>
+      <div class="wrapper">
+        <div class="sidebar">
+          <h2>Sidebar</h2>
+          <ul>
+            <li>
+              <a href="#">
+                <i class="fas fa-home"></i>Manual Booking
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-user"></i>User Management
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-address-card"></i>Slot Management
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-project-diagram"></i>Refund Requests
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-blog"></i>Set Values
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-address-book"></i>Chat
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-map-pin"></i>My account
+              </a>
+            </li>
+          </ul>
         </div>
-        <div className="box-2"></div>
+
       </div>
+    </div>
   );
 }
