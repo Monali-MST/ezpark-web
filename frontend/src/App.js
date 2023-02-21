@@ -18,7 +18,7 @@ function App() {
             <Route path="/pointsystem" element={<PointSystem />} />
             <Route path="/userdashboard/:id" element={<UserDashboardPage />} />
             <Route path="/checkoutpay" element={<CheckoutPayButton />} />
-            <Route path="/sucesspay" element={<SuccessPay />} />
+            <Route path="/successpay" element={<SuccessPay />} />
             <Route path="/closepay" element={<ClosePay />} />
           </Routes>
         </BrowserRouter>

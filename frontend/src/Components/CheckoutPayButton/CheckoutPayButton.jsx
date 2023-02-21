@@ -1,4 +1,5 @@
 import React from 'react'
+import "./CheckoutPayButton.css";
 
 const CheckoutPayButton = () => {
     const handlecheckbutton = () => {
@@ -9,8 +10,7 @@ const CheckoutPayButton = () => {
           },
           body: JSON.stringify({
             items: [
-              { id: 1, quantity: 3 },
-              { id: 2, quantity: 1 },
+              { id: 1, quantity: 1 }
             ],
           }),
         })
@@ -27,13 +27,13 @@ const CheckoutPayButton = () => {
       };
     
       return (
-        <div className="App">
-          <button
+        <div>
+          <button className='btn'
             onClick={
               handlecheckbutton
             }
           >
-            Checkout
+            Pay Here
           </button>
         </div>
       );
