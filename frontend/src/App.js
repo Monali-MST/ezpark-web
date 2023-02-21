@@ -1,3 +1,4 @@
+
 import "./App.css";
 import NavBarAdmin from "./Components/NavBarAdmin/NavBarAdmin";
 import SlotAdmin from "./Components/SlotsAdmin/SlotsAdmin";
@@ -16,7 +17,10 @@ function App() {
       </Routes>
       </Router>
       
+
     </div>
+
+  
   );
 }
 
