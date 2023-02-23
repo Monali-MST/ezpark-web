@@ -6,6 +6,7 @@ import HomePage from "./Pages/HomePage/HomePage";
 import LoginPage from "./Pages/LoginPage/LoginPage";
 import PointSystem from "./Pages/PointSystem/PointSystem";
 import UserDashboardPage from "./Pages/UserDashboardPage/UserDashboardPage";
+import PointsAddButtonTest from "./Components/PointsAddButtonTest/PointsAddButtonTest";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/checkoutpay" element={<CheckoutPayButton />} />
             <Route path="/successpay" element={<SuccessPay />} />
             <Route path="/closepay" element={<ClosePay />} />
+            <Route path="/pointsaddbutton" element={<PointsAddButtonTest/>} />
           </Routes>
         </BrowserRouter>
       </div>
