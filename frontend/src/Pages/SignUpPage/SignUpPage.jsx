@@ -29,7 +29,8 @@ const SignUpPage = () => {
     e.preventDefault();
     try {
       await axios.post("http://localhost:8800/user", register);
-      navigate("/");
+      console.log("User account has been created successfully");
+      navigate("/login");
     } catch (err) {
       console.log(err);
     }
@@ -37,7 +38,8 @@ const SignUpPage = () => {
   console.log(register);
 
   return (
-    <div className="form">
+    <><div><NavBar />
+    <Footer/></div><div className="form">
       <h1>Create New Account</h1>
 
       <div className="feild">
@@ -45,102 +47,90 @@ const SignUpPage = () => {
           type="text"
           placeholder="FirstName"
           onChange={handleChange}
-          name="firstName"
-        />
+          name="firstName" />
       </div>
       <div className="feild">
         <input
           type="text"
           placeholder="LastName"
           onChange={handleChange}
-          name="lastName"
-        />
+          name="lastName" />
 
         <div className="feild">
           <input
             type="text"
             placeholder="AddFLine"
             onChange={handleChange}
-            name="addFline"
-          />
+            name="addFline" />
         </div>
         <div className="feild">
           <input
             type="text"
             placeholder="AddSLine"
             onChange={handleChange}
-            name="addSline"
-          />
+            name="addSline" />
         </div>
         <div className="feild">
           <input
             type="text"
             placeholder="Street"
             onChange={handleChange}
-            name="street"
-          />
+            name="street" />
         </div>
         <div className="feild">
           <input
             type="text"
             placeholder="City"
             onChange={handleChange}
-            name="city"
-          />
+            name="city" />
         </div>
         <div className="feild">
           <input
             type="text"
             placeholder="PostCode"
             onChange={handleChange}
-            name="postCode"
-          />
+            name="postCode" />
         </div>
         <div className="feild">
           <input
             type="text"
             placeholder="MobileNo"
             onChange={handleChange}
-            name="mobileNumber"
-          />
+            name="mobileNumber" />
         </div>
         <div className="feild">
           <input
             type="text"
             placeholder="FixedLine"
             onChange={handleChange}
-            name="fixedLine"
-          />
+            name="fixedLine" />
         </div>
         <div className="feild">
           <input
             type="text"
             placeholder="Nic"
             onChange={handleChange}
-            name="NIC"
-          />
+            name="NIC" />
         </div>
         <div className="feild">
           <input
             type="email"
             placeholder="Email"
             onChange={handleChange}
-            name="email"
-          />
+            name="email" />
         </div>
         <div className="feild">
           <input
             type="password"
             placeholder="Password"
             onChange={handleChange}
-            name="password"
-          />
+            name="password" />
         </div>
       </div>
       <button className="formButton" onClick={handleClick}>
         Submit
       </button>
-    </div>
+    </div></>
   );
 };
 
