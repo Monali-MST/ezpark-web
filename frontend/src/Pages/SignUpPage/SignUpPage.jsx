@@ -6,131 +6,157 @@ import Footer from "../../Components/Footer/Footer";
 
 const SignUpPage = () => {
   const [register, setRegister] = useState({
-    Fname: "",
-    Lname: "",
-    AddFLine: "",
-    AddSLine: "",
-    street: "",
-    city: "",
-    PCode: "",
-    MobNum: "",
-    FixedNum: "",
-    Nic: "",
-    Email: "",
-    Pword: "",
+    Fname:"",
+    Lname:"",
+    AddFLine:"",
+    AddSLine:"",
+    Street:"",
+    City:"",
+    PCode:"",
+    MobNum:"",
+    FixedNum:"",
+    Nic:"",
+    Email:"",
+    Pword:"",
+    CPword:"",
   });
 
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
+  const handleChange =(e)=> {
     setRegister((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
   const handleClick = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
-      await axios.post("http://localhost:8800/user", register);
+      await axios.post("http://localhost:8800/user", register)
       console.log("User account has been created successfully");
-      navigate("/login");
+      navigate("/login")
     } catch (err) {
-      console.log(err);
+      console.log(err)
     }
-  };
-  console.log(register);
+  }
+  console.log(register)
 
   return (
-    <><div><NavBar />
-    <Footer/></div><div className="form">
-      <h1>Create New Account</h1>
-
-      <div className="feild">
-        <input
-          type="text"
-          placeholder="FirstName"
-          onChange={handleChange}
-          name="firstName" />
+    <>
+      <div>
+        <NavBar />
+        <Footer />
       </div>
-      <div className="feild">
-        <input
-          type="text"
-          placeholder="LastName"
-          onChange={handleChange}
-          name="lastName" />
+      <div className="form">
+        <h1>Create New Account</h1>
 
         <div className="feild">
           <input
             type="text"
-            placeholder="AddFLine"
+            placeholder="FirstName"
             onChange={handleChange}
-            name="addFline" />
+            name="Fname"
+          />
         </div>
         <div className="feild">
           <input
             type="text"
-            placeholder="AddSLine"
+            placeholder="LastName"
             onChange={handleChange}
-            name="addSline" />
+            name="Lname"
+          />
+
+          <div className="feild">
+            <input
+              type="text"
+              placeholder="AddFLine"
+              onChange={handleChange}
+              name="AddFLine"
+            />
+          </div>
+          <div className="feild">
+            <input
+              type="text"
+              placeholder="AddSLine"
+              onChange={handleChange}
+              name="addSline"
+            />
+          </div>
+          <div className="feild">
+            <input
+              type="text"
+              placeholder="Street"
+              onChange={handleChange}
+              name="Street"
+            />
+          </div>
+          <div className="feild">
+            <input
+              type="text"
+              placeholder="City"
+              onChange={handleChange}
+              name="City"
+            />
+          </div>
+          <div className="feild">
+            <input
+              type="text"
+              placeholder="PostCode"
+              onChange={handleChange}
+              name="PCode"
+            />
+          </div>
+          <div className="feild">
+            <input
+              type="text"
+              placeholder="MobileNo"
+              onChange={handleChange}
+              name="MobNum"
+            />
+          </div>
+          <div className="feild">
+            <input
+              type="text"
+              placeholder="FixedLine"
+              onChange={handleChange}
+              name="FixedNum"
+            />
+          </div>
+          <div className="feild">
+            <input
+              type="text"
+              placeholder="Nic"
+              onChange={handleChange}
+              name="Nic"
+            />
+          </div>
+          <div className="feild">
+            <input
+              type="email"
+              placeholder="Email"
+              onChange={handleChange}
+              name="Email"
+            />
+          </div>
+          <div className="feild">
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={handleChange}
+              name="Pword"
+            />
+          </div>
+          <div className="feild">
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              onChange={handleChange}
+              name="CPword"
+            />
+          </div>
         </div>
-        <div className="feild">
-          <input
-            type="text"
-            placeholder="Street"
-            onChange={handleChange}
-            name="street" />
-        </div>
-        <div className="feild">
-          <input
-            type="text"
-            placeholder="City"
-            onChange={handleChange}
-            name="city" />
-        </div>
-        <div className="feild">
-          <input
-            type="text"
-            placeholder="PostCode"
-            onChange={handleChange}
-            name="postCode" />
-        </div>
-        <div className="feild">
-          <input
-            type="text"
-            placeholder="MobileNo"
-            onChange={handleChange}
-            name="mobileNumber" />
-        </div>
-        <div className="feild">
-          <input
-            type="text"
-            placeholder="FixedLine"
-            onChange={handleChange}
-            name="fixedLine" />
-        </div>
-        <div className="feild">
-          <input
-            type="text"
-            placeholder="Nic"
-            onChange={handleChange}
-            name="NIC" />
-        </div>
-        <div className="feild">
-          <input
-            type="email"
-            placeholder="Email"
-            onChange={handleChange}
-            name="email" />
-        </div>
-        <div className="feild">
-          <input
-            type="password"
-            placeholder="Password"
-            onChange={handleChange}
-            name="password" />
-        </div>
+        <button className="formButton" onClick={handleClick}>
+          Register
+        </button>
       </div>
-      <button className="formButton" onClick={handleClick}>
-        Submit
-      </button>
-    </div></>
+    </>
   );
 };
 
