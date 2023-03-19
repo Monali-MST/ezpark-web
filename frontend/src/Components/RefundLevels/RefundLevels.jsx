@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./Refund_Levels.css";
+import "./RefundLevels.css";
 import refundImg from "../../Assets/refunds_picture.png";
 
-const Refund_Levels = () => {
+const RefundLevels = () => {
   const [Refund_Levels, setRefund_Levels] = useState([]);
   useEffect(() => {
     const fetchAllRefund_Levels = async () => {
@@ -50,4 +50,4 @@ const Refund_Levels = () => {
   );
 };
 
-export default Refund_Levels;
+export default RefundLevels;

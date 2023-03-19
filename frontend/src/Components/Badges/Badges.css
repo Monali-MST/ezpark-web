@@ -1,3 +1,15 @@
+h3{
+
+    font-weight: 500;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    line-height: 1.7;
+    background: white;
+}
+
 .badge{
     height: 100vh;
 }
