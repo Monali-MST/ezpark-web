@@ -20,7 +20,7 @@ const RefundLevels = () => {
   const colorList = ["#fdaf06", "#8740e4", "#cf782c"];
 
   return (
-    <section>
+    <section id="refunds">
       <div className="Refunds">
         <div className="title-bar">
           <div className="title">Refunds</div>

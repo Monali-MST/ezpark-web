@@ -1,89 +1,83 @@
-h3{
-
-    font-weight: 500;
+h3 {
+  font-weight: 500;
 }
 
-body{
-    font-family: 'Poppins', sans-serif;
-    color: black;
-    line-height: 1.7;
-    background: white;
+body {
+  font-family: "Poppins", sans-serif;
+  color: black;
+  line-height: 1.7;
+  background: white;
 }
 
-.badge{
-    height: 100vh;
+.title-bar {
+  background-color: #1f1d1d;
+  padding: 10px;
 }
-.title-bar{
-    background-color: #1f1d1d;
-    padding: 10px;
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
 }
-.title{
-    font-size: 32px;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    
-}
-.badge-list{
-    display: flex;
-    margin-left: 200px;
-    margin-right: 200px;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 50px;
-    margin-bottom: 30px;
+.badge-list {
+  display: flex;
+  margin-left: 200px;
+  margin-right: 200px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
 
-.card{
-    font-weight: bold;
-    font-size: 25px;
-    text-align: center;
+.b-card {
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
 }
 
-.badge-img{
-    width: 231px;
-    height: 269px;
-    display: block;
-    object-fit: contain;
+.badge-img {
+  width: 231px;
+  height: 269px;
+  display: block;
+  object-fit: contain;
 }
 
-.bronze{
-    color: #964D0B;
+.bronze {
+  color: #964d0b;
 }
 
-.gold{
-    color: #fdaf06;
+.gold {
+  color: #fdaf06;
 }
 
-.silver{
-    color: #5510AD;
+.silver {
+  color: #5510ad;
 }
 
-
-.level-section{
-    background-color: white;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 25px;
-    padding-left: 150px;
-    padding-right: 150px;
-    padding-top: 30px;
+.level-section {
+  background-color: white;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 30px;
 }
 
-.badge-levels{
-    margin-left: 100px;
-    margin-right: 100px;
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
+.badge-levels {
+  margin-left: 100px;
+  margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
 }
-.badge-levels div{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    border-radius: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
+.badge-levels div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-radius: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
 }

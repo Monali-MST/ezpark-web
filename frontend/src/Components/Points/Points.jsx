@@ -20,7 +20,7 @@ const Points = () => {
   const colorList = ["#fdaf06", "#8740e4", "#8740e4", "#8740e4", "#cf782c"];
 
   return (
-    <section>
+    <section id ="points">
       <div className="points">
         <div className="title-bar">
           <div className="title">EZ Points</div>

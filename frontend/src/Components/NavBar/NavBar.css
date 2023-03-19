@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     border: 0;
@@ -8,7 +8,6 @@
     text-decoration: none;
  
 }
-
 .navbar{
     width: 100%;
     z-index: 999;
@@ -23,24 +22,24 @@
     align-items: center;
     justify-content: space-between;
     
-}
-
+}*/
+/* 
 .logo-section{
     display: flex;
 }
   
-.logo{
+ .logo{
     width: 70px;
     height: 70px;
-}
-.logo-name{
+} */
+/* .logo-name{
     list-style: none;
     display: inline-block;
     padding-left: 10px;
     padding-top: 20px;
     font-size: 40px;
     font-weight: bold;
-}
+} */
 
 .yell{
     color: #FAA41E;
@@ -48,8 +47,8 @@
   
 .blk{
     color: #000;
-}
-
+} 
+/*
 ul{
     list-style-type: none;
     margin: 0;
@@ -68,4 +67,4 @@ ul{
     font-weight: bold;
     margin-left: 25px;
     transition: color 0.3s ease;
-}
+} */

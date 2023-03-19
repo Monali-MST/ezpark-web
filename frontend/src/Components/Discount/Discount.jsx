@@ -20,7 +20,7 @@ const Discount = () => {
   const colorList = ["#fdaf06", "#8740e4", "#cf782c"];
 
   return (
-    <section>
+    <section id="discounts">
       <div className="discounts">
         <div className="title-bar">
           <div className="title">Discounts</div>
