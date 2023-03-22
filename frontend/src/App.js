@@ -1,23 +1,26 @@
 //import HomePage from "./Pages/HomePage/HomePage";
 //import Table from "./Pages/StaticView/Tables";
 
-import RevenueFunctionM from "./Pages/StaticView/RevenueFunctionM";
-import RevenueFunctionW from "./Pages/StaticView/RevenueFunctionW";
-import RevenueFunctionD from "./Pages/StaticView/RevenueFunctionD";
+// import RevenueFunctionM from "./Pages/StaticView/RevenueFunctionM";
+// import RevenueFunctionW from "./Pages/StaticView/RevenueFunctionW";
+// import RevenueFunctionD from "./Pages/StaticView/RevenueFunctionD";
 
-import RefundFPFunctionM from "./Pages/StaticView/RefundFPFunctionM";
-import RefundFPFunctionW from "./Pages/StaticView/RefundFPFunctionW";
-import RefundFPFunctionD from "./Pages/StaticView/RefundFPFunctionD";
+// import RefundFPFunctionM from "./Pages/StaticView/RefundFPFunctionM";
+// import RefundFPFunctionW from "./Pages/StaticView/RefundFPFunctionW";
+// import RefundFPFunctionD from "./Pages/StaticView/RefundFPFunctionD";
 
-import DoughnutFunctionM from "./Pages/StaticView/DoughnutFunctionM";
-import DoughnutFunctionW from "./Pages/StaticView/DoughnutFunctionW";
-import DoughnutFunctionD from "./Pages/StaticView/DoughnutFunctionD";
+// import DoughnutFunctionM from "./Pages/StaticView/DoughnutFunctionM";
+// import DoughnutFunctionW from "./Pages/StaticView/DoughnutFunctionW";
+// import DoughnutFunctionD from "./Pages/StaticView/DoughnutFunctionD";
 
+import DropDownBC from "./Pages/StaticView/DropDownBC";
+import DropDownTR from "./Pages/StaticView/DropDownTR";
+import DropDownRM from "./Pages/StaticView/DropDownRM";
 
 function App() {
   return (
     <div>
-      <div style={{padding:50}}>
+      {/* <div style={{padding:50}}>
         <DoughnutFunctionM /> 
       </div>
       <div style={{padding:50}}>
@@ -25,9 +28,9 @@ function App() {
       </div>
       <div style={{padding:50}}>
         <DoughnutFunctionD /> 
-      </div>
+      </div> */}
 
-      <div style={{padding:50}}>
+      {/* <div style={{padding:50}}>
         <RevenueFunctionM/>
       </div>
       <div style={{padding:50}}>
@@ -35,9 +38,9 @@ function App() {
       </div>  
       <div style={{padding:50}}>
         <RevenueFunctionD/>
-      </div>  
+      </div>   */}
 
-      <div style={{padding:50}}>
+      {/* <div style={{padding:50}}>
         <RefundFPFunctionM/>
       </div>
       <div style={{padding:50}}>
@@ -45,8 +48,11 @@ function App() {
       </div>
       <div style={{padding:50}}>
         <RefundFPFunctionD/>
-      </div> 
+      </div>  */}
 
+      <div><DropDownBC/></div>
+      <div><DropDownTR/></div>
+      <div><DropDownRM/></div>
     </div>
   );
 }
