@@ -1,20 +1,4 @@
 
-.navbar{
-    width: 100%;
-    z-index: 999;
-    padding-left: 50px;
-    padding-right: 100px;
-    font-family: 'Ubuntu', sans-serif;
-    transition: all 0.3s ease;
-}
-
-.navbar .navbar-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-}
-
 .logo-section{
     display: flex;
 }
@@ -39,23 +23,92 @@
 .blk{
     color: #000;
 }
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
 
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Titillium Web", sans-serif;
 }
 
-.navbar .menu li{
-    list-style: none;
-    display: inline-block;
+:root {
+	--mainColor: white;
+	--secondaryColor: #FAA41E;
+	--textColor: #000;
 }
 
-.navbar .menu li a{
-    display: block;
-    color: #000;
-    font-size: 18px;
-    font-weight: bold;
-    margin-left: 25px;
-    transition: color 0.3s ease;
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 80px;
+	padding: 0 2rem;
+	background-color: none;
+	color: var(--textColor);
+    border: 2px solid var(--secondaryColor);
+}
+
+nav a {
+	margin: 0 1rem;
+	color: var(--textColor);
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: var(--secondaryColor);
+}
+
+header .nav-btn {
+	padding: 5px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--textColor);
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.8rem;
+}
+
+header div,
+nav {
+	display: flex;
+	align-items: center;
+}
+
+@media only screen and (max-width: 1024px) {
+	header .nav-btn {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	header nav {
+		position: fixed;
+		top: -100vh;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		background-color: var(--mainColor);
+		transition: 1s;
+	}
+
+	header .responsive_nav {
+		transform: translateY(100vh);
+	}
+
+	nav .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+
+	nav a {
+		font-size: 1.5rem;
+	}
 }

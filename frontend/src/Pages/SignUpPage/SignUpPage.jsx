@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import NavBar from "../../Components/NavBar/NavBar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Footer from "../../Components/Footer/Footer";
+
 import '../SignUpPage/SignUpPage.css';
 
 function SignUpPage() {
@@ -96,10 +96,10 @@ function SignUpPage() {
   return (
     <>
       <NavBar />
-      <Footer />
+     
       <div className="container">
         <form onSubmit={handleSubmit}>
-          <h1>Create a new Account</h1>
+          <h1>Create Account</h1>
           <div className="ui divider"></div>
           <div className="ui form">
             <div className="field">
@@ -226,6 +226,7 @@ function SignUpPage() {
             <div className="field">
               <input
                 type="password"
+                security="true"
                 name=" CPword"
                 placeholder="Confifrm Password"
                 value={formValues.CPword}
