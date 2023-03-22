@@ -1,24 +1,32 @@
 //import HomePage from "./Pages/HomePage/HomePage";
 //import Table from "./Pages/StaticView/Tables";
-import BarFunction from "./Pages/StaticView/BarFunction";
-import BarFunctionW from "./Pages/StaticView/BarFunctionW";
-import BarFunctionD from "./Pages/StaticView/BarFunctionD";
+
 import RevenueFunctionM from "./Pages/StaticView/RevenueFunctionM";
 import RevenueFunctionW from "./Pages/StaticView/RevenueFunctionW";
 import RevenueFunctionD from "./Pages/StaticView/RevenueFunctionD";
+
+import RefundFPFunctionM from "./Pages/StaticView/RefundFPFunctionM";
+import RefundFPFunctionW from "./Pages/StaticView/RefundFPFunctionW";
+import RefundFPFunctionD from "./Pages/StaticView/RefundFPFunctionD";
+
+import DoughnutFunctionM from "./Pages/StaticView/DoughnutFunctionM";
+import DoughnutFunctionW from "./Pages/StaticView/DoughnutFunctionW";
+import DoughnutFunctionD from "./Pages/StaticView/DoughnutFunctionD";
+
 
 function App() {
   return (
     <div>
       <div style={{padding:50}}>
-        <BarFunction /> 
+        <DoughnutFunctionM /> 
       </div>
       <div style={{padding:50}}>
-        <BarFunctionW/>
+        <DoughnutFunctionW /> 
       </div>
       <div style={{padding:50}}>
-        <BarFunctionD/>
+        <DoughnutFunctionD /> 
       </div>
+
       <div style={{padding:50}}>
         <RevenueFunctionM/>
       </div>
@@ -28,7 +36,17 @@ function App() {
       <div style={{padding:50}}>
         <RevenueFunctionD/>
       </div>  
-        
+
+      <div style={{padding:50}}>
+        <RefundFPFunctionM/>
+      </div>
+      <div style={{padding:50}}>
+        <RefundFPFunctionW/>
+      </div>
+      <div style={{padding:50}}>
+        <RefundFPFunctionD/>
+      </div> 
+
     </div>
   );
 }

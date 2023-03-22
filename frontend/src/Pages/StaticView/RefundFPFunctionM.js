@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import BarChart from "./BarChart";
 import axios from "axios";
 
-function RevenueFunctionM(){
+function RefundFPFunctionM(){
   
   var [userData, setUserData] = useState([]);
   useEffect(()=>{
-    axios.get("http://localhost:8800/revenueMonthly")
+    axios.get("http://localhost:8800/refundFPMonthly")
     .then(response =>{
       setUserData(response.data);
     })
@@ -16,12 +16,17 @@ function RevenueFunctionM(){
   }, []);
 
   const chartData={
-    labels: userData.map((data)=>(data.PaymentDate).substr(0,9)+(parseInt((data.PaymentDate).charAt(9))+1).toString()),
+    labels: userData.map((data)=>(data.RefundDate).substr(0,9)+(parseInt((data.RefundDate).charAt(9))+1).toString()),
     datasets:[{
-      label: "Total Revenue",
-      data: userData.map((data)=> data.TotalRevenueMonthly),
+      label: "Full Refunds",
+      data: userData.map((data)=> data.TotalFullRefunds),
       backgroundColor:"#E7AD52", //better color
-    }]
+    },
+    {
+        label: "Parital Refunds",
+        data: userData.map((data)=> data.TotalPartialRefunds),
+        backgroundColor:"black", 
+      }]
   }
 
 
@@ -33,4 +38,4 @@ function RevenueFunctionM(){
     </div>
   );
 }
-export default RevenueFunctionM;
+export default RefundFPFunctionM;

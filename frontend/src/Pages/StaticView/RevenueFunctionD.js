@@ -10,17 +10,23 @@ function RevenueFunctionD(){
     .then(response =>{
       setUserData(response.data);
     })
-    .catch(error => {
+    .catch(error => {          
       console.log(error);
     });
   }, []);
 
   const chartData={
-    labels: userData.map((data)=>data.PaymentDate),
+    labels: userData.map((data) => {
+      const paymentDate = data.PaymentDate;
+      if (paymentDate) {
+        return paymentDate.substr(0, 9) + (parseInt(paymentDate.charAt(9)) + 1).toString();
+      }
+      return '';
+    }),
     datasets:[{
       label: "Total Revenue",
       data: userData.map((data)=> data.TotalRevenueDaily),
-      backgroundColor:"#DE8B09",
+      backgroundColor:"#f8ba59",
     }]
   }
 

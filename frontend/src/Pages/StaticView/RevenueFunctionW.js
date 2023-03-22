@@ -11,16 +11,16 @@ function RevenueFunctionW(){
       setUserData(response.data);
     })
     .catch(error => {
-      console.log(error);
-    });
+      console.log(error);  
+        });
   }, []);
 
   const chartData={
-    labels: userData.map((data)=>data.PaymentDate),
+    labels: userData.map((data)=>(data.PaymentDate).substr(0,9)+(parseInt((data.PaymentDate).charAt(9))+1).toString()),
     datasets:[{
       label: "Total Revenue",
       data: userData.map((data)=> data.TotalRevenueWeekly),
-      backgroundColor:"#DE8B09",
+      backgroundColor:"#face8a",
     }]
   }
 

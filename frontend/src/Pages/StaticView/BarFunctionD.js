@@ -19,7 +19,7 @@ function BarFunctionD(){
   const chartData={
     labels: ["Bookings","Cancelations"],
     datasets:[{
-      label: ["Bookings","Cancelations"],
+      label: ["Bookings"],
       data: [userData.Booking, userData.Cancellation],
       backgroundColor: [ "black", "#FAA41E "],
     }]
