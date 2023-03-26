@@ -8,7 +8,7 @@ const Points = () => {
   useEffect(() => {
     const fetchAllPoints = async () => {
       try {
-        const res = await axios.get("http://localhost:8800/pointActions");
+        const res = await axios.get("http://localhost:8800/api/user/get/pointActions");
         setpointActions(res.data);
       } catch (err) {
         console.log(err);

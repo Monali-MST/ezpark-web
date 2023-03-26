@@ -10,7 +10,7 @@ const Badges = () => {
   useEffect(() => {
     const fetchAllBadges = async () => {
       try {
-        const res = await axios.get("http://localhost:8800/badges");
+        const res = await axios.get("http://localhost:8800/api/user/get/badges");
         setBadges(res.data);
       } catch (err) {
         console.log(err);
