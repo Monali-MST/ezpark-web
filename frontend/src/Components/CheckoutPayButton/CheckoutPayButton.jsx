@@ -28,7 +28,7 @@ const CheckoutPayButton = () => {
 
   return (
     <div>
-      <Button variant="outline-primary" onClick={handlecheckbutton}>
+      <Button variant="outline-primary" size="sm" onClick={handlecheckbutton}>
         Pay Now
       </Button>
     </div>

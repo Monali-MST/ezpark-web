@@ -3,7 +3,7 @@ import React from 'react'
 const ClosePay = () => {
   return (
     <div>
-      <h3>The payment is cancel.</h3>
+      <h3>The payment is canceled.</h3>
     </div>
   )
 }
