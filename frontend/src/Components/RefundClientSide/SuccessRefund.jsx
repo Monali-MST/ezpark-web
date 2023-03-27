@@ -3,7 +3,7 @@ import React from 'react'
 const SuccessRefund = () => {
   return (
     <div>
-      <h3>refund successfully transfered</h3>
+      <h3>Refund Successfully Transfered..!!</h3>
     </div>
   )
 }

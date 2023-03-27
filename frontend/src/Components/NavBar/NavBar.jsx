@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../../Assets/logo_without_text.png";
+import pointImg from "../../Assets/point_picture.png";
 import "./NavBar.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -23,14 +24,22 @@ const NavBar = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            
-          </Nav>
+          <Nav className="me-auto"></Nav>
           <Nav>
             <Nav.Link href="#badges">Badges</Nav.Link>
             <Nav.Link href="#points">Points</Nav.Link>
             <Nav.Link href="#discounts">Discounts</Nav.Link>
-            <Nav.Link href="#refunds">Refunds</Nav.Link>
+            <Nav.Link href="#refunds">Refund</Nav.Link>
+            <Nav.Link href="/pointsystem">
+              {" "}
+              <img
+                alt=""
+                src={pointImg}
+                width="30"
+                height="30"
+                className="d-inline-block align-center"
+              />{" "}
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
