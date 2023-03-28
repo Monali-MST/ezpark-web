@@ -8,7 +8,7 @@ const Points = () => {
   useEffect(() => {
     const fetchAllPoints = async () => {
       try {
-        const res = await axios.get("http://localhost:8800/pointActions");
+        const res = await axios.get("http://localhost:8800/api/user/get/pointActions");
         setpointActions(res.data);
       } catch (err) {
         console.log(err);
@@ -20,7 +20,7 @@ const Points = () => {
   const colorList = ["#fdaf06", "#8740e4", "#8740e4", "#8740e4", "#cf782c"];
 
   return (
-    <section>
+    <section id ="points">
       <div className="points">
         <div className="title-bar">
           <div className="title">EZ Points</div>
@@ -46,7 +46,7 @@ const Points = () => {
           </div>
           <div className="pointAction">
             {pointActions.map((pointAction, index) => (
-              <div key="pointAction.Action_ID">
+              <div key={pointAction.Action_ID}>
                 <div
                   className="bronze-badge-level"
                   style={{ backgroundColor: colorList[index] }}

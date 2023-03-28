@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./Refund_Levels.css";
+import "./RefundLevels.css";
 import refundImg from "../../Assets/refunds_picture.png";
 
-const Refund_Levels = () => {
+const RefundLevels = () => {
   const [Refund_Levels, setRefund_Levels] = useState([]);
   useEffect(() => {
     const fetchAllRefund_Levels = async () => {
       try {
-        const res = await axios.get("http://localhost:8800/Refund_Level");
+        const res = await axios.get("http://localhost:8800/api/user/get/refund_level");
         setRefund_Levels(res.data);
       } catch (err) {
         console.log(err);
@@ -20,7 +20,7 @@ const Refund_Levels = () => {
   const colorList = ["#fdaf06", "#8740e4", "#cf782c"];
 
   return (
-    <section>
+    <section id="refunds">
       <div className="Refunds">
         <div className="title-bar">
           <div className="title">Refunds</div>
@@ -31,7 +31,7 @@ const Refund_Levels = () => {
           <div className="level-section">
             <div className="level-title">How much refund can I get?</div>
             {Refund_Levels.map((Refund_Level, index) => (
-              <div key="Refund_Level.Refund_level_id">
+              <div key={Refund_Level.Refund_level_id}>
                 <div className="badge-levels">
                   <div
                     className="bronze-badge-level"
@@ -50,4 +50,4 @@ const Refund_Levels = () => {
   );
 };
 
-export default Refund_Levels;
+export default RefundLevels;

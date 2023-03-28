@@ -1,8 +1,15 @@
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CheckoutPayButton from "./Components/CheckoutPayButton/CheckoutPayButton";
+import SuccessPay from "./Components/CheckoutPayButton/SuccessPay";
+import ClosePay from "./Components/CheckoutPayButton/ClosePay";
 import HomePage from "./Pages/HomePage/HomePage";
-import LoginPage from "./Pages/LoginPage/LoginPage";
 import PointSystem from "./Pages/PointSystem/PointSystem";
-import UserDashboardPage from "./Pages/UserDashboardPage/UserDashboardPage";
+import PointsAddButtonTest from "./Components/PointsAddButtonTest/PointsAddButtonTest";
+import RefundButton from "./Components/RefundClientSide/RefundButton";
+import SuccessRefund from "./Components/RefundClientSide/SuccessRefund";
+import AdminRefundRequestPage from "./Pages/AdminRefundRequestPage/AdminRefundRequestPage";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
@@ -11,9 +18,17 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/login" element={<LoginPage />} />
             <Route path="/pointsystem" element={<PointSystem />} />
-            <Route path="/userdashboard/:id" element={<UserDashboardPage />} />
+            <Route path="/checkoutpay" element={<CheckoutPayButton />} />
+            <Route path="/successpay" element={<SuccessPay />} />
+            <Route path="/closepay" element={<ClosePay />} />
+            <Route path="/pointsaddbutton" element={<PointsAddButtonTest />} />
+            <Route path="/refund" element={<RefundButton />} />
+            <Route path="/successrefund" element={<SuccessRefund />} />
+            <Route
+              path="/adminrefundrequest"
+              element={<AdminRefundRequestPage />}
+            />
           </Routes>
         </BrowserRouter>
       </div>

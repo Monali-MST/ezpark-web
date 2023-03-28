@@ -8,7 +8,7 @@ const Discount = () => {
   useEffect(() => {
     const fetchAlldiscounts = async () => {
       try {
-        const res = await axios.get("http://localhost:8800/discounts");
+        const res = await axios.get("http://localhost:8800/api/user/get/discounts");
         setdiscounts(res.data);
       } catch (err) {
         console.log(err);
@@ -20,7 +20,7 @@ const Discount = () => {
   const colorList = ["#fdaf06", "#8740e4", "#cf782c"];
 
   return (
-    <section>
+    <section id="discounts">
       <div className="discounts">
         <div className="title-bar">
           <div className="title">Discounts</div>
@@ -32,7 +32,7 @@ const Discount = () => {
           <div className="level-section">
             <div className="level-title">How Can I get Discounts?</div>
             {discounts.map((discount, index) => (
-              <div key="discount.Discount_ID">
+              <div key={discount.Discount_ID}>
                 <div className="badge-levels">
                   <div
                     className="bronze-badge-level"
