@@ -1,0 +1,97 @@
+.stacticv-top{
+    margin-top: 7rem;
+    margin-left: 19rem;
+    display: inline-flex;
+  
+}
+
+.booked-slots-container{
+    /* background-color: rgb(207, 10, 10); */
+    width:20rem;
+    height: 16vh;
+    margin-right: 5rem;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+.booked-slots-icon{
+    float: left;
+  
+}
+.booked-slots-num{
+   
+    font-size: 53px;
+    font-weight: bold; 
+    text-align: right;  
+    margin-right: 10px;    
+}
+.booked-slots{
+    text-align: right;
+    margin-right: 10px; 
+
+}
+
+
+.available-slots-container{
+    /* background-color: green; */
+    width:20rem;
+    height: 16vh;
+    margin-right: 5rem;
+    box-shadow: 5px 10px 8px #888888;
+}
+.available-slots-icon{
+    float: left; 
+
+}
+.available-slots-num{
+    font-size: 53px;
+    font-weight: bold; 
+    text-align: right;  
+    margin-right: 10px;   
+}
+.available-slots{
+    text-align: right;
+    margin-right: 10px; 
+}
+
+
+.date-time-container{
+    /* background-color: yellow; */
+    padding: 1rem;
+    width:20rem;
+    margin-right: 5rem;
+    font-size: 25px;
+    box-shadow: 5px 10px 8px #888888;
+    
+}
+.date-time-date{
+    float: left;
+    padding-right: 2rem;
+}
+.date-time-time{
+    float: left;
+    padding-right: 2rem;
+}
+.date-time-dnum{
+    font-weight: bold;
+}
+.date-time-tnum{
+    font-weight: bold;
+}
+
+.booking-and-cancel{
+    margin-left: 19rem;
+    margin-top: 2rem;
+   
+   
+}
+
+.total-revenue{
+   
+    margin-left: 19rem;
+    margin-top: 2rem;
+}
+
+.refund{
+    margin-left: 19rem;
+    margin-top: 2rem;  
+}

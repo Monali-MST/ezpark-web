@@ -13,9 +13,13 @@
 // import DoughnutFunctionW from "./Pages/StaticView/DoughnutFunctionW";
 // import DoughnutFunctionD from "./Pages/StaticView/DoughnutFunctionD";
 
-import DropDownBC from "./Pages/StaticView/DropDownBC";
-import DropDownTR from "./Pages/StaticView/DropDownTR";
-import DropDownRM from "./Pages/StaticView/DropDownRM";
+// import DropDownBC from "./Pages/StaticView/DropDownBC";
+// import DropDownTR from "./Pages/StaticView/DropDownTR";
+// import DropDownRM from "./Pages/StaticView/DropDownRM";
+
+// import BookedSlots from "./Pages/StaticView/BookedSlots";
+// import AvailableSlots from "./Pages/StaticView/AvailableSlots";
+import StaticView from "./Pages/StaticView/StaticView";
 
 function App() {
   return (
@@ -50,10 +54,17 @@ function App() {
         <RefundFPFunctionD/>
       </div>  */}
 
-      <div><DropDownBC/></div>
+      {/* <div><DropDownBC/></div>
       <div><DropDownTR/></div>
-      <div><DropDownRM/></div>
+      <div><DropDownRM/></div> */}
+
+      {/* <HomePage/> */}
+      {/* <BookedSlots/> */}
+      {/* <AvailableSlots/> */}
+
+      <StaticView/>
     </div>
+
   );
 }
 
