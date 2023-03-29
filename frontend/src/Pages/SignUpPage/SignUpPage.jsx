@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import NavBar from "../../Components/NavBar/NavBar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Footer from "../../Components/Footer/Footer";
+import "./SignUpPage.css";
+import validate from "../SignUpPage/SignUpValid";
 
-import '../SignUpPage/SignUpPage.css';
-
-function SignUpPage() {
-  const initialValues = {
+const SignUpPage = () => {
+  const img1 = new URL("../../Assets/parking.avif", import.meta.url);
+  const [formErrors, setFormErrors] = useState({});
+  const [formValues, setFormValues] = useState({
     Fname: "",
     Lname: "",
     AddFLine: "",
@@ -20,226 +23,199 @@ function SignUpPage() {
     Email: "",
     Pword: "",
     CPword: "",
-  };
-  const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
+  });
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
+    setFormValues((prev) => ({ ...prev, [e.target.name]: [e.target.value] }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
-    setIsSubmit(true);
-    try {
-      await axios.post("http://localhost:8800/user", formValues);
-      console.log("User account has been created successfully");
-      navigate("/login");
-    } catch (err) {
-      console.log(err);
+    if (
+      formErrors.Fname === "" &&
+      formErrors.Lname === "" &&
+      formErrors.AddFLine === "" &&
+      formErrors.AddSLine === "" &&
+      formErrors.Street === "" &&
+      formErrors.City === "" &&
+      formErrors.PCode === "" &&
+      formErrors.MobNum === "" &&
+      formErrors.FixedNum === "" &&
+      formErrors.Nic === "" &&
+      formErrors.Email === "" &&
+      formErrors.Pword === ""
+    ) {
+      axios
+        .post("http://localhost:8800/user", formValues)
+        .then((res) => {
+          navigate("/login");
+        })
+        .catch((err) => console.log(err));
     }
-  };
-
-  useEffect(() => {
-    console.log(formErrors);
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(formValues);
-    }
-  }, [formErrors]);
-  const validate = (values) => {
-    const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!values.Fname) {
-      errors.Fname = "First Name is required!";
-    }
-    if (!values.Lname) {
-      errors.Lname = "Last Name is required";
-    }
-    if (!values.AddFLine) {
-      errors.AddFLine = "Address  is required";
-    }
-    if (!values.City) {
-      errors.City = "City is required";
-    }
-    if (!values.MobNum) {
-      errors.MobNum = "Mobile Number is required";
-    } else if (values.MobNum.length > 10) {
-      errors.MobNum = "Mobile Number cannot exceed more than 10 characters";
-    }
-    if (!values.Nic) {
-      errors.Nic = "NIC is required";
-    }
-    if (!values.Email) {
-      errors.Email = "Last Name is required!";
-    } else if (!regex.test(values.Email)) {
-      errors.Email = "This is not a valid email format!";
-    }
-    if (!values.Pword) {
-      errors.Pword = "Password is required";
-    } else if (values.Pword.length < 4) {
-      errors.Pword = "Password must be more than 4 characters";
-    } else if (values.Pword.length > 10) {
-      errors.Pword = "Password cannot exceed more than 10 characters";
-    }
-    if (!values.CPword) {
-      errors.CPword = "Confirm Passsword is required";
-    } else if (values.CPword !== values.CPword) {
-      errors.CPword = "Password does not match";
-    }
-    return errors;
   };
 
   return (
     <>
-      <NavBar />
-     
+      <div>
+        <NavBar />
+        <div class="image-container">
+          <img src={img1} alt="parking car" />
+        </div>
+        <Footer />
+      </div>
       <div className="container">
-        <form onSubmit={handleSubmit}>
-          <h1>Create Account</h1>
-          <div className="ui divider"></div>
-          <div className="ui form">
-            <div className="field">
+        <form onSubmit={handleClick}>
+          <h1>Create New Account</h1>
+          <br />
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div className="feild">
               <input
+                style={{ width: "100%" }}
                 type="text"
+                placeholder="First Name"
+                onChange={handleChange}
                 name="Fname"
-                placeholder="First name"
                 value={formValues.Fname}
-                onChange={handleChange}
               />
             </div>
-            <p>{formErrors.Fname}</p>
-            <div className="field">
-              <input
-                type="text"
-                name="Lname"
-                placeholder="Last Name"
-                value={formValues.Lname}
-                onChange={handleChange}
-              />
-            </div>
-            <p>{formErrors.Lname}</p>
-            <div className="field">
-              <input
-                type="text"
-                name="AddFLine"
-                placeholder="Address(First line)"
-                value={formValues.AddFLine}
-                onChange={handleChange}
-              />
-            </div>
-            <p>{formErrors.AddFLine}</p>
-            <div className="field">
-              <input
-                type="text"
-                name="AddSLine"
-                placeholder="Address(Second line)"
-                value={formValues.AddSLine}
-                onChange={handleChange}
-              />
-            </div>
-            <p>{formErrors.AddSLine}</p>
-            <div className="field">
-              <input
-                type="text"
-                name="Street"
-                placeholder="Street"
-                value={formValues.Street}
-                onChange={handleChange}
-              />
-            </div>
-            <p>{formErrors.Street}</p>
-            <div className="field">
-              <input
-                type="text"
-                name="City"
-                placeholder="City"
-                value={formValues.City}
-                onChange={handleChange}
-              />
-            </div>
-            <p>{formErrors.City}</p>
-            <div className="field">
-              <input
-                type="text"
-                name="  PCode"
-                placeholder="Postal code"
-                value={formValues.PCode}
-                onChange={handleChange}
-              />
-            </div>
-            <p>{formErrors.PCode}</p>
-            <div className="field">
-              <input
-                type="text"
-                name="MobNum"
-                placeholder="Mobile Number"
-                value={formValues.MobNum}
-                onChange={handleChange}
-              />
-            </div>
-            <p>{formErrors.MobNum}</p>
-            <div className="field">
-              <input
-                type="text"
-                name="FixedNum"
-                placeholder="Fixed Line"
-                value={formValues.FixedNum}
-                onChange={handleChange}
-              />
-            </div>
-            <p>{formErrors.FixedNum}</p>
-            <div className="field">
-              <input
-                type="text"
-                name=" Nic"
-                placeholder="NIC"
-                value={formValues.Nic}
-                onChange={handleChange}
-              />
-            </div>
-            <p>{formErrors.Nic}</p>
-            <div className="field">
-              <input
-                type="text"
-                name="Email"
-                placeholder="Email"
-                value={formValues.Email}
-                onChange={handleChange}
-              />
-            </div>
-            <p>{formErrors.Email}</p>
-            <div className="field">
-              <input
-                type="text"
-                name="Pword"
-                placeholder="Password"
-                value={formValues.Pword}
-                onChange={handleChange}
-              />
-            </div>
-            <p>{formErrors.Pword}</p>
 
-            <div className="field">
+            <div className="feild">
               <input
-                type="password"
-                security="true"
-                name=" CPword"
-                placeholder="Confifrm Password"
-                value={formValues.CPword}
+                style={{ width: "100%" }}
+                type="text"
+                placeholder="Last Name"
                 onChange={handleChange}
+                name="Lname"
+                value={formValues.Lname}
               />
             </div>
-            <p>{formErrors.CPword}</p>
-            <button className="fluid ui button blue">Register</button>
           </div>
+          <p>{formErrors.Fname}</p>
+          <div className="feild">
+            <input
+              type="text"
+              placeholder="Address(First Line)"
+              onChange={handleChange}
+              name="AddFLine"
+              value={formValues.AddFLine}
+            />
+          </div>
+          <p>{formErrors.AddFLine}</p>
+          <div className="feild">
+            <input
+              type="text"
+              placeholder="Address(Second Line)"
+              onChange={handleChange}
+              name="AddSLine"
+              value={formValues.AddSLine}
+            />
+          </div>
+          <p>{formErrors.AddSLine}</p>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div className="feild">
+              <input
+                style={{ width: "95%" }}
+                type="text"
+                placeholder="Street"
+                onChange={handleChange}
+                name="Street"
+                value={formValues.Street}
+              />
+            </div>
+            <div className="feild">
+              <input
+                style={{ width: "95%" }}
+                type="text"
+                placeholder="City"
+                onChange={handleChange}
+                name="City"
+                value={formValues.City}
+              />
+            </div>
+
+            <div className="feild">
+              <input
+                style={{ width: "100%" }}
+                type="text"
+                placeholder="Postal Code"
+                onChange={handleChange}
+                name="PCode"
+                value={formValues.PCode}
+              />
+            </div>
+          </div>
+          <p>{formErrors.City}</p>
+          <p>{formErrors.PCode}</p>
+          <div className="feild">
+            <input
+              type="text"
+              placeholder="Mobile Number"
+              onChange={handleChange}
+              name="MobNum"
+              value={formValues.MobNum}
+            />
+          </div>
+          <p>{formErrors.MobNum}</p>
+          <div className="feild">
+            <input
+              type="text"
+              placeholder="Fixed Line"
+              onChange={handleChange}
+              name="FixedNum"
+              value={formValues.FixedNum}
+            />
+          </div>
+          <p>{formErrors.FixedNum}</p>
+          <div className="feild">
+            <input
+              type="text"
+              placeholder="NIC"
+              onChange={handleChange}
+              name="Nic"
+              value={formValues.Nic}
+            />
+          </div>
+          <p>{formErrors.Nic}</p>
+          <div className="feild">
+            <input
+              type="email"
+              placeholder="Email"
+              onChange={handleChange}
+              name="Email"
+              value={formValues.Email}
+            />
+          </div>
+          <p>{formErrors.Email}</p>
+          <div className="feild">
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={handleChange}
+              name="Pword"
+              value={formValues.Pword}
+            />
+          </div>
+
+          <div className="feild">
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              onChange={handleChange}
+              name="CPword"
+              value={formValues.CPword}
+            />
+          </div>
+          <p>{formErrors.Pword}</p>
+          <button className="formButton" onClick={handleClick}><strong>submit</strong>
+            
+          </button>
         </form>
       </div>
     </>
   );
-}
+};
 
 export default SignUpPage;

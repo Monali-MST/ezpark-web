@@ -10,6 +10,7 @@ import MyBookingsPage from "./Pages/MyBookingsPage/MyBookingsPage";
 import MyProfilePage from "./Pages/MyProfilePage/MyProfilePage";
 import SupportPage from "./Pages/SupportPage/SupportPage";
 import VehicleDetails from "./Pages/VehicleDetails/VehicleDetails";
+import VerEmail from "./Pages/verEmail/verEmail";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/mybooking" element={<MyProfilePage />} />
             <Route path="/supoort" element={<SupportPage />} />
             <Route path="/vehicledetails" element={<VehicleDetails />} />
+            <Route path="/emailverify" element={<VerEmail />} />
 
           </Routes>
         </BrowserRouter>

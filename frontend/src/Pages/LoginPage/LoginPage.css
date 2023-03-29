@@ -1,23 +1,67 @@
-.signIn {
-    background:linear-gradient(
-      to right,
-      white 0%,
-      white 50%,
-      black 50%,
-      black 100%
-    );
-    height: 100vh;
-    
-  }
-h1{
-  color: #FAA41E;
-  text-align: right;
-}
-.feild{
-  border: 10px;
-  border-radius: 5px;
-}
-.loginButton{
-  color: #FAA41E;
 
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.left-column {
+  width: 50%;
+  height: 100%;
+}
+.login_logo{
+width: 420px;
+height: 426px;
+margin-top:8vh;
+margin-left: 25vh;
+}
+
+.right-column {
+  background-color: black;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  
+}
+
+.Input {
+  
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  font-size: 31;
+}
+
+.feild1{
+  width: 50vh;
+  border-radius: 45px;
+}
+
+.log_btn {
+  width: 25vh;
+  padding: 10px;
+  background-color: #FAA41E;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 45px;
+  cursor: pointer;
+  margin-left: 12vh;
+}
+
+.h2{
+  margin-top:0px;
+  text-align: center;
+  color: white;
 }
