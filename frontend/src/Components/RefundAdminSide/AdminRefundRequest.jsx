@@ -44,7 +44,7 @@ const AdminRefundRequest = () => {
   const ToastComp = () => {
     return (
       <ToastContainer className="p-3" position="bottom-end">
-        <Toast onClose={() => setToastShow(false)} delay={5000} autohide>
+        <Toast onClose={() => setToastShow(false)} delay={7000} autohide>
           <Toast.Header closeButton={true}>
             <img
               src="holder.js/20x20?text=%20"
