@@ -26,6 +26,12 @@ const ClientRefundRequest = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
+
+    if (!request.Booking_id || !request.Reason) {
+      alert("Please fill out all fields");
+      return;
+    }
+
     try {
       await axios.post(
         "http://localhost:8800/api/user/post/send_refund_request",
@@ -45,7 +51,7 @@ const ClientRefundRequest = () => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Refunds Request</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -57,6 +63,7 @@ const ClientRefundRequest = () => {
                 onChange={handleChange}
                 name="Booking_id"
                 autoFocus
+                required
               />
             </Form.Group>
             <Form.Group
@@ -69,16 +76,25 @@ const ClientRefundRequest = () => {
                 rows={4}
                 onChange={handleChange}
                 name="Reason"
+                required
               />
+              <Form.Control.Feedback type="invalid">
+                Please provide a reason.
+              </Form.Control.Feedback>
+              <Form.Text muted>
+                Your Reason must be a reasonable reason to get the refunds. As
+                soon as the admin accepts your request, refunds will be
+                transfered to your bank account.
+              </Form.Text>
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="danger" onClick={handleClose}>
             Close
           </Button>
           <Button variant="primary" onClick={handleClick}>
-            Save Changes
+            Send Request
           </Button>
         </Modal.Footer>
       </Modal>

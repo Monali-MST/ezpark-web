@@ -30,7 +30,8 @@ const HomePage = () => {
 
       <hr></hr>
 
-      <h5>(in testing level)</h5>
+      <h5>(In testing level)</h5>
+      <br></br>
       <h5>points adding function (register, booking, review, rate, )</h5>
       <Button variant="outline-primary" size="sm">
         <Link to="/pointsaddbutton"> points add</Link>
