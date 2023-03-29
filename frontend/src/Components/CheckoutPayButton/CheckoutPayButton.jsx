@@ -1,5 +1,4 @@
 import React from "react";
-import "./CheckoutPayButton.css";
 
 import Button from "react-bootstrap/Button";
 

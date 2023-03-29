@@ -1,5 +1,5 @@
 import React from "react";
-import AdminRefundRequest from '../../Components/AdminRefundRequest/AdminRefundRequest'
+import AdminRefundRequest from '../../Components/RefundAdminSide/AdminRefundRequest';
 
 const AdminRefundRequestPage = () => {
   return (

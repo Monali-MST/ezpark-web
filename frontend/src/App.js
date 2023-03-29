@@ -8,6 +8,8 @@ import PointsAddButtonTest from "./Components/PointsAddButtonTest/PointsAddButto
 import RefundButton from "./Components/RefundClientSide/RefundButton";
 import SuccessRefund from "./Components/RefundClientSide/SuccessRefund";
 import AdminRefundRequestPage from "./Pages/AdminRefundRequestPage/AdminRefundRequestPage";
+import ClientRefundRequestPage from "./Pages/ClientRefundRequestPage/ClientRefundRequestPage";
+
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -28,6 +30,10 @@ function App() {
             <Route
               path="/adminrefundrequest"
               element={<AdminRefundRequestPage />}
+            />
+            <Route
+              path="/clientrefundrequest"
+              element={<ClientRefundRequestPage />}
             />
           </Routes>
         </BrowserRouter>

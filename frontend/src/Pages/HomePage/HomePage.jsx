@@ -10,6 +10,11 @@ const HomePage = () => {
     <div>
       <Navbar />
 
+      <h5>Point_System Details (in nav bar, user profile)</h5>
+      <Button variant="outline-primary" size="sm">
+        <Link to="/pointsystem">P_System</Link>
+      </Button>
+
       <h5>Payment (in booking page)</h5>
       <CheckoutPayButton />
 
@@ -17,7 +22,14 @@ const HomePage = () => {
       <Button variant="outline-primary" size="sm">
         <Link to="/adminrefundrequest">Refund Requests</Link>
       </Button>
+
+      <h5>Refund Requests (in client side cancel booking)</h5>
+      <Button variant="outline-primary" size="sm">
+        <Link to="/clientrefundrequest">Send Request </Link>
+      </Button>
+
       <hr></hr>
+
       <h5>(in testing level)</h5>
       <h5>points adding function (register, booking, review, rate, )</h5>
       <Button variant="outline-primary" size="sm">
