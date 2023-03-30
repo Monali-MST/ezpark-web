@@ -3,7 +3,9 @@ import Navbar from "../../Components/NavBar/NavBar";
 import Footer from "../../Components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
-import bgImg from "../../Assets/bgimg.jpg";
+import myImage from "../../Assets/bgimg.jpg";
+import Logo from "../../Assets/logo_without_text.png";
+
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -21,18 +23,33 @@ const HomePage = () => {
     <div>
       <Navbar />
       <section id="coverpage">
-      <div className="bgImg">
-        <div className="text">
-        <h1>Save Time</h1>
-      <h1>Save Money</h1>
-        
-          <img  src={bgImg} alt="web-logo" />
+      <div style={{ backgroundImage: `url(${myImage})`,backgroundSize:"cover", height:"83vh" ,filter: "brightness(0.6)"}}> 
+      <div className="logo-section" >
+        <div className="logo-img">
+          <img className="logo" src={Logo} alt="logo" />
         </div>
+        <div className="logo-name">
+          <span className="yell">EZ </span>
+          <span className="blk">Park</span>
         </div>
-      
+       
+      </div>
+      <p style={{color:"#85857F",fontWeight:"bold",fontSize:"20px",textAlign:"center"}}>PARKING AT YOUR FINGERTIPS</p>
+     
+      <div className="text" style={{}} >
+      <p style={{color:"white",fontSize:"50px"}}> Save Time.<br/>
+      Save Money. 
+     
+      </p>
+      </div> 
       <button className="start"onClick={handleClick}>Get Started</button>
-      <button className="start"onClick={handleClick}>VerEmail</button>
-      <h1 className="text">WE HAVE A SPOT FOR YOU. </h1>
+      </div>
+     
+      
+      
+      {/* <button className="start"onClick={handleClick}>VerEmail</button> */}
+      
+      <h1 className="text1">WE HAVE A SPOT FOR YOU. </h1>
       </section>
       <Footer />
     </div>
@@ -40,3 +57,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+

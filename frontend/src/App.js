@@ -6,11 +6,11 @@ import SignUpPage from "./Pages/SignUpPage/SignUpPage";
 import UserDashboardPage from "./Pages/UserDashboardPage/UserDashboardPage";
 import AboutUsPage from "./Pages/AboutUsPage/AboutUsPage";
 import BookingPage from "./Pages/BookingPage/BookingPage";
-import MyBookingsPage from "./Pages/MyBookingsPage/MyBookingsPage";
+// import MyBookingsPage from "./Pages/MyBookingsPage/MyBookingsPage";
 import MyProfilePage from "./Pages/MyProfilePage/MyProfilePage";
 import SupportPage from "./Pages/SupportPage/SupportPage";
 import VehicleDetails from "./Pages/VehicleDetails/VehicleDetails";
-import VerEmail from "./Pages/verEmail/verEmail";
+// import VerEmail from "./Pages/verEmail/verEmail";
 
 function App() {
   return (
@@ -25,11 +25,11 @@ function App() {
             <Route path="/userdashboard/:id" element={<UserDashboardPage />} />
             <Route path="/about" element={<AboutUsPage />} />
             <Route path="/booking" element={<BookingPage />} />
-            <Route path="/chat" element={<MyBookingsPage />} />
+            {/* <Route path="/chat" element={<MyBookingsPage />} /> */}
             <Route path="/mybooking" element={<MyProfilePage />} />
             <Route path="/supoort" element={<SupportPage />} />
             <Route path="/vehicledetails" element={<VehicleDetails />} />
-            <Route path="/emailverify" element={<VerEmail />} />
+            {/* <Route path="/emailverify" element={<VerEmail />} /> */}
 
           </Routes>
         </BrowserRouter>

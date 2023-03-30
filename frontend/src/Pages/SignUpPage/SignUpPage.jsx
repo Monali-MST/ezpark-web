@@ -6,6 +6,8 @@ import Footer from "../../Components/Footer/Footer";
 import "./SignUpPage.css";
 import validate from "../SignUpPage/SignUpValid";
 
+
+
 const SignUpPage = () => {
   const img1 = new URL("../../Assets/parking.avif", import.meta.url);
   const [formErrors, setFormErrors] = useState({});
@@ -28,52 +30,55 @@ const SignUpPage = () => {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setFormValues((prev) => ({ ...prev, [e.target.name]: [e.target.value] }));
+    setFormValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleClick = async (e) => {
+  const handleClick =  (e) => {
     e.preventDefault();
+    // console.log(formValues)
     setFormErrors(validate(formValues));
-    if (
-      formErrors.Fname === "" &&
-      formErrors.Lname === "" &&
-      formErrors.AddFLine === "" &&
-      formErrors.AddSLine === "" &&
-      formErrors.Street === "" &&
-      formErrors.City === "" &&
-      formErrors.PCode === "" &&
-      formErrors.MobNum === "" &&
-      formErrors.FixedNum === "" &&
-      formErrors.Nic === "" &&
-      formErrors.Email === "" &&
-      formErrors.Pword === ""
-    ) {
+    // if (
+    //   formErrors.Fname === "" &&
+    //   formErrors.Lname === "" &&
+    //   formErrors.AddFLine === "" &&
+    //   formErrors.AddSLine === "" &&
+    //   formErrors.Street === "" &&
+    //   formErrors.City === "" &&
+    //   formErrors.PCode === "" &&
+    //   formErrors.MobNum === "" &&
+    //   formErrors.FixedNum === "" &&
+    //   formErrors.Nic === "" &&
+    //   formErrors.Email === "" &&
+    //   formErrors.Pword === ""
+    // ) {
+      console.log(formValues)
       axios
         .post("http://localhost:8800/user", formValues)
         .then((res) => {
           navigate("/login");
         })
         .catch((err) => console.log(err));
-    }
+    //}
   };
 
   return (
     <>
       <div>
         <NavBar />
-        <div class="image-container">
+        
+        <div className="image-container">
           <img src={img1} alt="parking car" />
         </div>
         <Footer />
       </div>
       <div className="container">
-        <form onSubmit={handleClick}>
+        <form >
           <h1>Create New Account</h1>
           <br />
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div style={{ display: "flex",justifyContent:"space-between"}}>
             <div className="feild">
               <input
-                style={{ width: "100%" }}
+                style={{ width: "150%"}}
                 type="text"
                 placeholder="First Name"
                 onChange={handleChange}
@@ -208,7 +213,7 @@ const SignUpPage = () => {
               value={formValues.CPword}
             />
           </div>
-          <p>{formErrors.Pword}</p>
+          <p>{formErrors.CPword}</p>
           <button className="formButton" onClick={handleClick}><strong>submit</strong>
             
           </button>

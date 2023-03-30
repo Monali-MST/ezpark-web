@@ -14,7 +14,7 @@ function Navbar() {
     <header>
       <div className="logo-section">
         <div className="logo-img">
-          <img className="logo" src={Logo} />
+          <img className="logo" src={Logo} alt="logo"/>
         </div>
         <div className="logo-name">
           <span className="yell">EZ </span>
