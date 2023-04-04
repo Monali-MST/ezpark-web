@@ -16,7 +16,8 @@ const StaticView = () => {
     return (
         <section>
             <div className="stacticv-top">
-                <div className="booked-slots-container">
+                {/* booked slot count box*/}
+                <div className="booked-slots-container"> 
                     <div className="booked-slots-contain2">
                         <div className="booked-slots-icon"> 
                             <img src={CarIcon} style={{width:70, marginLeft:20,marginTop:20}}/>
@@ -31,6 +32,7 @@ const StaticView = () => {
                     </div>
                 </div>
 
+                 {/* available slot count box */}
                 <div className="available-slots-container">
                     <div className="available-slot-contain2">
                         <div className="available-slots-icon"> 
@@ -46,6 +48,7 @@ const StaticView = () => {
                     </div>
                 </div>
 
+                 {/* current date and time box */}
                 <div className="date-time-container">
                     
                         <div className="date-time-date"> 
@@ -63,6 +66,8 @@ const StaticView = () => {
                         </div>                 
                 </div>
             </div>
+
+             {/* Chart drop downs... */}
             <div className="booking-and-cancel"><DropDownBC/></div>
             <div className="total-revenue"><DropDownTR/></div>
             <div className="refund"><DropDownRM/></div>

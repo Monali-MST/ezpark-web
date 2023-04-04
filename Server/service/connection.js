@@ -1,10 +1,10 @@
 var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-  host: "ezpark-db.cvhbqqtsx1je.ap-northeast-1.rds.amazonaws.com",
-  user: "admin",
-  password: "ezPark!123",
-  database: "EzPark",
+  host: "ezpark-server.mysql.database.azure.com",
+  user: "SuperAdmin",
+  password: "ezPark@123",
+  database: "ezpark",
 });
 connection.connect(function(err) {
     if (err) throw err;

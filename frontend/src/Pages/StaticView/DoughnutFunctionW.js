@@ -1,3 +1,5 @@
+//weekly bookings and cancellations...
+
 import { useEffect, useState } from "react";
 import DoughnutChart from "./DoughnutChart";
 import axios from "axios";

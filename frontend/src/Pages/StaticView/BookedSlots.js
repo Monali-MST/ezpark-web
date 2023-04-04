@@ -1,3 +1,5 @@
+//count booked slots which are not disabled...
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 

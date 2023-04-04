@@ -1,3 +1,35 @@
+import StaticView from "./Pages/StaticView/StaticView";
+
+function App() {
+  return (
+    <div>
+      <StaticView/>
+    </div>
+
+  );
+}
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //import HomePage from "./Pages/HomePage/HomePage";
 //import Table from "./Pages/StaticView/Tables";
 
@@ -19,12 +51,8 @@
 
 // import BookedSlots from "./Pages/StaticView/BookedSlots";
 // import AvailableSlots from "./Pages/StaticView/AvailableSlots";
-import StaticView from "./Pages/StaticView/StaticView";
 
-function App() {
-  return (
-    <div>
-      {/* <div style={{padding:50}}>
+{/* <div style={{padding:50}}>
         <DoughnutFunctionM /> 
       </div>
       <div style={{padding:50}}>
@@ -61,11 +89,3 @@ function App() {
       {/* <HomePage/> */}
       {/* <BookedSlots/> */}
       {/* <AvailableSlots/> */}
-
-      <StaticView/>
-    </div>
-
-  );
-}
-
-export default App;
