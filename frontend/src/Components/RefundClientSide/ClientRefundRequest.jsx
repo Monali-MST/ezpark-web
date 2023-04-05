@@ -13,11 +13,17 @@ const ClientRefundRequest = () => {
   const navigate = useNavigate();
 
   const today = new Date();
+  const date =
+    today.getFullYear() +
+    "." +
+    (today.getMonth() + 1) +
+    "." +
+    today.getDate();
 
   const [request, setrequest] = useState({
     Booking_id: "",
     Reason: "",
-    Requested_date: today,
+    Requested_date: date,
   });
 
   const handleChange = (e) => {
@@ -33,11 +39,15 @@ const ClientRefundRequest = () => {
     }
 
     try {
-      await axios.post(
+      axios.post(
         "http://localhost:8800/api/user/post/send_refund_request",
         request
-      );
-      navigate("/");
+      )
+      .then((res)=>{
+        console.log(res);
+        navigate("/");
+      })
+      
     } catch (err) {
       console.log(err);
     }
