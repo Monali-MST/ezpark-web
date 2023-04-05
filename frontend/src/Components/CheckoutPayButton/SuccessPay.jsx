@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
 import checkmarkImage from "../../Assets/pay_success_pic.jpg";
+import axios from "axios";
 import {
   delete_localStorage,
   load_localStorage,
@@ -15,18 +16,30 @@ const SuccessPay = () => {
   const time =
     today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-  useEffect(() => {
-    console.log(data);
-  }, []);
-
   const billInfo = {
     billNo: data.bill_no,
     amount: data.amount,
     date: date,
     time: time,
+    bookingId: data.book_id,
     slotNo: data.slot_id,
     email: data.email,
   };
+
+  useEffect(() => {
+    try {
+      axios
+        .post(
+          "http://localhost:8800/api/user/pay/save_payment_details",
+          billInfo
+        )
+        .then((res) => {
+          console.log(res);
+        });
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
 
   return (
     <Container className="py-5 text-center">
@@ -55,6 +68,9 @@ const SuccessPay = () => {
             </p>
             <p className="m-0">
               <strong>Time:</strong> {billInfo.time}
+            </p>
+            <p className="m-0">
+              <strong>Booking ID:</strong> {billInfo.bookingId}
             </p>
             <p className="m-0">
               <strong>Slot Number:</strong> {billInfo.slotNo}

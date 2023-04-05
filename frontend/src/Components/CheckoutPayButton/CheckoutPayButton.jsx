@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import Button from "react-bootstrap/Button";
 import save_localStorage, {
-  load_localStorage,
   localStorage_keys,
 } from "../../helper/handle_localStorage";
 
@@ -11,7 +10,7 @@ const CheckoutPayButton = () => {
 
   const handlecheckbutton = async () => {
     const data = {
-      book_id: 0,
+      book_id: 14,
       slot_id: 1,
       amount: 10000,
       bill_no: 123,
