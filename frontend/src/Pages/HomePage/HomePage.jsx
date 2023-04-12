@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Navbar from "../../Components/NavBar/NavBar";
 import Footer from "../../Components/Footer/Footer";
 import CheckoutPayButton from "../../Components/CheckoutPayButton/CheckoutPayButton";
+import RefundButton from "../../Components/RefundClientSide/RefundButton";
 
 const HomePage = () => {
   return (
@@ -38,9 +39,7 @@ const HomePage = () => {
       </Button>
 
       <h5>Refund (in admin panal, cancel booking)</h5>
-      <Button variant="outline-primary" size="sm">
-        <Link to="/refund"> Refund</Link>
-      </Button>
+      <RefundButton />
 
       <Footer />
     </div>
