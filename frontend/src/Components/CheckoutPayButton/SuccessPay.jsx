@@ -31,32 +31,34 @@ const SuccessPay = () => {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const randomId = params.get("id");
-    let isPaymentDuplicated=true;
+    let isPaymentDuplicated = true;
     try {
-      // const prevRandonId = 
-      const stored_random_key = (load_localStorage(
+      const stored_random_key = load_localStorage(
         localStorage_keys.payment_RandomId
-      ));
-      if(randomId!==stored_random_key){
-        isPaymentDuplicated=false;
+      );
+      if (randomId !== stored_random_key) {
+        isPaymentDuplicated = false;
       }
     } catch (error) {
-      console.log(error);
+      console.log("error: no data to load in local storage ");
+      isPaymentDuplicated = false;
     }
-    try {
-      // axios
-      //   .post(
-      //     "http://localhost:8800/api/user/pay/save_payment_details",
-      //     billInfo
-      //   )
-      //   .then((res) => {
-      //     console.log(res.data);
 
-      save_localStorage(localStorage_keys.payment_RandomId, randomId);
-      //delete_localStorage(localStorage_keys.payment_RandomId);
-      // });
-    } catch (err) {
-      console.log(err);
+    if (!isPaymentDuplicated) {
+      try {
+        axios
+          .post(
+            "http://localhost:8800/api/user/pay/save_payment_details",
+            billInfo
+          )
+          .then((res) => {
+            console.log(res.data);
+            save_localStorage(localStorage_keys.payment_RandomId, randomId);
+            console.log("local stoerd");
+          });
+      } catch (err) {
+        console.log(err);
+      }
     }
   }, []);
 
@@ -103,7 +105,7 @@ const SuccessPay = () => {
             href="/"
             className="mb-3"
             onClick={() => {
-              //delete_localStorage(localStorage_keys.temp_payment);
+              delete_localStorage(localStorage_keys.temp_payment);
             }}
           >
             Back to Home
