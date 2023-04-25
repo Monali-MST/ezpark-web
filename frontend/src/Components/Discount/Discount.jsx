@@ -39,7 +39,7 @@ const Discount = () => {
                     style={{ backgroundColor: colorList[index] }}
                   >
                     <h3>{discount.Discounts_Name}</h3>
-                    <h3>{discount.Discount}% Discounts</h3>
+                    <h3>{discount.DefaultDiscount}% Discounts</h3>
                   </div>
                 </div>
               </div>
