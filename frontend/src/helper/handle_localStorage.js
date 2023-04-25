@@ -1,4 +1,4 @@
-export default function save_localStorage(key, value) {
+export function save_localStorage(key, value) {
   try {
     localStorage.setItem(key, JSON.stringify(value));
   } catch (error) {
@@ -40,5 +40,6 @@ export function clear_localStorage(){
 }
 
 export const localStorage_keys = {
-  temp_payment:"temp-payment"
+  temp_payment:"temp-payment",
+  payment_RandomId:"payment_RandomId"
 }

@@ -1,18 +1,20 @@
 import React from "react";
 
 import Button from "react-bootstrap/Button";
-import save_localStorage, {
+import {
+  save_localStorage,
   localStorage_keys,
 } from "../../helper/handle_localStorage";
 
 const CheckoutPayButton = () => {
   const amount = 1000;
+  const name = "Slot Name: Zone C -20";
 
   const handlecheckbutton = async () => {
     const data = {
       book_id: 14,
-      slot_id: 1,
-      amount: 10000,
+      slot_name: "Slot Name: Zone C -20",
+      amount: amount,
       bill_no: 123,
       email: "testmail@gmail.com",
       user_id: 12,
@@ -28,7 +30,7 @@ const CheckoutPayButton = () => {
       body: JSON.stringify({
         items: [{ id: 1, quantity: 1 }],
         price: amount,
-        name: "Slot Name: Zone C -20",
+        name: name,
       }),
     })
       .then((res) => {

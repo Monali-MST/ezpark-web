@@ -4,6 +4,7 @@ import checkmarkImage from "../../Assets/pay_success_pic.jpg";
 import axios from "axios";
 import {
   delete_localStorage,
+  save_localStorage,
   load_localStorage,
   localStorage_keys,
 } from "../../helper/handle_localStorage";
@@ -22,20 +23,38 @@ const SuccessPay = () => {
     date: date,
     time: time,
     bookingId: data.book_id,
-    slotNo: data.slot_id,
+    slotName: data.slot_name,
     email: data.email,
+    payment_intent_id: 4,
   };
 
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const randomId = params.get("id");
+    let isPaymentDuplicated=true;
     try {
-      axios
-        .post(
-          "http://localhost:8800/api/user/pay/save_payment_details",
-          billInfo
-        )
-        .then((res) => {
-          console.log(res);
-        });
+      // const prevRandonId = 
+      const stored_random_key = (load_localStorage(
+        localStorage_keys.payment_RandomId
+      ));
+      if(randomId!==stored_random_key){
+        isPaymentDuplicated=false;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      // axios
+      //   .post(
+      //     "http://localhost:8800/api/user/pay/save_payment_details",
+      //     billInfo
+      //   )
+      //   .then((res) => {
+      //     console.log(res.data);
+
+      save_localStorage(localStorage_keys.payment_RandomId, randomId);
+      //delete_localStorage(localStorage_keys.payment_RandomId);
+      // });
     } catch (err) {
       console.log(err);
     }
@@ -73,7 +92,7 @@ const SuccessPay = () => {
               <strong>Booking ID:</strong> {billInfo.bookingId}
             </p>
             <p className="m-0">
-              <strong>Slot Number:</strong> {billInfo.slotNo}
+              <strong>Slot Number:</strong> {billInfo.slotName}
             </p>
             <p className="m-0">
               <strong>Email:</strong> {billInfo.email}
@@ -84,7 +103,7 @@ const SuccessPay = () => {
             href="/"
             className="mb-3"
             onClick={() => {
-              delete_localStorage(localStorage_keys.temp_payment);
+              //delete_localStorage(localStorage_keys.temp_payment);
             }}
           >
             Back to Home
