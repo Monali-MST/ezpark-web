@@ -40,7 +40,7 @@ const ClientRefundRequest = () => {
 
     try {
       axios.post(
-        "http://localhost:8800/api/user/post/send_refund_request",
+        "http://localhost:8800/api/user/send_refund_request",
         request
       )
       .then((res)=>{

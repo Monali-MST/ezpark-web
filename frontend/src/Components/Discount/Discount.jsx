@@ -8,7 +8,7 @@ const Discount = () => {
   useEffect(() => {
     const fetchAlldiscounts = async () => {
       try {
-        const res = await axios.get("http://localhost:8800/api/user/get/discounts");
+        const res = await axios.get("http://localhost:8800/api/user/getdiscounts");
         setdiscounts(res.data);
       } catch (err) {
         console.log(err);

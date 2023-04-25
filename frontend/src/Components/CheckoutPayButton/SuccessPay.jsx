@@ -48,7 +48,7 @@ const SuccessPay = () => {
       try {
         axios
           .post(
-            "http://localhost:8800/api/user/pay/save_payment_details",
+            "http://localhost:8800/api/user/save_payment_details",
             billInfo
           )
           .then((res) => {

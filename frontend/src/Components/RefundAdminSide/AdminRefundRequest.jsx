@@ -20,7 +20,7 @@ const AdminRefundRequest = () => {
     const fetchAllRequests = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:8800/api/user/get/get_refund_request"
+          "http://localhost:8800/api/user/get_refund_request"
         );
         setRequests(res.data);
       } catch (err) {
@@ -33,7 +33,7 @@ const AdminRefundRequest = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        "http://localhost:8800/api/user/response/reject_refund_request" + id
+        "http://localhost:8800/api/user/reject_refund_request" + id
       );
       window.location.reload();
 
@@ -109,7 +109,7 @@ const AdminRefundRequest = () => {
               <p>{new Date(request.Requested_date).toDateString()}</p>
               <b>Paid Amount :</b>
               <p>Rs.{request.PaymentAmount}.00</p>
-              <Button variant="primary">Accept Refund</Button>{" "}
+              <Button variant="primary" >Accept Refund</Button>{" "}
               <Button
                 variant="danger"
                 onClick={() => {

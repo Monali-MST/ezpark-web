@@ -4,7 +4,6 @@ import Badges from "../../Components/Badges/Badges";
 import Points from "../../Components/Points/Points";
 import Discount from "../../Components/Discount/Discount";
 import RefundLevels from "../../Components/RefundLevels/RefundLevels";
-import Footer from "../../Components/Footer/Footer";
 
 const PointSystem = () => {
   return (
@@ -14,7 +13,6 @@ const PointSystem = () => {
       <Points />
       <Discount />
       <RefundLevels />
-      <Footer />
     </div>
   );
 };
