@@ -1,0 +1,33 @@
+/* 
+.badges .badge-list{
+  display: flex;
+  margin-left: 12.5rem;
+  margin-right: 12.5rem;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 3.125rem;
+  margin-bottom: 1.875rem;
+}
+.title-bar {
+  background-color: #1f1d1d;
+  padding: 0.625rem;
+}
+.title-bar .title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+.badges .badge-list .b-card{
+  font-weight: bold;
+  font-size: 1.563rem;
+  text-align: center;
+}
+
+.badges .badge-list .badge-img{
+  width: 14.438rem;
+  height: 16.813rem;
+  display: block;
+  object-fit: contain;
+} */

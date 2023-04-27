@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Badges.css";
-import Bronze from "../../Assets/bronze.png";
-import Gold from "../../Assets/gold.png";
-import Silver from "../../Assets/silver.png";
+import Bronze from "../../../Assets/bronze.png";
+import Gold from "../../../Assets/gold.png";
+import Silver from "../../../Assets/silver.png";
 
 const Badges = () => {
   const [badges, setBadges] = useState([]);
@@ -22,7 +22,7 @@ const Badges = () => {
   const colorList = ["#fdaf06", "#8740e4", "#cf782c"];
 
   return (
-    <section id="badges">
+    <main id="badges">
       <div className="badges">
         <div className="title-bar">
           <div className="title">EZ Badges</div>
@@ -35,7 +35,7 @@ const Badges = () => {
           </div>
 
           <div className="b-card">
-            <img className="badge-img" src={Gold} alt="Gold" />
+            <img className="badge-img" src={Gold}  alt="Gold" />
             <div className="badge-title gold ">Gold Badge</div>
           </div>
 
@@ -44,8 +44,9 @@ const Badges = () => {
             <div className="badge-title silver ">Silver Badge</div>
           </div>
         </div>
-        <div className="cont"><div className="level-section">
-          <div className="level-title">How Can I get these Badges?</div>
+        <div className="cont">
+          <div className="level-section">
+            <div className="level-title">How Can I get these Badges?</div>
             {badges.map((badge, index) => (
               <div key={badge.Badge_ID}>
                 <div className="badge-levels">
@@ -59,11 +60,10 @@ const Badges = () => {
                 </div>
               </div>
             ))}
-          
-        </div></div>
-        
+          </div>
+        </div>
       </div>
-    </section>
+    </main>
   );
 };
 

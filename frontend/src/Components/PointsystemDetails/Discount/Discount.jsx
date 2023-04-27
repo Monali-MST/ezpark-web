@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Discount.css";
-import dicountImg from "../../Assets/discounts_picture.png";
+import dicountImg from "../../../Assets/discounts_picture.png";
 
 const Discount = () => {
   const [discounts, setdiscounts] = useState([]);
   useEffect(() => {
     const fetchAlldiscounts = async () => {
       try {
-        const res = await axios.get("http://localhost:8800/api/user/getdiscounts");
+        const res = await axios.get(
+          "http://localhost:8800/api/user/getdiscounts"
+        );
         setdiscounts(res.data);
       } catch (err) {
         console.log(err);
@@ -27,7 +29,7 @@ const Discount = () => {
         </div>
 
         <div className="cont">
-          <img className="discount-img" src={dicountImg} alt="Silver" />
+          <img className="discount-img" src={dicountImg} alt="dicountImg" />
 
           <div className="level-section">
             <div className="level-title">How Can I get Discounts?</div>

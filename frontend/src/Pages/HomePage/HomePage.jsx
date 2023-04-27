@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import Navbar from "../../Components/NavBar/NavBar";
 import CheckoutPayButton from "../../Components/CheckoutPayButton/CheckoutPayButton";
-import RefundButton from "../../Components/RefundClientSide/RefundButton";
+import NavBar from "../../Components/PointsystemDetails/NavBar/NavBar";
 
 const HomePage = () => {
   return (
     <div>
-      <Navbar />
+      <NavBar/>
 
       <h5>Point_System Details (in nav bar, user profile)</h5>
       <Button variant="outline-primary" size="sm">

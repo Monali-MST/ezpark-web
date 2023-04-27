@@ -13,7 +13,7 @@ body {
   background-color: #1f1d1d;
   padding: 10px;
 }
-.title {
+.title-bar .title {
   font-size: 32px;
   font-weight: bold;
   text-align: center;

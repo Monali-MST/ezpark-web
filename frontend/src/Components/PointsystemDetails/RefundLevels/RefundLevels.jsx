@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./RefundLevels.css";
-import refundImg from "../../Assets/refunds_picture.png";
+import refundImg from "../../../Assets/refunds_picture.png";
 
 const RefundLevels = () => {
   const [Refund_Levels, setRefund_Levels] = useState([]);

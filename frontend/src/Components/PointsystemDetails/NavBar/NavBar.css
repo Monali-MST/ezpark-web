@@ -1,3 +1,11 @@
+.yell {
+    color: #faa41e;
+  }
+  
+  .blk {
+    color: #000;
+  }
+
 /* *{
     margin: 0;
     padding: 0;
@@ -41,13 +49,7 @@
     font-weight: bold;
 } */
 
-.yell{
-    color: #FAA41E;
-}
-  
-.blk{
-    color: #000;
-} 
+ 
 /*
 ul{
     list-style-type: none;

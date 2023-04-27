@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Points.css";
-import pointImg from "../../Assets/point_picture.png";
+import pointImg from "../../../Assets/point_picture.png";
 
 const Points = () => {
   const [pointActions, setpointActions] = useState([]);
