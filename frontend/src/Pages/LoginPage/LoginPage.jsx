@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 // import { FaUser, FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import validate from "../SignUpPage/SignUpValid";
+// import validate from "../SignUpPage/SignUpValid";
 import Logo from "../../Assets/logo_without_text.png";
 
 function LoginPage() {
@@ -22,26 +22,22 @@ function LoginPage() {
   };
 
   const handleClick =  (e) => {
-    e.preventDefault();
-    setFormErrors(validate(formValues));
-    // if (
-    //   formErrors.Fname === "" &&
-      
-    //   formErrors.Pword === ""
-    // )
-    //  {
-      axios
-        .post("http://localhost:8800/login", formValues)
-        .then((res) => {
-          if(res.data==="Success"){
-            navigate("/userdashboard/:id");
-          }else{
-            alert("No record existed");
-          }
+    navigate("/userdashboard/:id");
+    // e.preventDefault();
+    // setFormErrors({});
+  
+    //   axios
+    //     .post("http://localhost:8800/login", formValues)
+    //     .then((res) => {
+    //       if(res.data==="Success"){
+    //         navigate("/userdashboard/:id");
+    //       }else{
+    //         alert("No record existed");
+    //       }
           
-        })
-        .catch((err) => console.log(err));
-    //}
+    //     })
+    //     .catch((err) => console.log(err));
+    
   };
   return (
     <div className="login-page">
@@ -69,7 +65,7 @@ function LoginPage() {
           <form>
             <div className="feild1">
               <input
-              style={{borderRadius:"45px"}}
+              style={{borderRadius:"45px",padding:"5px",marginBottom:"20px",fontSize:"20",width:"50vh"}}
                 type="text"
                 placeholder="Username"
                 onChange={handleChange}
@@ -81,7 +77,7 @@ function LoginPage() {
             <p>{formErrors.Fname}</p>
             <div className="feild1">
               <input
-              style={{borderRadius:"45px"}}
+              style={{borderRadius:"45px",padding:"5px",marginBottom:"20px",fontSize:"20",width:"50vh"}}
                 type="password"
                 placeholder="Password" 
                 onChange={handleChange}

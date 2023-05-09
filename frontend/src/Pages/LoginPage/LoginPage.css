@@ -35,18 +35,6 @@ h1 {
   
 }
 
-.Input {
-  
-  padding: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  font-size: 31;
-}
-
-.feild1{
-  width: 50vh;
-  border-radius: 45px;
-}
 
 .log_btn {
   width: 25vh;

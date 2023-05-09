@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "../../Components/NavBar/NavBar";
 import Footer from "../../Components/Footer/Footer";
+import Button from 'react-bootstrap/Button';
+
 import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 import myImage from "../../Assets/bgimg.jpg";
@@ -13,7 +15,7 @@ const HomePage = () => {
     e.preventDefault();
     try {
       navigate("/signup");
-      navigate("/emailverify");
+      
     } catch (err) {
       console.log(err);
     }
@@ -22,6 +24,7 @@ const HomePage = () => {
   return (
     <div>
       <Navbar />
+   
       <section id="coverpage">
       <div style={{ backgroundImage: `url(${myImage})`,backgroundSize:"cover", height:"83vh" ,filter: "brightness(0.6)"}}> 
       <div className="logo-section" >
@@ -42,7 +45,7 @@ const HomePage = () => {
      
       </p>
       </div> 
-      <button className="start"onClick={handleClick}>Get Started</button>
+      <Button className="start"onClick={handleClick}>Get Started</Button>
       </div>
      
       
