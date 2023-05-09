@@ -19,7 +19,11 @@ function RevenueFunctionD(){
     labels: userData.map((data) => {
       const paymentDate = data.PaymentDate;
       if (paymentDate) {
-        return paymentDate.substr(0, 9) + (parseInt(paymentDate.charAt(9)) + 1).toString();
+        const date = new Date(paymentDate);
+        const day = date.getDate();
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear();
+        return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
       }
       return '';
     }),
@@ -29,7 +33,6 @@ function RevenueFunctionD(){
       backgroundColor:"#f8ba59",
     }]
   }
-
 
   return(
     <div>

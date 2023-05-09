@@ -1,7 +1,7 @@
 var connection = require('../../../service/connection');
 
 module.exports = async function stat_revenue_monthly(req, res){
-        const queryMR="SELECT PaymentDate,SUM(PaymentAmount) AS TotalRevenueMonthly FROM Payment_Details WHERE MONTH(PaymentDate)=MONTH(now()) GROUP BY date(PaymentDate) ORDER BY date(PaymentDate);";
+        const queryMR="SELECT PaymentDate,SUM(PaymentAmount) AS TotalRevenueMonthly FROM Payment_Details WHERE MONTH(PaymentDate)=MONTH(now()) GROUP BY PaymentDate ORDER BY PaymentDate;";
         connection.query(queryMR, (error, results, fields) =>{
             if(error) return res.json(error)
             const rows=results.map(row => {
@@ -14,5 +14,6 @@ module.exports = async function stat_revenue_monthly(req, res){
             return  res.json(rows);
             });
       }
+
 
       

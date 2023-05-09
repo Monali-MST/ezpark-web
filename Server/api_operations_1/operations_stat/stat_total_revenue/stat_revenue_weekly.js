@@ -1,7 +1,7 @@
 var connection = require('../../../service/connection');
 
 module.exports = async function stat_revenue_weekly(req, res){
-        const queryW="SELECT PaymentDate, (PaymentAmount) AS TotalRevenueWeekly FROM Payment_Details WHERE PaymentDate BETWEEN date (now())-6 AND date (now())+1 GROUP BY date(PaymentDate) ORDER BY date(PaymentDate);";
+        const queryW="SELECT PaymentDate, SUM(PaymentAmount) AS TotalRevenueWeekly FROM Payment_Details WHERE PaymentDate BETWEEN date (now())-6 AND date (now())+1 GROUP BY PaymentDate ORDER BY PaymentDate;";
         connection.query(queryW, (error, results, fields) =>{
             if(error) return res.json(error)
             const rows=results.map(row => {
@@ -16,4 +16,3 @@ module.exports = async function stat_revenue_weekly(req, res){
             });
       }
 
-      

@@ -8,6 +8,8 @@ import CurrentTime from "./CurrentTime";
 import DropDownBC from "./DropDownBC";
 import DropDownTR from "./DropDownTR";
 import DropDownRM from "./DropDownRM";
+
+import DateRangePicker from "./ReportGenerator";
 import CarIcon from "./../../Assets/car_side.png";
 import ToggleIcon from "./../../Assets/toggle.png";
 
@@ -71,6 +73,8 @@ const StaticView = () => {
             <div className="booking-and-cancel"><DropDownBC/></div>
             <div className="total-revenue"><DropDownTR/></div>
             <div className="refund"><DropDownRM/></div>
+
+            <div className= "report-generator"><DateRangePicker/></div>
 
         </section>
 

@@ -16,7 +16,17 @@ function RefundFPFunctionW(){
   }, []);
 
   const chartData={
-    labels: userData.map((data)=>(data.RefundDate).substr(0,9)+(parseInt((data.RefundDate).charAt(9))+1).toString()),
+    labels: userData.map((data) => {
+      const refundDate = data.RefundDate;
+      if (refundDate) {
+        const date = new Date(refundDate);
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+      }
+      return '';
+    }),
     datasets:[{
       label: "Full Refunds",
       data: userData.map((data)=> data.TotalFullRefunds),

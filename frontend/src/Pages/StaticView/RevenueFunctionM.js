@@ -16,7 +16,18 @@ function RevenueFunctionM(){
   }, []);
 
   const chartData={
-    labels: userData.map((data)=>(data.PaymentDate).substr(0,9)+(parseInt((data.PaymentDate).charAt(9))+1).toString()),
+    labels: userData.map((data) => {
+      const paymentDate = data.PaymentDate;
+      if (paymentDate) {
+        const date = new Date(paymentDate);
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+      }
+      return '';
+    }),
+    
     datasets:[{
       label: "Total Revenue",
       data: userData.map((data)=> data.TotalRevenueMonthly),
