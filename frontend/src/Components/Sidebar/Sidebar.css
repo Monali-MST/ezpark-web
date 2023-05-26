@@ -1,50 +1,68 @@
-* {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-}
 .container {
   display: flex;
+  
 }
 
+
 .sidebar {
-  background: #000;
-  color: #fff;
-  height: 100vh;
-  width: 200px;
-  transition: all 0.5s;
-  position: fixed;
+ height: 725px;
+  width: 50px;
+  background-color: #f0f0f0;
+  transition: width 0.3s;
 }
-.top_section {
+
+.sidebar .top_section {
   display: flex;
   align-items: center;
-  padding: 20px 15px;
+  padding: 10px;
+  background-color: #ccc;
 }
-.logo {
-  font-size: 30px;
+
+.sidebar .top_section .logo {
+  display: none;
 }
-.bars {
+
+.sidebar .top_section .bars {
+  cursor: pointer;
+}
+
+.sidebar .link {
   display: flex;
-  font-size: 25px;
-  margin-left: 50px;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s;
 }
-.link {
-  display: flex;
+
+.sidebar .link:hover {
+  background-color: #ddd;
+}
+
+.sidebar .link .icon {
+  margin-right: 10px;
+}
+
+.sidebar .link .link_text {
+  display: none;
+}
+
+.sidebar .link.active {
+  background-color: #aaa;
   color: #fff;
-  padding: 10px 15px;
-  gap: 15px;
-  transition: all 0.5s;
 }
-.link:hover {
-  background: lightblue;
-  color: #000;
-  transition: all 0.5s;
+
+.sidebar.open {
+  width: 250px;
 }
-.active {
-  background: lightblue;
-  color: #000;
+
+.sidebar.open .top_section .logo {
+  display: block;
+  margin-left: 10px;
+  color: #333;
 }
-.icon,
-.link_text {
-  font-size: 20px;
+
+.sidebar.open .link .link_text {
+  display: block;
+  margin-left: 10px;
 }

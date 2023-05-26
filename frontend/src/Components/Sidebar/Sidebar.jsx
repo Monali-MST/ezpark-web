@@ -27,6 +27,11 @@ const Sidebar = ({Children}) => {
       icon: <FaUserAlt />,
     },
     {
+      path: "/myaccount",
+      name: "Profile",
+      icon: <FaUserAlt />,
+    },
+    {
       path: "/booking",
       name: "Bookings",
       icon: <FaRegEdit />,

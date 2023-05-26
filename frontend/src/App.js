@@ -11,7 +11,7 @@ import MyProfilePage from "./Pages/MyProfilePage/MyProfilePage";
 import SupportPage from "./Pages/SupportPage/SupportPage";
 import VehicleDetails from "./Pages/VehicleDetails/VehicleDetails";
 import VerEmail from "./Pages/VerEmail/verEmail";
-import VerMobile from "./Pages/VerMobile/verMobile";
+// import VerMobile from "./Pages/VerMobile/verMobile";
 import Sucess from "./Pages/Sucess/SucessPage";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -33,8 +33,9 @@ function App() {
             <Route path="/supoort" element={<SupportPage />} />
             <Route path="/vehicledetails" element={<VehicleDetails />} />
             <Route path="/emailverify" element={<VerEmail />} />
-            <Route path="/Mobileverify" element={<VerMobile />} />
+            {/* <Route path="/Mobileverify" element={<VerMobile />} /> */}
             <Route path="/sucess" element={<Sucess/>}/>
+            <Route path="/myaccount" element={<MyProfilePage/>}/>
 
           </Routes>
         </BrowserRouter>

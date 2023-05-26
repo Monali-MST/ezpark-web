@@ -1,11 +1,18 @@
-import React from 'react'
+import Form from 'react-bootstrap/Form';
 
-const BookingPage = () => {
+function FormGroupExample() {
   return (
-    <div>
-      <h1>Make a booking</h1>
-    </div>
-  )
+    <Form>
+      <Form.Group className="mb-3" controlId="formGroupEmail">
+        <Form.Label>Email address</Form.Label>
+        <Form.Control type="email" placeholder="Enter email" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formGroupPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password" placeholder="Password" />
+      </Form.Group>
+    </Form>
+  );
 }
 
-export default BookingPage
+export default FormGroupExample;
