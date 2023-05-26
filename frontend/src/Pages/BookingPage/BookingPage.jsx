@@ -1,6 +1,6 @@
 import Form from 'react-bootstrap/Form';
 
-function FormGroupExample() {
+function BookingPage() {
   return (
     <Form>
       <Form.Group className="mb-3" controlId="formGroupEmail">
@@ -15,4 +15,4 @@ function FormGroupExample() {
   );
 }
 
-export default FormGroupExample;
+export default BookingPage;

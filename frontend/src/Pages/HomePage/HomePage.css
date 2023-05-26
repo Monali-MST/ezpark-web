@@ -60,4 +60,43 @@
     background-color: #000;
     color: #fff;
   }
+  .section{
+    height: 100vh;
+  }
+  .section-title{
+    background-color: black;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    color: white;
+  }
+  .two-column-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .column {
+    width: 50%; /* Adjust the width of each column */
+  }
+  
+  .video-wrapper {
+    padding-top: 200px;
+    position: relative;
+    padding-bottom: 56.25%; /* Aspect ratio for 16:9 video */
+    overflow: hidden;
+  }
+  
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
   
