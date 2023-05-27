@@ -25,41 +25,8 @@
 .blk{
     color: #000;
 }
-  
-  .text1 {
-    color: #FAA41E;
-    font-size: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-  .text{
-    color: white;
-    font-size: 3rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-weight: bold;  
-    margin-left: 10vh;
-    
-  }
- 
-  
-  
-  .start {
-    background-color: #F8D297;
-    color: #000;
-    padding: 0.5rem 2rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-radius: 5rem;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 30vh;
-    margin-left: 10vh;
-  }
-  
-  .start:hover {
-    background-color: #000;
-    color: #fff;
-  }
+
+
   .section{
     height: 100vh;
   }
@@ -99,4 +66,14 @@
     width: 100%;
     height: 100%;
   }
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8vh;
+    padding-top: 10vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+  }
+  
+ 
   
