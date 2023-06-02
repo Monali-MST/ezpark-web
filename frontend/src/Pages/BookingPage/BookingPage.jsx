@@ -3,17 +3,23 @@ import Card from "react-bootstrap/Card";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
 
 function BookingPage() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState("");
+  const [selectedHrs, setSelectedHrs] = useState("");
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
 
   const handleTimeChange = (event) => {
     setSelectedTime(event.target.value);
+  };
+  const handleHrsChange = (event) => {
+    setSelectedHrs(event.target.value);
   };
   return (
     <>
@@ -30,17 +36,23 @@ function BookingPage() {
             <Card.Text>
               <div>
                 <label htmlFor="timeSelect">Select Date:</label>
+                
                 <DatePicker
+                
                   selected={selectedDate}
                   onChange={handleDateChange}
                   dateFormat="dd/MM/yyyy"
                   isClearable
                   placeholderText="Select a date"
-                />
-                <Row className="mb-3">
                   
-                  <label htmlFor="timeSelect">Select Time:</label>
-                  <select
+                />
+          
+                <Form>
+      <Row>
+        <Col>
+        <label htmlFor="timeSelect">Select Time:</label>
+        
+          <select
                     id="timeSelect"
                     value={selectedTime}
                     onChange={handleTimeChange}
@@ -51,13 +63,15 @@ function BookingPage() {
                     <option value="15:45">03:45 PM</option>
                     {/* Add more options as needed */}
                   </select>
-                  <p>Start Time: {selectedTime}</p>
-
-                  <label htmlFor="timeSelect">Select hour:</label>
-                  <select
+                  
+        </Col>
+        <Col>
+        <label htmlFor="timeSelect">Select hours:</label>
+         
+          <select
                     id="timeSelect"
-                    value={selectedTime}
-                    onChange={handleTimeChange}
+                    value={selectedHrs}
+                    onChange={handleHrsChange}
                   >
                     <option value="">-- Select --</option>
                     <option value="09:00">1 hrs</option>
@@ -65,8 +79,10 @@ function BookingPage() {
                     <option value="15:45">3 hrs</option>
                     {/* Add more options as needed */}
                   </select>
-                  <p>Start Time: {selectedTime}</p>
-                </Row>
+                 
+        </Col>
+      </Row>
+    </Form>
                 <Button variant="secondary">Select slot</Button>{" "}
               </div>
             </Card.Text>

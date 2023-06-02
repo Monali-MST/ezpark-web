@@ -77,9 +77,9 @@ const Footer = () => {
           <div class="copyright">
             <p>
               Developed and maintained by{" "}
-              <a href="#" target="_blank">
+              
                 company
-              </a>
+              
             </p>
           </div>
         </div>

@@ -64,7 +64,7 @@ const HomePage = () => {
               fontWeight: "bold",
               marginLeft: "10vh",
               paddingTop:"30vh",
-              marginLeft: "10vh",
+            
             }}
           >
             <p>

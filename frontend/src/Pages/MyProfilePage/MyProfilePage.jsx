@@ -59,7 +59,7 @@ const ProfileSettings = () => {
 
   return (
     <>
-    <Sidebar/>
+  
     <div className="profile-settings">
       <h2>Profile Settings</h2>
       <form onSubmit={handleSubmit}>

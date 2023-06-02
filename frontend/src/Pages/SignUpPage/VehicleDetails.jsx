@@ -1,23 +1,42 @@
 import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
 import myImage from "../../Assets/parking-signup.jpg";
 import { Col, Container, Row, Form } from "react-bootstrap";
 
-function VehicleDetails() {
-  const [formValues, setformValues] = useState([]);
+function VehicleDetails({ formValues, setFormValues }) {
+  const [formValuesw, setFormValuesw] = useState([
+    {
+      VehicleNo: "",
+      VehicleType: "",
+    },
+  ]);
 
   const handleChange = (e, index) => {
     const { name, value } = e.target;
-    const updatedVehicles = [...formValues];
+    const updatedVehicles = [...formValuesw];
     updatedVehicles[index] = {
       ...updatedVehicles[index],
       [name]: value,
     };
-    setformValues(updatedVehicles);
+    setFormValuesw(updatedVehicles);
+    setFormValues((prev) => ({
+      ...prev,
+      Vehical: updatedVehicles,
+    }));
   };
 
   const handleAddVehicle = () => {
-    setformValues([...formValues, { VehicleNo: "", VehicleType: "" }]);
+    if (
+      !formValuesw[formValuesw.length - 1].VehicleNo ||
+      !formValuesw[formValuesw.length - 1].VehicleType
+    ) {
+      alert("Please fill all the fields");
+    } else {
+      setFormValuesw([...formValuesw, { VehicleNo: "", VehicleType: "" }]);
+    }
   };
+
+  const handleSubmit = () => {};
 
   return (
     <Container fluid>
@@ -33,37 +52,41 @@ function VehicleDetails() {
               alignItems: "center",
               flexDirection: "column",
               filter: "brightness(1)",
-             
             }}
-          >
-            <h2 style={{ marginBottom: "1rem" }}>Vehicle Details</h2>
-            <button className="add-btn" onClick={handleAddVehicle}>
-              Add Vehicle
-            </button>
-          </div>
+          ></div>
         </Col>
         <Col md={6}>
-          {formValues.map((formValue, index) => (
-            <div key={index} className="mb-3">
-              <Form>
+          <Button
+            variant="outline-warning"
+            onClick={handleAddVehicle}
+            style={{ marginBottom: "20px" }}
+          >
+            Add Vehicle
+          </Button>
+          {formValuesw.slice(0, 5).map((formValuew, index) => (
+            <div key={index} className="mb-4">
+              <Form onSubmit={handleSubmit}>
                 <Row>
-                  <Form.Group as={Col} controlId="formGridVehicleNo">
-                    
+                  <Form.Group as={Col} controlId={`formGridVehicleNo${index}`}>
                     <Form.Control
                       type="text"
-                      placeholder="vehicle number"
+                      placeholder="Vehicle Number"
                       name="VehicleNo"
-                      value={formValue.VehicleNo}
+                      value={formValuew.VehicleNo}
                       onChange={(e) => handleChange(e, index)}
+                      style={{ marginTop: "4px" }}
                     />
                   </Form.Group>
 
-                  <Form.Group as={Col} controlId="formGridVehicleType">
-                    
+                  <Form.Group
+                    as={Col}
+                    controlId={`formGridVehicleType${index}`}
+                  >
                     <Form.Select
                       name="VehicleType"
-                      value={formValue.VehicleType}
+                      value={formValuew.VehicleType}
                       onChange={(e) => handleChange(e, index)}
+                      style={{ marginTop: "4px" }}
                     >
                       <option value="">Choose...</option>
                       <option value="Car">Car</option>

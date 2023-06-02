@@ -36,7 +36,7 @@ const VerMobile = () => {
           <div>
             {otp.map((data, index) => (
               <input
-              style={{marginLeft:"20px",marginTop:"10px"}}
+              style={{marginLeft:"20px",marginTop:"10px",width:"40px",height:"40px"}}
                 type="text"
                 maxLength="1"
                 key={index}

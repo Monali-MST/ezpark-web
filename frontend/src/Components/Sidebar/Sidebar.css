@@ -5,10 +5,13 @@
 
 
 .sidebar {
+ 
  height: 725px;
-  width: 50px;
+  width: 30px;
   background-color: #f0f0f0;
   transition: width 0.3s;
+  margin-left: -140px;
+  padding-left: 30px;
 }
 
 .sidebar .top_section {

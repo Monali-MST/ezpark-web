@@ -2,43 +2,86 @@ import React, { useState } from "react";
 import "./LoginPage.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// import { FaUser, FaLock } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 // import validate from "../SignUpPage/SignUpValid";
 import Logo from "../../Assets/logo_without_text.png";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 function LoginPage() {
-  const [formErrors, setFormErrors] = useState({});
-  const [formValues, setFormValues] = useState({
-    Fname: "",
-    
-    Pword: "",
-   
-  });
   const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleChange = (e) => {
-    setFormValues((prev) => ({ ...prev, [e.target.name]: [e.target.value] }));
+  const usernameChangeHandler = (e) => {
+    setUsername(e.target.value);
   };
 
-  const handleClick =  (e) => {
-    navigate("/userdashboard/:id");
-    // e.preventDefault();
-    // setFormErrors({});
-  
-    //   axios
-    //     .post("http://localhost:8800/login", formValues)
-    //     .then((res) => {
-    //       if(res.data==="Success"){
-    //         navigate("/userdashboard/:id");
-    //       }else{
-    //         alert("No record existed");
-    //       }
-          
-    //     })
-    //     .catch((err) => console.log(err));
-    
+  const passwordChangeHandler = (e) => {
+    setPassword(e.target.value);
   };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    if (!username || !password) {
+      alert("Please fill all the fields");
+    } else if (
+      !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gi.test(
+        username
+      )
+    ) {
+      alert("Invalid Email Address");
+    } else {
+      console.log(username);
+      console.log(password);
+
+      axios
+        .post("http://localhost:8800/login", {
+          username: username,
+          password: password,
+        })
+        .then((res) => {
+          if (res.data === "Success") {
+            navigate("/userdashboard/:id");
+          } else {
+            alert("No record existed");
+          }
+        })
+        .catch((err) => console.log(err));
+    }
+  };
+
+  // const [formErrors, setFormErrors] = useState({});
+  // const [formValues, setFormValues] = useState({
+  //   Fname: "",
+
+  //   Pword: "",
+  // });
+  // const navigate = useNavigate();
+
+  // const handleChange = (e) => {
+  //   setFormValues((prev) => ({ ...prev, [e.target.name]: [e.target.value] }));
+  // };
+
+  // const handleClick = (e) => {
+  //   navigate("/userdashboard/:id");
+  //   // e.preventDefault();
+  //   // setFormErrors({});
+
+  //   //   axios
+  //   //     .post("http://localhost:8800/login", formValues)
+  //   //     .then((res) => {
+  //   //       if(res.data==="Success"){
+  //   //         navigate("/userdashboard/:id");
+  //   //       }else{
+  //   //         alert("No record existed");
+  //   //       }
+
+  //   //     })
+  //   //     .catch((err) => console.log(err));
+  // };
   return (
     <div className="login-page">
       <div className="left-column">
@@ -59,46 +102,75 @@ function LoginPage() {
       </div>
       <div className="right-column">
         <div className="login-form">
-          <h1 style={{ color: "#FAA41E",marginTop:"0vh",fontSize:"50px" }}>Ez Park</h1>
-          <h2 style={{ color: "white",marginTop:"5vh",fontSize:"30px",textAlign:"center"}}>Welcome to Ez park</h2>
+          <h1 style={{ color: "#FAA41E", fontSize: "50px" }}>Ez Park</h1>
+          <h2
+            style={{
+              color: "white",
+              marginTop: "5vh",
+              fontSize: "30px",
+              textAlign: "center",
+            }}
+          >
+            Welcome to Ez park
+          </h2>
           <br />
-          <form>
-            <div className="feild1">
-              <input
-              style={{borderRadius:"45px",padding:"5px",marginBottom:"20px",fontSize:"20",width:"50vh"}}
-                type="text"
+          <Form>
+            <Form.Group className="mb-3" controlId="formGroupEmail">
+              <Form.Control
+                type="email"
                 placeholder="Username"
-                onChange={handleChange}
-                name="Fname"
-                value={formValues.Fname}
+                name="username"
+                value={username}
+                onChange={usernameChangeHandler}
+                style={{ borderRadius: "45px", width: "400px" }}
               />
-              {/* <FaUser className="icon" /> */}
-            </div>
-            <p>{formErrors.Fname}</p>
-            <div className="feild1">
-              <input
-              style={{borderRadius:"45px",padding:"5px",marginBottom:"20px",fontSize:"20",width:"50vh"}}
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formGroupPassword">
+              <Form.Control
                 type="password"
-                placeholder="Password" 
-                onChange={handleChange}
-                name="Pword"
-                value={formValues.Pword}
+                placeholder="Password"
+                name="password"
+                value={password}
+                onChange={passwordChangeHandler}
+                style={{
+                  borderRadius: "45px",
+                  width: "400px",
+                  marginTop: "10px",
+                }}
               />
-              {/* <FaLock className="icon" /> */}
-            </div>
-            <p>{formErrors.Pword}</p>
-            <p style={{color:"#FAA41E",textAlign:"right"}}>Forgot password?</p><br />
-
-            <button className="log_btn" type="submit"  onClick={handleClick}>Sign in</button>
-            <br />
-
-            <p style={{ color: "white",fontSize:"20px",textAlign:"center",marginTop:"8vh" }}>
-              New?
-              <Link to="/signup" style={{ color: "#FAA41E" ,fontSize:"15px"}}>
-                Create an Account
-              </Link>
-            </p>
-          </form>
+            </Form.Group>
+          </Form>
+          <p
+            style={{ color: "#FAA41E", textAlign: "right", marginTop: "50px" }}
+          >
+            Forgot password?
+          </p>
+          <Button
+            variant="warning"
+            onClick={submitHandler}
+            style={{
+              backgroundColor: "#FAA41E",
+              width: "150px",
+              borderRadius: "25px",
+              alignItems: "center",
+              marginLeft: "150px",
+            }}
+          >
+            Sign in
+          </Button>{" "}
+          <p
+            style={{
+              color: "white",
+              fontSize: "20px",
+              textAlign: "center",
+              marginTop: "8vh",
+            }}
+          >
+            New?
+            <Link to="/signup" style={{ color: "#FAA41E", fontSize: "15px" }}>
+              Create an Account
+            </Link>
+          </p>
         </div>
       </div>
     </div>
