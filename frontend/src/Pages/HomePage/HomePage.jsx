@@ -12,8 +12,10 @@ import myImage4 from "../../Assets/parking.jpg";
 import myImage5 from "../../Assets/refund.jpg";
 import Logo from "../../Assets/logo_without_text.png";
 import Card from "react-bootstrap/Card";
+import YouTube from 'react-youtube';
 
 const HomePage = () => {
+  const videoId = 'CK7KYruoGZY'; // Replace with your YouTube video ID
   const navigate = useNavigate();
   const handleClick = async (e) => {
     e.preventDefault();
@@ -24,6 +26,9 @@ const HomePage = () => {
     }
   };
 
+   
+  
+
   return (
     <div>
       <div className="section">
@@ -31,9 +36,11 @@ const HomePage = () => {
 
         <div
           style={{
+            "--brightness": "1",
             backgroundImage: `url(${myImage})`,
             backgroundSize: "cover",
             height: "80vh",
+            filter: "brightness(var(--brightness))",
           }}
         >
           <div className="logo-section">
@@ -63,8 +70,7 @@ const HomePage = () => {
               fontSize: "3rem",
               fontWeight: "bold",
               marginLeft: "10vh",
-              paddingTop:"30vh",
-            
+              paddingTop: "30vh",
             }}
           >
             <p>
@@ -81,7 +87,7 @@ const HomePage = () => {
               borderRadius: "5rem",
               backgroundColor: "#F8D297",
               alignItems: "center",
-             
+
               marginLeft: "10vh",
             }}
           >
@@ -103,8 +109,77 @@ const HomePage = () => {
           WE HAVE A SPOT FOR YOU.{" "}
         </h1>
       </div>
+      <div className="section" style={{backgroundColor: "black" }}>
+  <div className="card-container">
+    <div className="card-wrapper">
+      <Card style={{ width: "15rem", height: "20rem" ,marginLeft:"10rem"}}>
+        <Card.Img variant="top" src={myImage1} style={{ height: "8rem" }} />
+        <Card.Body>
+          <Card.Title>Online Bookings</Card.Title>
+          <Card.Text style={{ fontSize: "14px" }}>
+            Allow users to book parking slots for their vehicles in advance.
+            Users can select the date, time, and duration for which they need
+            parking.
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    
+      <Card style={{ width: "15rem", height: "20rem" ,marginLeft:"26rem",marginTop:"2rem"}}>
+        <Card.Img variant="top" src={myImage2} style={{ height: "8rem" }} />
+        <Card.Body>
+                <Card.Title>Payment Processing</Card.Title>
+                <Card.Text style={{ fontSize: "14px" }}>
+                  Integrate a secure payment gateway to handle online payments
+                  for parking reservations. Users can make payments using debit
+                  cards or other available payment methods.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+          <div>
+          <Card style={{ width: "15rem", height: "20rem",marginLeft:"10rem" }}>
+        <Card.Img variant="top" src={myImage3} style={{ height: "8rem" }} />
+        <Card.Body>
+                <Card.Title>User Accounts</Card.Title>
+                <Card.Text style={{ fontSize: "14px" }}>
+                  Provide user registration and login functionality, allowing
+                  users to create accounts to manage their parking bookings,
+                  view booking history, and update personal information.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+            
+          <Card style={{ width: "15rem", height: "20rem",marginLeft:"26rem",marginTop:"2rem" }}>
+        <Card.Img variant="top" src={myImage5} style={{ height: "8rem" }} />
+        <Card.Body>
+                <Card.Title>Cancellation and Refunds</Card.Title>
+                <Card.Text style={{ fontSize: "14px" }}>
+                  Allow users to cancel their parking reservations within a
+                  specified time frame and provide a refund based on the
+                  cancellation policy.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+        
+          </div>
+          <div>
+          <Card style={{ width: "15rem", height: "20rem",marginLeft:"10rem" }}>
+        <Card.Img variant="top" src={myImage4} style={{ height: "8rem" }} />
+        <Card.Body>
+                <Card.Title>Availability Check</Card.Title>
+                <Card.Text style={{ fontSize: "14px" }}>
+                  Provide real-time availability of parking slots, allowing
+                  users to check if slots are available for their desired date
+                  and time.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </div>
+         
+        </div>
+      </div>
       <div className="section">
-        <div className="section-title">HOW IT WORKS</div>
+        <div className="section-title" style={{backgroundColor:"#FAA41E"}}>HOW IT WORKS</div>
         <div className="two-column-container">
           <div className="column">
             <p
@@ -130,111 +205,48 @@ const HomePage = () => {
           </div>
           <div className="column">
             <div className="video-wrapper">
-              <iframe
-                src="https://www.youtube.com/watch?v=CK7KYruoGZY"
-                title="Embedded video"
-                style={{ width: "700px", height: "500px", marginTop: "75px" }}
-              ></iframe>
+             
+               <YouTube videoId={videoId} 
+                style={{ width: "fit-content", height: "fit-content"}}
+              />
             </div>
           </div>
         </div>
       </div>
       <div className="section">
-        <div className="section-title">360 veiw</div>
-      </div>
-      <div className="section" style={{ backgroundColor: "black" }}>
-        <div className="card-container">
-          <div>
-            <Card style={{ width: "16rem", height: "20rem" }}>
-              <Card.Img
-                variant="top"
-                src={myImage1}
-                style={{ height: "10rem" }}
-              />
-              <Card.Body>
-                <Card.Title>Online Bookings</Card.Title>
-                <Card.Text style={{ fontSize: "14px" }}>
-                  Allow users to book parking slots for their vehicles in
-                  advance. Users can select the date, time, and duration for
-                  which they need parking.
-                </Card.Text>
-              </Card.Body>
-            </Card>
+        <div className="section-title">Location</div>
+        <div className="two-column-container">
+          <div className="column">
+            
           </div>
-          <div>
-            <Card
-              style={{ width: "16rem", height: "20rem", marginTop: "30vh" }}
+          <div className="column">
+            <div>
+            <p
+              style={{
+                textAlign: "justify",
+                margin: "50px",
+                paddingTop: "100px",
+                fontFamily: "bold",
+                fontSize: "20px",
+              }}
             >
-              <Card.Img
-                variant="top"
-                src={myImage2}
-                style={{ height: "10rem" }}
-              />
-              <Card.Body>
-                <Card.Title>Payment Processing</Card.Title>
-                <Card.Text style={{ fontSize: "14px" }}>
-                  Integrate a secure payment gateway to handle online payments
-                  for parking reservations. Users can make payments using debit
-                  cards or other available payment methods.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-          <div>
-            <Card style={{ width: "16rem", height: "20rem" }}>
-              <Card.Img
-                variant="top"
-                src={myImage3}
-                style={{ height: "10rem" }}
-              />
-              <Card.Body>
-                <Card.Title>User Accounts</Card.Title>
-                <Card.Text style={{ fontSize: "14px" }}>
-                  Provide user registration and login functionality, allowing
-                  users to create accounts to manage their parking bookings,
-                  view booking history, and update personal information.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-          <div>
-            <Card
-              style={{ width: "16rem", height: "20rem", marginTop: "30vh" }}
-            >
-              <Card.Img
-                variant="top"
-                src={myImage4}
-                style={{ height: "10rem" }}
-              />
-              <Card.Body>
-                <Card.Title>Availability Check</Card.Title>
-                <Card.Text style={{ fontSize: "14px" }}>
-                  Provide real-time availability of parking slots, allowing
-                  users to check if slots are available for their desired date
-                  and time.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-          <div>
-            <Card style={{ width: "16rem", height: "20rem" }}>
-              <Card.Img
-                variant="top"
-                src={myImage5}
-                style={{ height: "10rem" }}
-              />
-              <Card.Body>
-                <Card.Title>Cancellation and Refunds</Card.Title>
-                <Card.Text style={{ fontSize: "14px" }}>
-                  Allow users to cancel their parking reservations within a
-                  specified time frame and provide a refund based on the
-                  cancellation policy.
-                </Card.Text>
-              </Card.Body>
-            </Card>
+              A vehicle parking system is an automated solution that simplifies
+              the process of parking and managing vehicles in a parking
+              facility. It includes features such as entry gates, sensors,
+              ticketing, allocation of parking spaces, payment systems, and exit
+              gates. By utilizing technology and real-time data, the system
+              optimizes the utilization of parking spaces, improves traffic
+              flow, and enhances the overall parking experience for users. It
+              provides convenience, efficiency, and effective management of
+              vehicles in parking areas, making it an essential tool for modern
+              parking facilities.
+            </p>
           </div>
         </div>
       </div>
+      </div>
+
+     
       <div
         className="section"
         style={{ backgroundColor: "#FAA41E", height: "75vh" }}

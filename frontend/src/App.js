@@ -5,6 +5,7 @@ import PointSystem from "./Pages/PointSystem/PointSystem";
 import SignUpPage from "./Pages/SignUpPage/Form";
 import UserDashboardPage from "./Pages/UserDashboardPage/UserDashboardPage";
 import AboutUsPage from "./Pages/AboutUsPage/AboutUsPage";
+import SlotSelect from "./Pages/SlotSelect/Slot";
 import BookingPage from "./Pages/BookingPage/BookingPage";
 import MyBookingsPage from "./Pages/MyBookingsPage/MyBookingsPage";
 import MyProfilePage from "./Pages/MyProfilePage/MyProfilePage";
@@ -27,8 +28,9 @@ function App() {
             <Route path="/pointsystem" element={<PointSystem />} />
             <Route path="/userdashboard/:id" element={<UserDashboardPage />} />
             <Route path="/about" element={<AboutUsPage />} />
+            <Route path="/Slotselection" element={<SlotSelect />} />
             <Route path="/booking" element={<BookingPage />} />
-            <Route path="/chat" element={<MyBookingsPage />} /> 
+
             <Route path="/mybooking" element={<MyBookingsPage />} />
             <Route path="/supoort" element={<SupportPage />} />
             <Route path="/vehicledetails" element={<VehicleDetails />} />

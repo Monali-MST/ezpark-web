@@ -1,95 +1,109 @@
-import React, { useState } from "react";
-import Card from "react-bootstrap/Card";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import Button from "react-bootstrap/Button";
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
 
-function BookingPage() {
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedTime, setSelectedTime] = useState("");
-  const [selectedHrs, setSelectedHrs] = useState("");
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
+import myImage from "../../Assets/parking-booking.jpg";
 
-  const handleTimeChange = (event) => {
-    setSelectedTime(event.target.value);
-  };
-  const handleHrsChange = (event) => {
-    setSelectedHrs(event.target.value);
-  };
+import "./BookingPage.css";
+
+function GridComplexExample() {
   return (
-    <>
-      {["Dark"].map((variant) => (
-        <Card
-          bg={variant.toLowerCase()}
-          key={variant}
-          text={variant.toLowerCase() === "light" ? "dark" : "white"}
-          style={{ width: "18rem" }}
-          className="mb-2"
-        >
-          <Card.Header>BOOK A SLOT</Card.Header>
-          <Card.Body>
-            <Card.Text>
-              <div>
-                <label htmlFor="timeSelect">Select Date:</label>
-                
-                <DatePicker
-                
-                  selected={selectedDate}
-                  onChange={handleDateChange}
-                  dateFormat="dd/MM/yyyy"
-                  isClearable
-                  placeholderText="Select a date"
-                  
-                />
-          
-                <Form>
-      <Row>
-        <Col>
-        <label htmlFor="timeSelect">Select Time:</label>
+    
+    <div
+    
+      style={{
+        backgroundImage: `url(${myImage})`,
+        backgroundSize: "cover",
+        height: "100vh",
+      }}
+    >
+      <div className="form" style={{ color: "white",marginRight:"100px"}}>
+      <div className="form-container" style={{ marginRight:"600px",marginTop:"50px", padding:"50px" }}>
         
-          <select
-                    id="timeSelect"
-                    value={selectedTime}
-                    onChange={handleTimeChange}
-                  >
-                    <option value="">-- Select --</option>
-                    <option value="09:00">09:00 AM</option>
-                    <option value="12:30">12:30 PM</option>
-                    <option value="15:45">03:45 PM</option>
-                    {/* Add more options as needed */}
-                  </select>
-                  
-        </Col>
-        <Col>
-        <label htmlFor="timeSelect">Select hours:</label>
-         
-          <select
-                    id="timeSelect"
-                    value={selectedHrs}
-                    onChange={handleHrsChange}
-                  >
-                    <option value="">-- Select --</option>
-                    <option value="09:00">1 hrs</option>
-                    <option value="12:30">2 hrs</option>
-                    <option value="15:45">3 hrs</option>
-                    {/* Add more options as needed */}
-                  </select>
-                 
-        </Col>
-      </Row>
-    </Form>
-                <Button variant="secondary">Select slot</Button>{" "}
-              </div>
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      ))}
-    </>
+          <Form>
+            <h2>MAKE YOUR SPACE</h2>
+            <Form.Group as={Col} controlId="formGridUsername">
+              <Form.Label style={{ paddingTop: "2px" }}> Username</Form.Label>
+              <Form.Control
+                type="text"
+                style={{ borderColor: "#FAA41E", textAlign: "left", height: "35px" }}
+              />
+            </Form.Group>
+
+            <Form.Group as={Col} controlId="formGridEmail">
+              <Form.Label style={{ paddingTop: "2px" }}>Email</Form.Label>
+              <Form.Control
+                type="Email"
+                style={{ borderColor: "#FAA41E",textAlign: "left", height: "35px" }}
+              />
+            </Form.Group>
+
+            <Form.Group as={Col} controlId="formGridVehicleNumber">
+              <Form.Label style={{ paddingTop: "2px" }}>
+                Vehicle Number
+              </Form.Label>
+              <Form.Control
+                type="text"
+                style={{ borderColor: "#FAA41E",textAlign: "left", height: "35px" }}
+              />
+            </Form.Group>
+
+            <Form.Group as={Col} controlId="formGridBookedDate">
+              <Form.Label style={{ paddingTop: "2px" }}>Booked Date</Form.Label>
+              <Form.Control
+                type="Date"
+                style={{ borderColor: "#FAA41E",textAlign: "left", height: "35px" }}
+              />
+            </Form.Group>
+
+            <Row className="mb-3">
+              <Form.Group as={Col} controlId="formGridMobNum">
+                <Form.Label style={{ paddingTop: "5px" }}>
+                  Start Time
+                </Form.Label>
+                <Form.Control
+                  type="time"
+                  style={{borderColor: "#FAA41E", textAlign: "left", height: "35px" }}
+                />
+              </Form.Group>
+
+              <Form.Group as={Col} controlId="formGridFixedNum">
+                <Form.Label style={{ paddingTop: "5px" }}>End Time</Form.Label>
+                <Form.Control
+                  type="time"
+                  style={{borderColor: "#FAA41E", textAlign: "left", height: "35px" }}
+                />
+              </Form.Group>
+            </Row>
+            <Form.Group as={Col} controlId="formGridPaymentMethod">
+              <Form.Label style={{ paddingTop: "25px" }}>
+                Payment Method
+              </Form.Label>
+              <Form.Select style={{borderColor: "#FAA41E"}}>
+                <option>Online</option>
+                <option>Cash Payment</option>
+              </Form.Select>
+            </Form.Group>
+
+            <Button
+              variant="primary"
+              type="submit"
+              style={{
+                marginTop: "15px",
+                width: "175px",
+                backgroundColor: "#FAA41E",
+                marginLeft: "100px",
+                marginTop:"10px"
+              }}
+            >
+              Pay Now
+            </Button>
+          </Form>
+        </div>
+      </div>
+    </div>
   );
 }
-export default BookingPage;
+
+export default GridComplexExample;

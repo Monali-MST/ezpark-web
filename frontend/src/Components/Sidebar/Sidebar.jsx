@@ -22,44 +22,43 @@ const Sidebar = ({Children}) => {
       icon: <FaTh />,
     },
     {
-      path: "/about",
-      name: "About Us",
-      icon: <FaUserAlt />,
-    },
-    {
       path: "/myaccount",
       name: "Profile",
       icon: <FaUserAlt />,
     },
+   
+   
     {
-      path: "/booking",
+      path: "/Slotselection",
       name: "Bookings",
       icon: <FaRegEdit />,
     },
-    {
-      path: "/chat",
-      name: "Chat",
-      icon: <FaRegCommentAlt />,
-    },
+   
     {
       path: "/mybooking",
       name: "My Bookings",
       icon: <FaRegCheckSquare />,
     },
     {
-      path: "/supoort",
-      name: "Support",
-      icon: <FaRegQuestionCircle />,
-    },
-    {
       path: "/vehicledetails",
       name: "Vehicle Details",
       icon: <FaCarAlt />,
     },
+    {
+      path: "/about",
+      name: "About Us",
+      icon: <FaUserAlt />,
+    },
+    {
+      path: "/supoort",
+      name: "Support",
+      icon: <FaRegQuestionCircle />,
+    },
+   
   ];
   return (
     <div className="container">
-      <div style={{width:isOpen ?"250px":"50px"}} className="sidebar">
+      <div style={{width:isOpen ?"250px":"70px"}} className="sidebar">
         <div className="top_section">
             <h1 style={{display:isOpen ?"block":"none"}} className="logo">EzPark</h1>
             <div style={{marginLeft:isOpen ?"50px":"0px"}} className="bars">
