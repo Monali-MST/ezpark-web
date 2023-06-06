@@ -75,6 +75,7 @@ const StaticView = () => {
             <div className="refund"><DropDownRM/></div>
 
             <div className= "report-generator"><DateRangePicker/></div>
+           
 
         </section>
 
@@ -83,3 +84,4 @@ const StaticView = () => {
   };
   
   export default StaticView;
+  

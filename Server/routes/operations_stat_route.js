@@ -86,6 +86,9 @@ router.post('/reportRefundsFetch',  (req, res, next) => {
     fetchTotalRefund(req, res);
 });
 
+
+module.exports = router
+
 //  // Endpoint for fetching total refunds
 //  router.get('/reportRefundsFetch', async (req, res) => {
 //     try {
@@ -99,4 +102,3 @@ router.post('/reportRefundsFetch',  (req, res, next) => {
 //   });
 
   
-module.exports = router

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import axios from 'axios';
 import 'react-datepicker/dist/react-datepicker.css';
+import BarChart from "./BarChart";
 
 function DateRangePicker(props) {
     const [showPopup, setShowPopup] = useState(false);
@@ -11,15 +12,30 @@ function DateRangePicker(props) {
       fromDate: "",
       toDate: ""
     })
+    var [revenueData, setRevenueData] = useState([]);
+    var [refData, setRefundData] = useState([]);
+
     const handleGenerate = async () => {
-    
     if (dates.fromDate && dates.toDate) {
         // Step 2: Fetch total revenue
         await axios.post('http://localhost:8800/reportRevenueFetch', dates)
-        .then(
-          await axios.post('http://localhost:8800/reportRefundsFetch', dates)
+        .then(response =>{
+            //console.log(response.data);
+            setRevenueData(response.data);
+          })
+          .catch(error => {
+            console.log(error);
+          }
         )
-        
+        await axios.post('http://localhost:8800/reportRefundsFetch', dates)
+        .then(response =>{
+          setRefundData(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        }
+        )
+      
         setShowPopup(false);
         
     } else {
@@ -44,6 +60,54 @@ function DateRangePicker(props) {
     }
       
   }
+
+  //Revenue chart
+  const chartDataRev={
+    labels: revenueData.map((data) => {
+      const paymentDate = data.PaymentDate;
+      if (paymentDate) {
+        console.log(paymentDate);
+        const date = new Date(paymentDate);
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+      }
+      return '';
+    }),
+    
+    datasets:[{
+      label: "Total Revenue",
+      data: revenueData.map((data)=> data.TotalRevenue),
+      backgroundColor:"#E7AD52", //better color
+    }]
+  }
+
+  //refund chart
+  const chartDataRef={
+    labels: refData.map((data) => {
+      const refundDate = data.RefundDate;
+      if (refundDate) {
+        const date = new Date(refundDate);
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+      }
+      return '';
+    }),
+    datasets:[{
+      label: "Full Refunds",
+      data: refData.map((data)=> data.TotalFullRefunds),
+      backgroundColor:"#E7AD52", //better color
+    },
+    {
+      label: "Parital Refunds",
+      data: refData.map((data)=> data.TotalPartialRefunds),
+      backgroundColor:"black", 
+    }]
+  }
+
 
   return (
     <div>
@@ -72,9 +136,22 @@ function DateRangePicker(props) {
           <button className="btn btn-primary" onClick={handleGenerate}>Generate</button>
         </div>
       )}
+
+      <div>
+        <div style={{width:700}}>
+          <BarChart chartData={chartDataRev}/>
+        </div>
+      </div>
+
+      <div>
+        <div style={{width:700}}>
+          <BarChart chartData={chartDataRef}/>
+        </div>
+      </div>
     </div>
   );
 }
+
 export default DateRangePicker;
 
 

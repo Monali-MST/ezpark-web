@@ -1,21 +1,41 @@
 const connection = require('D:/SW Project/Ez Park Web Clone/ezpark-web/Server/service/connection');
 
+
 module.exports = async function fetchTotalRevenue(req, res) {
   const query = 'SELECT PaymentDate,SUM(PaymentAmount) AS TotalRevenue FROM Payment_Details WHERE PaymentDate BETWEEN (?) AND (?) GROUP BY PaymentDate ORDER BY PaymentDate';
   const val = [req.body.fromDate,req.body.toDate];
-  connection.query(query, val, (err, data)=>{
+  connection.query(query, val, (err, results, fields)=>{
       if (err) {
-        console.log(err);
+        return res.json(err);
+        //console.log(err);
       }else{
-        console.log(data);
+        const rows=results.map(row => {
+          const RepRevData={};
+          fields.forEach(field =>{
+            RepRevData[field.name] = row[field.name];
+          });
+          return RepRevData;
+      });
+        return res.json(rows);
         
       }
     });
 }
-
-
-
-
+//previous code
+// module.exports = async function fetchTotalRevenue(req, res) {
+//   const query = 'SELECT PaymentDate,SUM(PaymentAmount) AS TotalRevenue FROM Payment_Details WHERE PaymentDate BETWEEN (?) AND (?) GROUP BY PaymentDate ORDER BY PaymentDate';
+//   const val = [req.body.fromDate,req.body.toDate];
+//   connection.query(query, val, (err, data)=>{
+//       if (err) {
+//         return res.json(err);
+//         //console.log(err);
+//       }else{
+//         return res.json(data);
+//         //console.log(data);
+        
+//       }
+//     });
+// }
 
 
 
