@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
+
 //----------Booked Slot Count------------------------
 var stat_booked_slots = require('../api_operations_1/operations_stat/stat_slot_count/stat_booked_slots');
 router.get('/bookedSlots' ,(req,res,next)=>{
@@ -71,4 +72,31 @@ router.get('/refundFPMonthly' ,(req,res,next)=>{
     stat_refundFP_monthly(req, res);
 })
 
+//----------------Generating report fetch data--------------------------------------
+// Endpoint for fetching total revenue
+var fetchTotalRevenue = require('../api_operations_1/operations_stat/stat_gen_report/get_date')
+router.post('/reportRevenueFetch',  (req, res, next) => {
+    fetchTotalRevenue(req, res);
+});
+
+
+// Endpoint for fetching total refunds
+var fetchTotalRefund = require('../api_operations_1/operations_stat/stat_gen_report/get_refund')
+router.post('/reportRefundsFetch',  (req, res, next) => {
+    fetchTotalRefund(req, res);
+});
+
+//  // Endpoint for fetching total refunds
+//  router.get('/reportRefundsFetch', async (req, res) => {
+//     try {
+//       const { fromDate, toDate } = req.query;
+//       const totalRefunds = await fetchTotalRefund(fromDate, toDate);
+//       res.json({ totalRefunds });
+//     } catch (error) {
+//       console.error('Error fetching total refunds:', error);
+//       res.status(500).json({ error: 'An error occurred' });
+//     }
+//   });
+
+  
 module.exports = router
