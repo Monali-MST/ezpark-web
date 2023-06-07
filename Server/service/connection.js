@@ -6,9 +6,9 @@ var connection = mysql.createConnection({
   password: "ezPark@123",
   database: "ezpark",
 });
-connection.connect(function(err) {
-    if (err) throw err;
-    console.log("connected to Ezpark database")
-  });
+connection.connect(function (err) {
+  if (err) throw err;
+  console.log("connected to Ezpark database")
+});
 
 module.exports = connection

@@ -18,23 +18,24 @@ function DateRangePicker(props) {
     const handleGenerate = async () => {
     if (dates.fromDate && dates.toDate) {
         // Step 2: Fetch total revenue
-        await axios.post('http://localhost:8800/reportRevenueFetch', dates)
+        await axios.get('http://localhost:8800/testPdf', dates)
         .then(response =>{
             //console.log(response.data);
-            setRevenueData(response.data);
+            // setRevenueData(response.data);
+            console.log("setRevenueData");
           })
           .catch(error => {
             console.log(error);
           }
         )
-        await axios.post('http://localhost:8800/reportRefundsFetch', dates)
-        .then(response =>{
-          setRefundData(response.data);
-        })
-        .catch(error => {
-          console.log(error);
-        }
-        )
+        // await axios.post('http://localhost:8800/reportRefundsFetch', dates)
+        // .then(response =>{
+        //   setRefundData(response.data);
+        // })
+        // .catch(error => {
+        //   console.log(error);
+        // }
+        // )
       
         setShowPopup(false);
         

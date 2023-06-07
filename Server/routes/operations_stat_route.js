@@ -74,17 +74,17 @@ router.get('/refundFPMonthly' ,(req,res,next)=>{
 
 //----------------Generating report fetch data--------------------------------------
 // Endpoint for fetching total revenue
-var fetchTotalRevenue = require('../api_operations_1/operations_stat/stat_gen_report/get_revenue')
-router.post('/reportRevenueFetch',  (req, res, next) => {
-    fetchTotalRevenue(req, res);
-});
+// var fetchTotalRevenue = require('../api_operations_1/operations_stat/stat_gen_report/get_revenue')
+// router.post('/reportRevenueFetch',  (req, res, next) => {
+//     fetchTotalRevenue(req, res);
+// });
 
 
-// Endpoint for fetching total refunds
-var fetchTotalRefund = require('../api_operations_1/operations_stat/stat_gen_report/get_refund')
-router.post('/reportRefundsFetch',  (req, res, next) => {
-    fetchTotalRefund(req, res);
-});
+// // Endpoint for fetching total refunds
+// var fetchTotalRefund = require('../api_operations_1/operations_stat/stat_gen_report/get_refund')
+// router.post('/reportRefundsFetch',  (req, res, next) => {
+//     fetchTotalRefund(req, res);
+// });
 
 
 var testPdf = require('../api_operations_1/operations_stat/stat_gen_report/test_pdf');
