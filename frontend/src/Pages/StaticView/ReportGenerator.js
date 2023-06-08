@@ -6,15 +6,12 @@ import BarChart from "./BarChart";
 
 function DateRangePicker(props) {
     const [showPopup, setShowPopup] = useState(false);
-    // const [fromDate, setFromDate] = useState(null);
-    // const [toDate, setToDate] = useState(null);
     const [dates, setDates] = useState({
       fromDate: "",
       toDate: ""
     })
     var [revenueData, setRevenueData] = useState([]);
     var [refData, setRefundData] = useState([]);
-
     const handleGenerate = async () => {
     if (dates.fromDate && dates.toDate) {
         // Step 2: Fetch total revenue
@@ -27,41 +24,26 @@ function DateRangePicker(props) {
           .catch(error => {
             console.log(error);
           }
-        )
-        // await axios.post('http://localhost:8800/reportRefundsFetch', dates)
-        // .then(response =>{
-        //   setRefundData(response.data);
-        // })
-        // .catch(error => {
-        //   console.log(error);
-        // }
-        // )
-      
-        setShowPopup(false);
-        
+        )    
+        setShowPopup(false); 
     } else {
       alert('Please select both "from" and "to" dates');
     }
   };
-
   const handleCancel = () => {
     setShowPopup(false);
     props.onCancel();
   }
-
   const handleReport = () => {
     setShowPopup(true);
   }
-
   const handleChange =  (name, value)=>{
     if(name==="toDate"){
       setDates((prev) => ({...prev, toDate: value}));
     }else{
       setDates((prev) => ({...prev, fromDate: value}));
-    }
-      
+    } 
   }
-
   //Revenue chart
   const chartDataRev={
     labels: revenueData.map((data) => {
@@ -137,7 +119,6 @@ function DateRangePicker(props) {
           <button className="btn btn-primary" onClick={handleGenerate}>Generate</button>
         </div>
       )}
-
       <div>
         <div style={{width:700}}>
           <BarChart chartData={chartDataRev}/>
@@ -152,7 +133,6 @@ function DateRangePicker(props) {
     </div>
   );
 }
-
 export default DateRangePicker;
 
 
@@ -166,3 +146,11 @@ export default DateRangePicker;
         
         // Pass the total revenue and refunds to the parent component
         // props.onFinancialData(totalRevenue, totalRefunds);
+          // await axios.post('http://localhost:8800/reportRefundsFetch', dates)
+        // .then(response =>{
+        //   setRefundData(response.data);
+        // })
+        // .catch(error => {
+        //   console.log(error);
+        // }
+        // )
