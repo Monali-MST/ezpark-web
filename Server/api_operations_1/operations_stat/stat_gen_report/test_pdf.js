@@ -10,6 +10,7 @@ const chartJSNodeCanvas = new ChartJSNodeCanvas({ width: 500, height: 300 });
 module.exports = async function testPdf(req, res) {
   const { fromDate, toDate, email } = req.body;
 
+
   try {
     const revenueData = await fetchTotalRevenue(fromDate, toDate);
     const refundData = await fetchTotalRefund(fromDate, toDate);
@@ -24,7 +25,7 @@ module.exports = async function testPdf(req, res) {
     doc
       .fontSize(21)
       .text('Financial Report of the Parking Yard', { align: 'center' })
-      .text(`From ${fromDate} to ${toDate}`, { align: 'center', marginBottom: 20 })
+      .text(`From ${fromDate.slice(0,10)} to ${toDate.slice(0,10)}`, { align: 'center', marginBottom: 20 })
       .image('../frontend/src/Assets/logo_trans.png', 40, 20, { width: 100 });
 
     if (revenueData.length > 0) {
@@ -56,10 +57,14 @@ module.exports = async function testPdf(req, res) {
 
       const chartImage = await chartJSNodeCanvas.renderToBuffer(chartConfiguration);
       doc.image(chartImage, { align: 'center', width: 400 });
+    }else{
+      doc
+      .fontSize(21)
+      .text(`No revenue date from ${fromDate.slice(0,10)} to ${toDate.slice(0,10)}`, { align: 'center' })
     }
 
     if (refundData.length > 0) {
-      doc.addPage();
+      //doc.addPage();
       doc.fontSize(18).text('Refund Chart', { align: 'center', marginTop: 20 });
 
       const chartConfiguration = {
@@ -93,23 +98,27 @@ module.exports = async function testPdf(req, res) {
 
       const chartImage = await chartJSNodeCanvas.renderToBuffer(chartConfiguration);
       doc.image(chartImage, { align: 'center', width: 400 });
+    }else{
+      doc
+      .fontSize(21)
+      .text(`No refund date from ${fromDate.slice(0,10)} to ${toDate.slice(0,10)}`, { align: 'center' })
     }
 
     doc.end();
 
     // Send the generated PDF via email
     const transporter = createTransport({
-      host: 'smtp.example.com',
+      host: 'smtp.gmail.com', //simple mail trasfer protocol of gmail
       port: 587,
       secure: false,
       auth: {
-        user: 'securesally@gmail.com',
+        user: 'fernandownm.20@itfac.mrt.ac.lk',
         pass: 'rovzjxkjiflfntkv',
       },
     });
 
     const mailOptions = {
-      from: 'securesally@gmail.com',
+      from: 'fernandownm.20@itfac.mrt.ac.lk',
       to: email,
       subject: 'Financial Report',
       text: 'Please find the attached financial report.',

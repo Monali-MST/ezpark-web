@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import axios from 'axios';
 import 'react-datepicker/dist/react-datepicker.css';
 import BarChart from "./BarChart";
 
 function DateRangePicker(props) {
+    const [showFormPop, setShowFromPop] = useState(false);
     const [showPopup, setShowPopup] = useState(false);
     const [dates, setDates] = useState({
       fromDate: "",
-      toDate: ""
+      toDate: "",
+      email: localStorage.getItem('email')
     })
     var [revenueData, setRevenueData] = useState([]);
     var [refData, setRefundData] = useState([]);
     const handleGenerate = async () => {
     if (dates.fromDate && dates.toDate) {
         // Step 2: Fetch total revenue
-        await axios.get('http://localhost:8800/testPdf', dates)
+        await axios.post('http://localhost:8800/testPdf', dates)
         .then(response =>{
             //console.log(response.data);
             // setRevenueData(response.data);
@@ -30,11 +32,17 @@ function DateRangePicker(props) {
       alert('Please select both "from" and "to" dates');
     }
   };
+
+  const popUpClose = () => {
+    setShowFromPop(false);
+  }
+
   const handleCancel = () => {
     setShowPopup(false);
     props.onCancel();
   }
   const handleReport = () => {
+    setShowFromPop(true);
     setShowPopup(true);
   }
   const handleChange =  (name, value)=>{
@@ -91,6 +99,10 @@ function DateRangePicker(props) {
     }]
   }
 
+  useEffect(()=>{
+    localStorage.setItem('email',"nathalifernando70@gmail.com");
+  },[])
+
 
   return (
     <div>
@@ -119,7 +131,8 @@ function DateRangePicker(props) {
           <button className="btn btn-primary" onClick={handleGenerate}>Generate</button>
         </div>
       )}
-      <div>
+      
+      {/* <div>
         <div style={{width:700}}>
           <BarChart chartData={chartDataRev}/>
         </div>
@@ -129,7 +142,15 @@ function DateRangePicker(props) {
         <div style={{width:700}}>
           <BarChart chartData={chartDataRef}/>
         </div>
+      </div> */}
+      {showFormPop ? <div className="popup-overlay">
+      <div className="popup-content">
+        {/* Your popup content goes here */}
+        <button className="close-button" onClick={() => popUpClose()}>
+          Close
+        </button>
       </div>
+    </div> : null}
     </div>
   );
 }

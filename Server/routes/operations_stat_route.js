@@ -88,7 +88,7 @@ router.get('/refundFPMonthly' ,(req,res,next)=>{
 
 
 var testPdf = require('../api_operations_1/operations_stat/stat_gen_report/test_pdf');
-router.get('/testPdf',  (req, res, next) => {
+router.post('/testPdf',  (req, res, next) => {
     testPdf(req, res);
 });
 
