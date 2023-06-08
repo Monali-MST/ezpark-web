@@ -62,6 +62,7 @@ function Slot() {
                         <label htmlFor="timeSelect">Select Time:</label>
 
                         <select
+                        
                           id="timeSelect"
                           value={selectedTime}
                           onChange={handleTimeChange}

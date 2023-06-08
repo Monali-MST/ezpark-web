@@ -14,6 +14,7 @@ import VehicleDetails from "./Pages/VehicleDetails/VehicleDetails";
 import VerEmail from "./Pages/VerEmail/verEmail";
  import VerMobile from "./Pages/VerMobile/verMobile";
 import Sucess from "./Pages/Sucess/SucessPage";
+import Review_Rating from "./Pages/Review_Rating/Feedback";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -32,13 +33,13 @@ function App() {
             <Route path="/booking" element={<BookingPage />} />
 
             <Route path="/mybooking" element={<MyBookingsPage />} />
-            <Route path="/supoort" element={<SupportPage />} />
+            <Route path="/support" element={<SupportPage />} />
             <Route path="/vehicledetails" element={<VehicleDetails />} />
             <Route path="/emailverify" element={<VerEmail />} />
             <Route path="/Mobileverify" element={<VerMobile />} />
             <Route path="/sucess" element={<Sucess/>}/>
             <Route path="/myaccount" element={<MyProfilePage/>}/>
-
+            <Route path="/rating" element={<Review_Rating/>}/>
           </Routes>
         </BrowserRouter>
       </div>

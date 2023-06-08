@@ -1,0 +1,29 @@
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card {
+    height: 200px;
+    width: 350px;
+    margin-top: 20px;
+    margin-right: 850px;
+    border-color: #FAA41E;
+  }
+  .card:hover {
+    background-color: #FAA41E;
+    border-color: #FAA41E;
+  }
+
+  .card-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    margin-bottom: 10px;
+    font-size: 50px;
+  }

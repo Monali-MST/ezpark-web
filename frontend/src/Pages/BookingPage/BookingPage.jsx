@@ -18,8 +18,8 @@ function GridComplexExample() {
         height: "100vh",
       }}
     >
-      <div className="form" style={{ color: "white",marginRight:"100px"}}>
-      <div className="form-container" style={{ marginRight:"600px",marginTop:"50px", padding:"50px" }}>
+      <div className="booking-form" style={{ color: "white",marginRight:"100px"}}>
+      <div className="booking-form-container" style={{ marginRight:"600px",marginTop:"50px", padding:"50px" }}>
         
           <Form>
             <h2>MAKE YOUR SPACE</h2>

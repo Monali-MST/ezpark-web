@@ -1,0 +1,36 @@
+
+.logo-section{
+    display: flex;
+}
+  
+.logo{
+    width: 70px;
+    height: 70px;
+}
+.logo-name{
+    list-style: none;
+    display: inline-block;
+    padding-left: 10px;
+    padding-top: 20px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.yell{
+    color: #FAA41E;
+}
+  
+.blk{
+    color: #000;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 80px;
+	padding: 0 2rem;
+	background-color: none;
+	color: var(--textColor);
+    border: 2px solid  #FAA41E;
+}

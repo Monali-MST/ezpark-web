@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SignUpInfo from "./SignUpOne";
 import VehicleInfo from "./VehicleDetails";
-// import SignUpValid from "./SignUpValid";
+
 import Complete from "./Complete";
 import axios from "axios";
 import NavBar from "../../Components/NavBar/NavBar";
@@ -122,14 +122,48 @@ function Form() {
         }
       }
     } else {
+      // if (page === FormTitles.length - 1) {
+      //   const userPostPromise = axios.post("http://localhost:8800/user", formValues);
+      //   const vehiclePostPromise = axios.post("http://localhost:8800/vehicle", formValues);
+      
+      //   Promise.all([userPostPromise, vehiclePostPromise])
+      //     .then((res) => {
+      //       const userResponse = res[0].data;
+      //       const vehicleResponse = res[1].data;
+      
+      //       console.log(userResponse);
+      //       console.log(vehicleResponse);
+      
+      //       if (userResponse === "Success" && vehicleResponse === "Success") {
+      //         alert("FORM SUBMITTED");
+      //         navigate("/Mobileverify");
+      //       } else {
+      //         alert("Something went wrong");
+      //       }
+      //     })
+      //     .catch((error) => {
+      //       console.error(error);
+      //     });
+      // } else {
+      //   setPage((currPage) => currPage + 1);
+      // }
+      
       if (page === FormTitles.length - 1) {
-        axios
-          .post("http://localhost:8800/user", formValues)
+        axios.post("http://localhost:8800/user", formValues)
+          // .post("http://localhost:8800/vehical", formValues)
           .then((res) => {
-            console.log(res);
             if (res.data === "Success") {
-              alert("FORM SUBMITTED");
-              navigate("/Mobileverify");
+              // alert("FORM SUBMITTED");
+              axios.post("http://localhost:8800/generateOTP", {"MobNum":formValues.MobNum})
+              .then((res) => {
+                if(res.data === 200){
+                  localStorage.setItem("MobNum",formValues.MobNum);
+                  navigate("/Mobileverify")
+                }else{
+                  alert("Something wrong");
+                }
+              }
+              )
             } else {
               alert("Something wrong");
             }
@@ -214,3 +248,5 @@ function Form() {
 }
 
 export default Form;
+
+

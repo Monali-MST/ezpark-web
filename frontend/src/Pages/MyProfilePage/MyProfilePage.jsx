@@ -1,127 +1,209 @@
 import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import MyImage from "../../Assets/User_Icon.png";
+import Image from "react-bootstrap/Image";
+import { Col, Row } from "react-bootstrap";
+import Header from "../../Components/Header/Header";
 import Sidebar from "../../Components/Sidebar/Sidebar";
-import "./MyProfilePage.css"
 
-const ProfileSettings = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [mobileNumber, setMobileNumber] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [profileImage, setProfileImage] = useState("");
+import "./MyProfilePage.css";
 
-  const handleFirstNameChange = (e) => {
-    setFirstName(e.target.value);
+const ProfilePage = () => {
+ 
+  const [formValues, setFormValues] = useState({
+    firstName: "",
+    lastName: "",
+    mobileNumber: "",
+    email: "",
+    password: "",
+    profilePicture: ""
+  });
+
+  // const handleProfilePictureChange = (e) => {
+  //   // Handle profile picture change and update state
+  //   const file = e.target.files[0];
+  //   const reader = new FileReader();
+  //   reader.onloadend = () => {
+  //     setProfilePicture(reader.result);
+  //   };
+  //   if (file) {
+  //     reader.readAsDataURL(file);
+  //   }
+  // };
+
+  const handleEditClick = (field) => {
+    // Handle edit button click
+    console.log(`Edit button clicked for ${field}`);
   };
 
-  const handleLastNameChange = (e) => {
-    setLastName(e.target.value);
-  };
-
-  const handleMobileNumberChange = (e) => {
-    setMobileNumber(e.target.value);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleProfileImageChange = (e) => {
-    const imageFile = e.target.files[0];
-    setProfileImage(URL.createObjectURL(imageFile));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Perform the update request or any other desired actions with the updated profile details and image
-    console.log("Updated Profile Details:", {
-      firstName,
-      lastName,
-      mobileNumber,
-      email,
-      password,
-      profileImage,
-    });
-
-    // Reset the form fields
-    setFirstName("");
-    setLastName("");
-    setMobileNumber("");
-    setEmail("");
-    setPassword("");
-    setProfileImage("");
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Handle form submission
+  //   console.log("Form submitted!");
+  //   console.log("First Name:", firstName);
+  //   console.log("Last Name:", lastName);
+  //   console.log("Mobile Number:", mobileNumber);
+  //   console.log("Email:", email);
+  //   console.log("Password:", password);
+  //   console.log("Profile Picture:", profilePicture);
+  // };
+  const handleChange = (e) => {
+    setFormValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   return (
-    <>
-  
-    <div className="profile-settings">
-      <h2>Profile Settings</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="firstName">First Name</label>
-          <input
-            type="text"
-            id="firstName"
-            value={firstName}
-            onChange={handleFirstNameChange}
-          />
+    <Row>
+      <Header />
+      <Col>
+        <Sidebar />
+      </Col>
+      <Col style={{ background: "linear-gradient(to right,white, #FAA41E)" }}>
+        <div >
+        <div className="profile-container"  >
+          <Row>
+         
+            {/* <Col md={6}>
+              <div className="profile-picture"style={{marginLeft:"-500px"}}>
+                <Image
+                  src={profilePicture || MyImage}
+                  alt="Profile"
+                  roundedCircle
+                />
+              <Button
+                variant="dark"
+                id="profilePictureInput"
+                type="file"
+                onChange={handleProfilePictureChange}
+                accept="image/*"
+                style={{
+                  width: "150px",
+                  height: "40px",
+                  borderRadius: "20px",
+                  marginLeft: "25px",
+                  marginTop: "50px",
+                }}
+              >
+                Change Picture{" "}
+              </Button>
+              </div>
+
+            </Col> */}
+            <Col md={6}>
+            
+              <Form style={{marginLeft:"-300px"}}>
+              <h1 style={{marginTop:"-60px",marginBottom:"20px"}}>Personal Information</h1>
+                <Form.Group as={Row} className="mb-3">
+                  <Form.Label column sm={5}>
+                    First Name
+                  </Form.Label>
+                  <Col sm={20}>
+                    <Form.Control
+                      type="text"
+                      value={formValues.firstName}
+                      onChange={handleChange}
+                      style={{ marginLeft: "120px", marginTop: "-35px" }}
+                    />
+                  </Col>
+                </Form.Group>
+                <Form.Group as={Row} className="mb-3">
+                  <Form.Label column sm={5}>
+                    Last Name
+                  </Form.Label>
+                  <Col sm={20}>
+                    <Form.Control
+                      type="text"
+                      value={formValues.lastName}
+                      onChange={handleChange}
+                      style={{ marginLeft: "120px", marginTop: "-35px" }}
+                    />
+                  </Col>
+                </Form.Group>
+
+                <Form.Group as={Row} className="mb-3">
+                  <Form.Label column sm={5}>
+                    Mobile Number
+                  </Form.Label>
+                  <Col sm={20}>
+                    <Form.Control
+                      type="tel"
+                      value={formValues.mobileNumber}
+                      onChange={handleChange}
+                      style={{ marginLeft: "120px", marginTop: "-35px" }}
+                    />
+                  </Col>
+                </Form.Group>
+                <Form.Group as={Row} className="mb-3">
+                  <Form.Label column sm={5}>
+                    Email
+                  </Form.Label>
+                  <Col sm={15}>
+                    <Form.Control
+                      type="email"
+                      value={formValues.email}
+                      onChange={handleChange}
+                      style={{ marginLeft: "120px", marginTop: "-35px" }}
+                    />
+                  </Col>
+                </Form.Group>
+
+                <Form.Group as={Row} className="mb-3">
+                  <Form.Label column sm={5}>
+                    Password
+                  </Form.Label>
+                  <Col sm={15}>
+                    <Form.Control
+                      type="password"
+                      value={formValues.password}
+                      onChange={handleChange}
+                      style={{ marginLeft: "120px", marginTop: "-35px" }}
+                    />
+                  </Col>
+                </Form.Group>
+
+                <Form.Group as={Row} className="mb-3">
+                  <Col sm={{ span: 10, offset: 3 }}>
+                    <Button
+                      type="submit"
+                      style={{
+                        marginLeft: "250px",
+                        marginTop: "35px",
+                        backgroundColor: "black",
+                        borderColor: "black",
+                        borderRadius: "20px",
+                        width:"100px"
+                      }}
+                    >
+                      Save
+                    </Button>
+                  </Col>
+                </Form.Group>
+
+                <Form.Group as={Row} className="mb-3">
+                  <Col sm={{ span: 10, offset: 2 }}>
+                    <Button
+                      type="submit"
+                      style={{
+                        marginLeft: "150px",
+                        marginTop: "-10px",
+                        backgroundColor: "black",
+                        borderColor: "black",
+                        borderRadius: "20px",
+                        width:"100px"
+                      }}
+                    >
+                      Update
+                    </Button>
+                  </Col>
+                </Form.Group>
+              </Form>
+            </Col>
+          </Row>
         </div>
-        <div className="form-group">
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            type="text"
-            id="lastName"
-            value={lastName}
-            onChange={handleLastNameChange}
-          />
         </div>
-        <div className="form-group">
-          <label htmlFor="mobileNumber">Mobile Number</label>
-          <input
-            type="tel"
-            id="mobileNumber"
-            value={mobileNumber}
-            onChange={handleMobileNumberChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={handleEmailChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="profileImage">Profile Image</label>
-          <input
-            type="file"
-            id="profileImage"
-            accept="image/*"
-            onChange={handleProfileImageChange}
-          />
-        </div>
-        <button type="submit">Update Profile</button>
-      </form>
-    </div>
-    </>
+      </Col>
+    </Row>
   );
 };
 
-export default ProfileSettings;
+export default ProfilePage;

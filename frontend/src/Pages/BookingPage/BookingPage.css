@@ -4,7 +4,7 @@ body {
   font-family: montserrat, arial, verdana;
 }
 
-.form {
+.booking-form {
 
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@ body {
   align-items: center;
 }
 
-.form-container {
+.booking-form-container {
 
   background-color: black;
   border-radius: 8px;

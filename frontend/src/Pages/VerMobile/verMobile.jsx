@@ -2,8 +2,10 @@ import React, { useState, useRef } from "react";
 import "./verMobile.css";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const VerMobile = () => {
+
   const navigate = useNavigate();
   const [otp, setOtp] = useState(["", "", "", ""]);
   const otpInput = useRef([]);
@@ -14,14 +16,24 @@ const VerMobile = () => {
     const newOtp = [...otp];
     newOtp[index] = element.value;
     setOtp(newOtp);
+    console.log(otp);
 
     if (element.nextSibling) {
       element.nextSibling.focus();
     }
   };
   const handleClick = () => {
-   
-    navigate('/sucess');
+    axios.post("http://localhost:8800/verifyOTP", {"otp":otp[0]+otp[1]+otp[2]+otp[3], "MobNum":localStorage.getItem("MobNum")})
+    .then((res=>{
+      if(res.data===200){
+        navigate('/sucess');
+      }else if(res.data===300){
+        alert("Invalid OTP");
+      }else if(res.data===100){
+        alert("Something went wrong");
+      }
+    }))
+    .catch((err) => console.log(err));
   }
  
   return (

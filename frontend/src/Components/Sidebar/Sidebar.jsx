@@ -1,82 +1,62 @@
-import React, { useState } from "react";
-import '../Sidebar/Sidebar.css';
-import {
-  FaTh,
-  FaBars,
-  FaCarAlt,
-  FaUserAlt,
-  FaRegEdit,
-  FaRegCommentAlt,
-  FaRegCheckSquare,
-  FaRegQuestionCircle,
-} from "react-icons/fa";
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import "./Sidebar.css";
+import { Navbar } from 'react-bootstrap';
 
-const Sidebar = ({Children}) => {
-    const[isOpen,setIsOpen]=useState(false);
-    const toggle=()=>setIsOpen(!isOpen)
-  const menuItem = [
-    {
-      path: "/userdashboard/:id",
-      name: "Dashboard",
-      icon: <FaTh />,
-    },
-    {
-      path: "/myaccount",
-      name: "Profile",
-      icon: <FaUserAlt />,
-    },
-   
-   
-    {
-      path: "/Slotselection",
-      name: "Bookings",
-      icon: <FaRegEdit />,
-    },
-   
-    {
-      path: "/mybooking",
-      name: "My Bookings",
-      icon: <FaRegCheckSquare />,
-    },
-    {
-      path: "/vehicledetails",
-      name: "Vehicle Details",
-      icon: <FaCarAlt />,
-    },
-    {
-      path: "/about",
-      name: "About Us",
-      icon: <FaUserAlt />,
-    },
-    {
-      path: "/supoort",
-      name: "Support",
-      icon: <FaRegQuestionCircle />,
-    },
-   
-  ];
+const NavBar = () => {
   return (
-    <div className="container">
-      <div style={{width:isOpen ?"250px":"70px"}} className="sidebar">
-        <div className="top_section">
-            <h1 style={{display:isOpen ?"block":"none"}} className="logo">EzPark</h1>
-            <div style={{marginLeft:isOpen ?"50px":"0px"}} className="bars">
-                <FaBars onClick={toggle}/>
-            </div>
+    <section>
+      <nav class="navbar">
+        <div className="navbar-container">
+
+          <div className="item-list">
+            <ul className="menu">
+              <li className="navbar-item">
+                <a href="/userdashboard/:id" class="menu-btn active">
+                Dashboard
+                </a>
+              </li>
+              <li className="navbar-item">
+                <a href="/myaccount" class="menu-btn">
+                Profile
+                </a>
+              </li>
+              <li className="navbar-item">
+                <a href="/Slotselection" class="menu-btn">
+                Bookings
+                </a>
+              </li>
+              <li className="navbar-item">
+                <a href="/mybooking" class="menu-btn">
+                My Bookings
+                </a>
+              </li>
+              <li className="navbar-item">
+                <a href="/vehicledetails" class="menu-btn">
+                Vehicle Details
+                </a>
+              </li>
+              <li className="navbar-item">
+                <a href="/about" class="menu-btn">
+                About Us
+                </a>
+              </li>
+              <li className="navbar-item">
+                <a href="/supoort" class="menu-btn">
+                Support
+                </a>
+              </li>
+              <li className="navbar-item">
+                <a href="/rating" class="menu-btn">
+                Review & Rating
+                </a>
+              </li>
+              
+            </ul>
+          </div>
         </div>
-        {
-        menuItem.map((item,index)=>(
-            <NavLink to={item.path} key={index} className="link" activeclassName="active">
-              <div className="icon">{item.icon}</div>  
-              <div style={{display:isOpen ?"block":"none"}} className="link_text">{item.name}</div>  
-            </NavLink>
-        ))
-        }
-      </div>
-      <main>{Children}</main>
-    </div>
+      </nav>
+    </section>
   );
 };
 
-export default Sidebar;
+export default NavBar;

@@ -11,6 +11,7 @@ import myImage3 from "../../Assets/user_Acc.png";
 import myImage4 from "../../Assets/parking.jpg";
 import myImage5 from "../../Assets/refund.jpg";
 import Logo from "../../Assets/logo_without_text.png";
+
 import Card from "react-bootstrap/Card";
 import YouTube from 'react-youtube';
 
@@ -124,7 +125,7 @@ const HomePage = () => {
         </Card.Body>
       </Card>
     
-      <Card style={{ width: "15rem", height: "20rem" ,marginLeft:"26rem",marginTop:"2rem"}}>
+      <Card style={{ width: "15rem", height: "20rem" ,marginLeft:"26rem",marginTop:"-3rem"}}>
         <Card.Img variant="top" src={myImage2} style={{ height: "8rem" }} />
         <Card.Body>
                 <Card.Title>Payment Processing</Card.Title>
@@ -149,7 +150,7 @@ const HomePage = () => {
               </Card.Body>
             </Card>
             
-          <Card style={{ width: "15rem", height: "20rem",marginLeft:"26rem",marginTop:"2rem" }}>
+          <Card style={{ width: "15rem", height: "20rem",marginLeft:"26rem",marginTop:"-3rem"}}>
         <Card.Img variant="top" src={myImage5} style={{ height: "8rem" }} />
         <Card.Body>
                 <Card.Title>Cancellation and Refunds</Card.Title>
@@ -264,6 +265,7 @@ const HomePage = () => {
         <p style={{ fontSize: "50px", color: "white", paddingLeft: "5vh" }}>
           Try out the Ez Park App on Android.
         </p>
+
       </div>
       <div
         className="section"
