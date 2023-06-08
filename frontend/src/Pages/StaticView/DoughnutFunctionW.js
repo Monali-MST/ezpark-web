@@ -26,9 +26,7 @@ function DoughnutFunctionW(){
         borderColot:["black","#FAA41E " ]
       }]
     }
-    
     const chartOption={
-
     }
   
     return(
