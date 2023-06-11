@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;300;400;500;600;700&display=swap');
+
 .stacticv-top{
     margin-top: 2rem;
     margin-left: 2rem;
@@ -96,6 +98,25 @@
     margin-top: 2rem;  
 }
 
+.btn-gen-report{
+    background-color: rgba(222,139,9,0.5);
+    border: none;
+    font-family: 'Saira Condensed', sans-serif;
+    letter-spacing: .06rem;
+    color: black;
+    font-weight:bold;
+    padding: .4rem .9rem;
+    text-align: center;
+    text-decoration: none;
+    margin: .25rem .125rem;
+    cursor: pointer;
+    border-radius: 1.0625rem;
+}
+
+ .btn-gen-report:hover{
+    background-color:rgba(211,211,211,0.5);
+  }
+
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -110,14 +131,105 @@
   
   .popup-content {
     background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    width: 40%;
-    height: 50%
+    background-image: url("../../Assets/report-pana.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1.25rem;
+    border-radius: 0.313rem;
+    box-shadow: 0 0.125rem .25rem rgba(0, 0, 0, 0.2);
+    width: 30%;
+    height: 40%
   }
   
-  .close-button {
-    margin-top: 10px;
+  .popup-content .close-button {
+    margin-top: 0.5rem;
+    margin-left: 18rem;
+    padding: .1rem .2rem;
+    border-radius:10% ;
+    background-color: rgba(222,139,9,0.5);
+  }
+  .popup-content .close-button:hover{
+    background-color:rgba(238, 193, 193, 0.59);
   }
   
+  .date-range-picker {
+    font-family: 'Saira Condensed', sans-serif;
+    margin-left: 2rem;
+    font-weight: 600;
+  }
+
+  
+
+  .date-range-picker .form-group{
+    margin-left: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: .7rem;
+    row-gap: 0.1rem;
+  }
+
+  .date-range-picker .form-group .to-date{
+    margin-left: 1rem;
+  }
+  
+  .date-range-picker .form-group #from-date{
+    width: 100%;
+    background: rgba(211,211,211,0.5);
+    border-radius: .2rem;
+    padding: .1rem;
+    padding-left: .4rem;
+    font-family: 'Saira Condensed', sans-serif;
+    letter-spacing: .15rem;
+  }
+  
+  .date-range-picker .form-group #to-date{
+    width: 100%;
+    background: rgba(211,211,211,0.5);
+    border-radius: .2rem;
+    padding: .1rem;
+    padding-left: .4rem;
+    font-family: 'Saira Condensed', sans-serif;
+    letter-spacing: .15rem;
+  }
+
+  .date-range-picker .btn-containter{
+   padding-top: 10%;
+   padding-left:38% ;
+  }
+
+  .date-range-picker .btn-cancel{
+    background-color: black;
+    border: none;
+    font-family: 'Saira Condensed', sans-serif;
+    letter-spacing: .07rem;
+    color: white;
+    font-weight:600;
+    padding: .3rem .8rem;
+    text-align: center;
+    text-decoration: none;
+    margin: .25rem .125rem;
+    cursor: pointer;
+    border-radius: 17px;
+  }
+  .date-range-picker .btn-cancel:hover{
+    background-color:rgba(238, 193, 193, 0.59);
+  }
+
+  .date-range-picker .btn-generate{
+    background-color: rgba(222,139,9,0.5);
+      border: none;
+      font-family: 'Saira Condensed', sans-serif;
+      letter-spacing: .07rem;
+      color: black;
+      font-weight:600;
+      padding: .3rem .5rem;
+      text-align: center;
+      text-decoration: none;
+      margin: .25rem .125rem;
+      cursor: pointer;
+      border-radius: 17px;
+    }
+
+    .date-range-picker .btn-generate:hover{
+        background-color:rgba(211,211,211,0.5);
+      }

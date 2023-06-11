@@ -25,12 +25,13 @@ module.exports = async function testPdf(req, res) {
     doc
       .fontSize(21)
       .text('Financial Report of the Parking Yard', { align: 'center' })
-      .text(`From ${fromDate.slice(0,10)} to ${toDate.slice(0,10)}`, { align: 'center', marginBottom: 20 })
-      .image('../frontend/src/Assets/logo_trans.png', 40, 20, { width: 100 });
+      .text(`From ${fromDate.slice(0, 10)} to ${toDate.slice(0, 10)}`, { align: 'center', marginBottom: 20 })
+      .image('../frontend/src/Assets/logo_trans.png', 40, 20, { width: 80 });
+    doc.moveDown();
 
+    doc.fontSize(16).text('Total Revenue', { align: 'center', marginTop: 20 });
+    doc.moveDown();
     if (revenueData.length > 0) {
-      doc.fontSize(18).text('Revenue Chart', { align: 'center', marginTop: 20 });
-
       const chartConfiguration = {
         type: 'bar',
         data: {
@@ -57,16 +58,18 @@ module.exports = async function testPdf(req, res) {
 
       const chartImage = await chartJSNodeCanvas.renderToBuffer(chartConfiguration);
       doc.image(chartImage, { align: 'center', width: 400 });
-    }else{
+
+    } else {
       doc
-      .fontSize(21)
-      .text(`No revenue date from ${fromDate.slice(0,10)} to ${toDate.slice(0,10)}`, { align: 'center' })
+        .fillColor('red')
+        .fontSize(19)
+        .text(`No revenue from ${fromDate.slice(0, 10)} to ${toDate.slice(0, 10)}`, { align: 'center' })
     }
+    doc.moveDown();
 
+    doc.fontSize(16).text('Full and Partial Refunds', { align: 'center', marginTop: 20 });
+    doc.moveDown();
     if (refundData.length > 0) {
-      //doc.addPage();
-      doc.fontSize(18).text('Refund Chart', { align: 'center', marginTop: 20 });
-
       const chartConfiguration = {
         type: 'bar',
         data: {
@@ -98,10 +101,12 @@ module.exports = async function testPdf(req, res) {
 
       const chartImage = await chartJSNodeCanvas.renderToBuffer(chartConfiguration);
       doc.image(chartImage, { align: 'center', width: 400 });
-    }else{
+    } else {
       doc
-      .fontSize(21)
-      .text(`No refund date from ${fromDate.slice(0,10)} to ${toDate.slice(0,10)}`, { align: 'center' })
+        .fontSize(19)
+        .fillColor('red')
+        .text(`No refunds from ${fromDate.slice(0, 10)} to ${toDate.slice(0, 10)}`, { align: 'center' })
+
     }
 
     doc.end();
