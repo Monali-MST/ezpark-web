@@ -7,9 +7,9 @@ function AvailableSlots() {
   const [availableSlots, setAvailableSlots] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:8800/availableSlots")
+    axios.post("http://localhost:8800/availableSlots")
       .then(response => {
-        setAvailableSlots(response.data.availableSlots);
+        setAvailableSlots(response.data);
       })
       .catch(error => {
         console.log(error);
@@ -24,3 +24,6 @@ function AvailableSlots() {
 }
 
 export default AvailableSlots;
+
+
+//--------------------------------------------

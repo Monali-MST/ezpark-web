@@ -25,7 +25,7 @@ module.exports = async function testPdf(req, res) {
     doc
       .fontSize(21)
       .text('Financial Report of the Parking Yard', { align: 'center' })
-      .text(`From ${fromDate.slice(0, 10)} to ${toDate.slice(0, 10)}`, { align: 'center', marginBottom: 20 })
+      .text(`From ${formatDate(fromDate).slice(0, 10)} to ${formatDate(toDate).slice(0, 10)}`, { align: 'center', marginBottom: 20 })
       .image('../frontend/src/Assets/logo_trans.png', 40, 20, { width: 80 });
     doc.moveDown();
 
@@ -63,7 +63,7 @@ module.exports = async function testPdf(req, res) {
       doc
         .fillColor('red')
         .fontSize(19)
-        .text(`No revenue from ${fromDate.slice(0, 10)} to ${toDate.slice(0, 10)}`, { align: 'center' })
+        .text(`No revenue from ${formatDate(fromDate).slice(0, 10)} to ${formatDate(toDate).slice(0, 10)}`, { align: 'center' })
     }
     doc.moveDown();
 
@@ -105,7 +105,7 @@ module.exports = async function testPdf(req, res) {
       doc
         .fontSize(19)
         .fillColor('red')
-        .text(`No refunds from ${fromDate.slice(0, 10)} to ${toDate.slice(0, 10)}`, { align: 'center' })
+        .text(`No refunds from ${formatDate(fromDate).slice(0, 10)} to ${formatDate(toDate).slice(0, 10)}`, { align: 'center' })
 
     }
 

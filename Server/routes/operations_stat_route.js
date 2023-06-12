@@ -4,13 +4,13 @@ const router = express.Router()
 
 //----------Booked Slot Count------------------------
 var stat_booked_slots = require('../api_operations_1/operations_stat/stat_slot_count/stat_booked_slots');
-router.get('/bookedSlots' ,(req,res,next)=>{
+router.post('/bookedSlots' ,(req,res,next)=>{
     stat_booked_slots(req, res);
 })
 
 //----------Available Slot Count---------------------
 var stat_available_slots = require('../api_operations_1/operations_stat/stat_slot_count/stat_available_slots');
-router.get('/availableSlots' ,(req,res,next)=>{
+router.post('/availableSlots' ,(req,res,next)=>{
     stat_available_slots(req, res);
 })
 
@@ -73,6 +73,17 @@ router.get('/refundFPMonthly' ,(req,res,next)=>{
 })
 
 //----------------Generating report fetch data--------------------------------------
+var testPdf = require('../api_operations_1/operations_stat/stat_gen_report/test_pdf');
+router.post('/testPdf',  (req, res, next) => {
+    testPdf(req, res);
+});
+
+
+module.exports = router
+
+
+
+
 // Endpoint for fetching total revenue
 // var fetchTotalRevenue = require('../api_operations_1/operations_stat/stat_gen_report/get_revenue')
 // router.post('/reportRevenueFetch',  (req, res, next) => {
@@ -85,16 +96,6 @@ router.get('/refundFPMonthly' ,(req,res,next)=>{
 // router.post('/reportRefundsFetch',  (req, res, next) => {
 //     fetchTotalRefund(req, res);
 // });
-
-
-var testPdf = require('../api_operations_1/operations_stat/stat_gen_report/test_pdf');
-router.post('/testPdf',  (req, res, next) => {
-    testPdf(req, res);
-});
-
-
-
-module.exports = router
 
 //  // Endpoint for fetching total refunds
 //  router.get('/reportRefundsFetch', async (req, res) => {

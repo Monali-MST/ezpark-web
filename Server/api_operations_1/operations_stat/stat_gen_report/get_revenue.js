@@ -11,8 +11,7 @@ module.exports = {
           console.error('Error executing query:', err);
           reject(err);
         } else {
-          const rows = results.map((row) => {
-            const RepRevData = {};
+          const rows = results.map((row) => {const RepRevData = {};
             fields.forEach((field) => {
               RepRevData[field.name] = row[field.name];
             });
