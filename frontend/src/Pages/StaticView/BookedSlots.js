@@ -14,7 +14,7 @@ function BookedSlots() {
       const currentTime = new Date().toLocaleTimeString([], { hour12: false });
       console.log(date);
       console.log(currentTime);
-      axios.post("http://localhost:8800/bookedSlots",  {"date": date, "currentTime": currentTime})
+      axios.post("http://localhost:8800/bookedSlots", { "date": date, "currentTime": currentTime })
         .then(response => {
           setBookedSlots(response.data);
         })
@@ -24,9 +24,9 @@ function BookedSlots() {
     };
 
     const interval = setInterval(() => {
-        fetchBookedSlots();
+      fetchBookedSlots();
     }, 6000)
-     
+
     // Clean up the interval when component unmounts
     return () => clearInterval(interval);
   }, []);
