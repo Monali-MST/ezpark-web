@@ -45,6 +45,11 @@ const HomePage = () => {
       <Button variant="outline-primary" size="sm">
         <Link to="/refund"> To Refund page</Link>
       </Button>
+
+      <h5>Discount Settings (in admin panal)</h5>
+      <Button variant="outline-primary" size="sm">
+        <Link to="/discountsettings"> Set Discounts</Link>
+      </Button>
     </div>
   );
 };

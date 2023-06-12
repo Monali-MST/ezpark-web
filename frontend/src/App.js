@@ -9,6 +9,7 @@ import RefundButton from "./Components/RefundClientSide/RefundButton";
 import SuccessRefund from "./Components/RefundClientSide/SuccessRefund";
 import AdminRefundRequestPage from "./Pages/AdminRefundRequestPage/AdminRefundRequestPage";
 import ClientRefundRequestPage from "./Pages/ClientRefundRequestPage/ClientRefundRequestPage";
+import DiscountSettings from "./Components/DiscountAdminSide/DiscountSettings";
 
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -27,6 +28,7 @@ function App() {
             <Route path="/pointsaddbutton" element={<PointsAddButtonTest />} />
             <Route path="/refund" element={<RefundButton />} />
             <Route path="/successrefund" element={<SuccessRefund />} />
+            <Route path="/discountsettings" element={<DiscountSettings/>}></Route>
             <Route
               path="/adminrefundrequest"
               element={<AdminRefundRequestPage />}
