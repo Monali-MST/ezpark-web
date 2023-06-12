@@ -13,19 +13,25 @@ const DropDownTR = () => {
   };
 
   return (
-    <div>
-        <div><h3>Total Revenue</h3></div>
-        <div>
-            <select value={selectedChart} onChange={handleChartChange}>
+    <div className="drop-down-tr-container">
+        <div className="drop-down-tr"><h3>Total Revenue</h3></div>
+        
+          <div className="drop-down-tr-names" style={{paddingTop:1.5}}>
+          <select value={selectedChart} onChange={handleChartChange}>
                 <option value="daily">Daily</option>
                 <option value="weekly">Weekly</option>
                 <option value="monthly">Monthly</option>
             </select>
+          </div>
+
+          <div className="drop-down-tr-values" >
             {/* Render the appropriate chart component based on the selected value */}
-            {selectedChart === "daily" && <div style={{padding:50}}><RevenueFunctionD /></div> }
-            {selectedChart === "weekly" && <div style={{padding:50}}><RevenueFunctionW/></div> }
-            {selectedChart === "monthly" && <div style={{padding:50}}><RevenueFunctionM/></div>}
-        </div>
+            {selectedChart === "daily" && <div style={{paddingTop: 13, paddingLeft: 20 }}><RevenueFunctionD /></div> }
+            {selectedChart === "weekly" && <div style={{paddingTop: 13, paddingLeft: 20 }}><RevenueFunctionW/></div> }
+            {selectedChart === "monthly" && <div style={{paddingTop: 13, paddingLeft: 20 }}><RevenueFunctionM/></div>}
+          </div>
+
+        
     </div>
   );
 };

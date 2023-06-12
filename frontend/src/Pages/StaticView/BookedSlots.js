@@ -33,7 +33,7 @@ function BookedSlots() {
 
   return (
     <div>
-      {bookedSlots !== null ? <p>{bookedSlots}</p> : <p>Loading...</p>}
+      {bookedSlots !== null ? <p>{bookedSlots}</p> : <p className="b-a-loading" >Loading...</p>}
     </div>
   );
 }

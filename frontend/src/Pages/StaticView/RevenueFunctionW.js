@@ -38,7 +38,7 @@ function RevenueFunctionW(){
 
   return(
     <div>
-      <div style={{width:700}}>
+      <div style={{width:400, height:400}}>
       <BarChart chartData={chartData}/>
       </div>
     </div>

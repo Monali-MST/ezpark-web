@@ -18,7 +18,7 @@ function AvailableSlots() {
 
   return (
     <div>
-      {availableSlots !== null ? <p> {availableSlots}</p> : <p>Loading...</p>}
+      {availableSlots !== null ? <p> {availableSlots}</p> : <p className="b-a-loading">Loading...</p>}
     </div>
   );
 }

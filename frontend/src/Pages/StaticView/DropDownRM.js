@@ -14,18 +14,22 @@ const DropDownRM = () => {
   };
 
   return (
-    <div>
-        <div><h3>Refunds Made</h3></div>
-        <div>
-            <select value={selectedChart} onChange={handleChartChange}>
-                <option value="daily">Daily</option>
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-            </select>
-            {/* Render the appropriate chart component based on the selected value */}
-            {selectedChart === "daily" && <div style={{padding:50}}><RefundFPFunctionD /></div> }
-            {selectedChart === "weekly" && <div style={{padding:50}}><RefundFPFunctionW /></div>}
-            {selectedChart === "monthly" && <div style={{padding:50}}><RefundFPFunctionM /></div>}
+    <div className="drop-down-rm-container">
+      <div className="drop-down-rm"><h3>Refunds Made</h3></div>
+      
+        <div className="drop-down-rm-names" style={{paddingTop:1.5}}>
+          <select value={selectedChart} onChange={handleChartChange}>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+          </select>
+        </div>
+
+        <div className="drop-down-rm-values">
+          {/* Render the appropriate chart component based on the selected value */}
+          {selectedChart === "daily" && <div style={{ paddingTop: 17, paddingLeft: 50 }}><RefundFPFunctionD /></div>}
+          {selectedChart === "weekly" && <div style={{ paddingTop: 17, paddingLeft: 50 }}><RefundFPFunctionW /></div>}
+          {selectedChart === "monthly" && <div style={{ paddingTop: 17, paddingLeft: 50 }}><RefundFPFunctionM /></div>}
         </div>
     </div>
   );

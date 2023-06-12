@@ -22,7 +22,7 @@ const StaticView = () => {
                 <div className="booked-slots-container"> 
                     <div className="booked-slots-contain2">
                         <div className="booked-slots-icon"> 
-                            <img src={CarIcon} style={{width:70, marginLeft:20,marginTop:20}}/>
+                            <img src={CarIcon} alt="caricon" style={{width:70,paddingTop:19}}/>
                         </div>
                         <div className="booked-slots-num"> 
                             <BookedSlots/>
@@ -38,7 +38,7 @@ const StaticView = () => {
                 <div className="available-slots-container">
                     <div className="available-slot-contain2">
                         <div className="available-slots-icon"> 
-                        <img src={ToggleIcon} style={{width:70, marginLeft:20,marginTop:20}}/>
+                        <img src={ToggleIcon} alt="toggle" style={{width:70, paddingTop:23}}/>
                         </div>
                         <div className="available-slots-num"> 
                             <AvailableSlots/>
@@ -52,27 +52,34 @@ const StaticView = () => {
 
                  {/* current date and time box */}
                 <div className="date-time-container">
-                    
+                    <div className="date-container">
                         <div className="date-time-date"> 
                             Date:
                         </div>
                         <div className="date-time-dnum"> 
-                           <CurrentDate />
+                            <CurrentDate />
                         </div>
-                    
+                    </div>
+                        
+                    <div className="time-container">
                         <div className="date-time-time"> 
                             Time:
                         </div>
                         <div className="date-time-tnum"> 
-                           <CurrentTime />
-                        </div>                 
+                            <CurrentTime />
+                        </div>   
+                    </div>
+                                      
                 </div>
             </div>
 
-             {/* Chart drop downs... */}
+            <div className="chart-drop-downs">
+            {/* Chart drop downs... */}
             <div className="booking-and-cancel"><DropDownBC/></div>
             <div className="total-revenue"><DropDownTR/></div>
+            </div>
             <div className="refund"><DropDownRM/></div>
+
 
             <div className= "report-generator"><DateRangePicker/></div>
            

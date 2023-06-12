@@ -33,7 +33,7 @@ function DoughnutFunctionD(){
   
     return(
       <div>
-        <div style={{width:200, height:200}}>
+        <div style={{width:240, height:240}}>
         <DoughnutChart chartData={chartData} chartOption={chartOption}/>
         </div>
       </div>
