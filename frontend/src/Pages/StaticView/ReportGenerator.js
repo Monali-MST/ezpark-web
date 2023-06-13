@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import axios from 'axios';
 import 'react-datepicker/dist/react-datepicker.css';
+import TickIcon from "./../../Assets/tick.png";
 //import BarChart from "./BarChart";
 
 function DateRangePicker(props) {
     const [showFormPop, setShowFromPop] = useState(false);
-    //const [showPopup, setShowPopup] = useState(false);
+    const [showSuccessPopup, setShowSuccessPopup] = useState(false);
     const [dates, setDates] = useState({
       fromDate: "",
       toDate: "",
@@ -17,18 +18,26 @@ function DateRangePicker(props) {
     
     const handleGenerate = async () => {
     if (dates.fromDate && dates.toDate) {
-        // Step 2: Fetch total revenue
+
+      
         await axios.post('http://localhost:8800/testPdf', dates)
         .then(response =>{
             //console.log(response.data);
             // setRevenueData(response.data);
-            console.log("setRevenueData");
+            //console.log("setRevenueData");
+
+            if(response.status===200){
+              console.log("email sent successfully");
+              setShowSuccessPopup(true); 
+            }else{
+              alert("Sending email faild.");
+            }
           })
           .catch(error => {
             console.log(error);
+            alert("Error occured while generating report");
           }
         )    
-        //setShowPopup(false); 
         setShowFromPop(false); 
     } else {
       alert('Please select both "from" and "to" dates');
@@ -38,14 +47,19 @@ function DateRangePicker(props) {
   const popUpClose = () => {
     setShowFromPop(false);
   }
+  const popUpOK = () => {
+    setShowSuccessPopup(false);
+  }
 
   const handleCancel = () => {
     //setShowPopup(false);
     setShowFromPop(false);
     props.onCancel();
   }
+
   const handleReport = () => {
     setShowFromPop(true);
+    
     //setShowPopup(true);
   }
   const handleChange =  (name, value)=>{
@@ -55,6 +69,8 @@ function DateRangePicker(props) {
       setDates((prev) => ({...prev, fromDate: value}));
     } 
   }
+
+  
   //Revenue chart
   // const chartDataRev={
   //   labels: revenueData.map((data) => {
@@ -111,42 +127,17 @@ function DateRangePicker(props) {
     <div>
       <button className="btn-gen-report" onClick={handleReport}>Generate Report</button>
 
-      {/* {showPopup &&(
-        <div className="date-range-picker">
-          <div className="form-group">
-            <label htmlFor="from-date">From Date</label>
-            <DatePicker
-              id="from-date"
-              selected={dates.fromDate}
-              onChange={(date) => handleChange("fromDate", date)}
-              dateFormat="dd/MM/yyyy"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="to-date">To Date</label>
-            <DatePicker
-              id="to-date"
-              selected={dates.toDate}
-              onChange={(date) => handleChange("toDate", date)}
-              dateFormat="dd/MM/yyyy"
-            />
-          </div>
-          <button className="btn btn-secondary" onClick={handleCancel}>Cancel</button>
-          <button className="btn btn-primary" onClick={handleGenerate}>Generate</button>
+      {/* success message */}
+      {showSuccessPopup ? <div className="popup-overlay">
+        <div className='popup-content'>
+          <div className='popup-content-success'>
+          <img src={TickIcon} alt='tick' className="tick-icon" style={{width:60}}></img>
+          <h3>Email Sent Successfully</h3>
+          <button className="btn-OK" onClick={() => popUpOK()}>OK</button>
         </div>
-      )} */}
-      
-      {/* <div>
-        <div style={{width:700}}>
-          <BarChart chartData={chartDataRev}/>
         </div>
-      </div>
+      </div> :null}
 
-      <div>
-        <div style={{width:700}}>
-          <BarChart chartData={chartDataRef}/>
-        </div>
-      </div> */}
 
       {showFormPop ? <div className="popup-overlay">
       <div className="popup-content">
@@ -155,7 +146,6 @@ function DateRangePicker(props) {
           <button  class="close-button" aria-label="Close">
             <span aria-hidden="true" onClick={() => popUpClose()}>&times;</span>
           </button>
-        
 
         <div className="date-range-picker">
           <h3>Dates</h3>
@@ -185,7 +175,20 @@ function DateRangePicker(props) {
 
       </div>
     </div> : null}
-    </div>
+
+     {/* <div>
+        <div style={{width:700}}>
+          <BarChart chartData={chartDataRev}/>
+        </div>
+      </div>
+
+      <div>
+        <div style={{width:700}}>
+          <BarChart chartData={chartDataRef}/>
+        </div>
+      </div> */}
+
+  </div>
   );
 }
 export default DateRangePicker;
