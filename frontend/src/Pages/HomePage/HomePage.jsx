@@ -7,16 +7,18 @@ import "./HomePage.css";
 import myImage from "../../Assets/bgimg.jpg";
 import myImage1 from "../../Assets/booking.jpg";
 import myImage2 from "../../Assets/OnlinePayment.jpg";
-import myImage3 from "../../Assets/user_Acc.png";
+import myImage3 from "../../Assets/user.jpg";
 import myImage4 from "../../Assets/parking.jpg";
 import myImage5 from "../../Assets/refund.jpg";
+import myImage6 from "../../Assets/playstore.png";
+import myImage7 from "../../Assets/phone.webp";
 import Logo from "../../Assets/logo_without_text.png";
-
+import { Col, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import YouTube from 'react-youtube';
+import YouTube from "react-youtube";
 
 const HomePage = () => {
-  const videoId = 'CK7KYruoGZY'; // Replace with your YouTube video ID
+  const videoId = "CK7KYruoGZY"; // Replace with your YouTube video ID
   const navigate = useNavigate();
   const handleClick = async (e) => {
     e.preventDefault();
@@ -26,9 +28,6 @@ const HomePage = () => {
       console.log(err);
     }
   };
-
-   
-  
 
   return (
     <div>
@@ -40,7 +39,7 @@ const HomePage = () => {
             "--brightness": "1",
             backgroundImage: `url(${myImage})`,
             backgroundSize: "cover",
-            height: "80vh",
+            height: "100vh",
             filter: "brightness(var(--brightness))",
           }}
         >
@@ -82,52 +81,55 @@ const HomePage = () => {
             </p>
           </div>
           <Button
-            variant="warning"
+            variant="outline-warning"
             onClick={handleClick}
             style={{
               borderRadius: "5rem",
-              backgroundColor: "#F8D297",
-              alignItems: "center",
-
               marginLeft: "10vh",
             }}
           >
             Get Started
-          </Button>{" "}
+          </Button>
         </div>
-
-        {/* <button className="start"onClick={handleClick}>VerEmail</button> */}
-
-        <h1
-          className="text1"
-          style={{
-            marginTop: "10px",
-            color: "#FAA41E",
-            fontSize: "2rem",
-            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
-          }}
-        >
-          WE HAVE A SPOT FOR YOU.{" "}
-        </h1>
       </div>
-      <div className="section" style={{backgroundColor: "black" }}>
-  <div className="card-container">
-    <div className="card-wrapper">
-      <Card style={{ width: "15rem", height: "20rem" ,marginLeft:"10rem"}}>
-        <Card.Img variant="top" src={myImage1} style={{ height: "8rem" }} />
-        <Card.Body>
-          <Card.Title>Online Bookings</Card.Title>
-          <Card.Text style={{ fontSize: "14px" }}>
-            Allow users to book parking slots for their vehicles in advance.
-            Users can select the date, time, and duration for which they need
-            parking.
-          </Card.Text>
-        </Card.Body>
-      </Card>
-    
-      <Card style={{ width: "15rem", height: "20rem" ,marginLeft:"26rem",marginTop:"-3rem"}}>
-        <Card.Img variant="top" src={myImage2} style={{ height: "8rem" }} />
-        <Card.Body>
+      <div
+        className="section"
+        style={{ backgroundColor: "black", height: "110vh" }}
+      >
+        <div className="card-container">
+          <div className="card-wrapper">
+            <Card
+              style={{ width: "15rem", height: "20rem", marginLeft: "10rem" }}
+            >
+              <Card.Img
+                variant="top"
+                src={myImage1}
+                style={{ height: "8rem" }}
+              />
+              <Card.Body>
+                <Card.Title>Online Bookings</Card.Title>
+                <Card.Text style={{ fontSize: "14px" }}>
+                  Allow users to book parking slots for their vehicles in
+                  advance. Users can select the date, time, and duration for
+                  which they need parking.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+
+            <Card
+              style={{
+                width: "15rem",
+                height: "20rem",
+                marginLeft: "26rem",
+                marginTop: "-3rem",
+              }}
+            >
+              <Card.Img
+                variant="top"
+                src={myImage2}
+                style={{ height: "8rem" }}
+              />
+              <Card.Body>
                 <Card.Title>Payment Processing</Card.Title>
                 <Card.Text style={{ fontSize: "14px" }}>
                   Integrate a secure payment gateway to handle online payments
@@ -138,9 +140,15 @@ const HomePage = () => {
             </Card>
           </div>
           <div>
-          <Card style={{ width: "15rem", height: "20rem",marginLeft:"10rem" }}>
-        <Card.Img variant="top" src={myImage3} style={{ height: "8rem" }} />
-        <Card.Body>
+            <Card
+              style={{ width: "15rem", height: "20rem", marginLeft: "10rem" }}
+            >
+              <Card.Img
+                variant="top"
+                src={myImage3}
+                style={{ height: "8rem" }}
+              />
+              <Card.Body>
                 <Card.Title>User Accounts</Card.Title>
                 <Card.Text style={{ fontSize: "14px" }}>
                   Provide user registration and login functionality, allowing
@@ -149,10 +157,21 @@ const HomePage = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-            
-          <Card style={{ width: "15rem", height: "20rem",marginLeft:"26rem",marginTop:"-3rem"}}>
-        <Card.Img variant="top" src={myImage5} style={{ height: "8rem" }} />
-        <Card.Body>
+
+            <Card
+              style={{
+                width: "15rem",
+                height: "20rem",
+                marginLeft: "26rem",
+                marginTop: "-3rem",
+              }}
+            >
+              <Card.Img
+                variant="top"
+                src={myImage5}
+                style={{ height: "8rem" }}
+              />
+              <Card.Body>
                 <Card.Title>Cancellation and Refunds</Card.Title>
                 <Card.Text style={{ fontSize: "14px" }}>
                   Allow users to cancel their parking reservations within a
@@ -161,12 +180,17 @@ const HomePage = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-        
           </div>
           <div>
-          <Card style={{ width: "15rem", height: "20rem",marginLeft:"10rem" }}>
-        <Card.Img variant="top" src={myImage4} style={{ height: "8rem" }} />
-        <Card.Body>
+            <Card
+              style={{ width: "15rem", height: "20rem", marginLeft: "10rem" }}
+            >
+              <Card.Img
+                variant="top"
+                src={myImage4}
+                style={{ height: "8rem" }}
+              />
+              <Card.Body>
                 <Card.Title>Availability Check</Card.Title>
                 <Card.Text style={{ fontSize: "14px" }}>
                   Provide real-time availability of parking slots, allowing
@@ -176,11 +200,12 @@ const HomePage = () => {
               </Card.Body>
             </Card>
           </div>
-         
         </div>
       </div>
       <div className="section">
-        <div className="section-title" style={{backgroundColor:"#FAA41E"}}>HOW IT WORKS</div>
+        <div className="section-title" style={{ backgroundColor: "#FAA41E" }}>
+          HOW IT WORKS
+        </div>
         <div className="two-column-container">
           <div className="column">
             <p
@@ -206,9 +231,13 @@ const HomePage = () => {
           </div>
           <div className="column">
             <div className="video-wrapper">
-             
-               <YouTube videoId={videoId} 
-                style={{ width: "fit-content", height: "fit-content"}}
+              <YouTube
+                videoId={videoId}
+                style={{
+                  width: "fit-content",
+                  height: "fit-content",
+                  marginTop: "-80px",
+                }}
               />
             </div>
           </div>
@@ -217,59 +246,72 @@ const HomePage = () => {
       <div className="section">
         <div className="section-title">Location</div>
         <div className="two-column-container">
-          <div className="column">
-            
-          </div>
+          <div className="column"></div>
           <div className="column">
             <div>
-            <p
-              style={{
-                textAlign: "justify",
-                margin: "50px",
-                paddingTop: "100px",
-                fontFamily: "bold",
-                fontSize: "20px",
-              }}
-            >
-              A vehicle parking system is an automated solution that simplifies
-              the process of parking and managing vehicles in a parking
-              facility. It includes features such as entry gates, sensors,
-              ticketing, allocation of parking spaces, payment systems, and exit
-              gates. By utilizing technology and real-time data, the system
-              optimizes the utilization of parking spaces, improves traffic
-              flow, and enhances the overall parking experience for users. It
-              provides convenience, efficiency, and effective management of
-              vehicles in parking areas, making it an essential tool for modern
-              parking facilities.
-            </p>
+              <p
+                style={{
+                  textAlign: "justify",
+                  margin: "50px",
+                  paddingTop: "100px",
+                  fontFamily: "bold",
+                  fontSize: "20px",
+                }}
+              >
+                A vehicle parking system is an automated solution that
+                simplifies the process of parking and managing vehicles in a
+                parking facility. It includes features such as entry gates,
+                sensors, ticketing, allocation of parking spaces, payment
+                systems, and exit gates. By utilizing technology and real-time
+                data, the system optimizes the utilization of parking spaces,
+                improves traffic flow, and enhances the overall parking
+                experience for users. It provides convenience, efficiency, and
+                effective management of vehicles in parking areas, making it an
+                essential tool for modern parking facilities.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      </div>
 
-     
       <div
         className="section"
         style={{ backgroundColor: "#FAA41E", height: "75vh" }}
       >
-        <p
-          style={{
-            fontSize: "50px",
-            color: "white",
-            paddingTop: "10vh",
-            paddingLeft: "5vh",
-          }}
-        >
-          BROWSERING ON YOUR PHONE?
-        </p>
-        <p style={{ fontSize: "50px", color: "white", paddingLeft: "5vh" }}>
-          Try out the Ez Park App on Android.
-        </p>
-
+        <Row>
+          <Col>
+            <p
+              style={{
+                fontSize: "50px",
+                color: "white",
+                paddingTop: "15vh",
+                paddingLeft: "5vh",
+              }}
+            >
+              BROWSERING ON YOUR PHONE?
+            </p>
+            <p style={{ fontSize: "40px", color: "white", paddingLeft: "5vh" }}>
+              Try out the Ez Park App on Android.
+            </p>
+            <img src={myImage6} alt="playStore" style={{ width: "300px" }} />
+          </Col>
+          <Col>
+            <img
+              src={myImage7}
+              alt="phone"
+              style={{ width: "500px", marginLeft: "100px" }}
+            />
+          </Col>
+        </Row>
       </div>
       <div
         className="section"
-        style={{ backgroundColor: "#CBCBCB", height: "25vh" }}
+        style={{
+          backgroundColor: "#CBCBCB",
+          height: "30vh",
+          border: "3px",
+          borderColor: "black",
+        }}
       >
         <Footer />
       </div>

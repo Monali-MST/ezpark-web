@@ -23,6 +23,7 @@ const VerMobile = () => {
     }
   };
   const handleClick = () => {
+    console.log(otp);
     axios.post("http://localhost:8800/verifyOTP", {"otp":otp[0]+otp[1]+otp[2]+otp[3], "MobNum":localStorage.getItem("MobNum")})
     .then((res=>{
       if(res.data===200){
@@ -44,7 +45,6 @@ const VerMobile = () => {
           <p style={{ marginTop: "10px" }}>
             <b>Please Enter the One-Time password to verify your Account</b>
           </p>
-          <p>A One-Time password has been send to +94 77 ** ** 535</p>
           <div>
             {otp.map((data, index) => (
               <input

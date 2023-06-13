@@ -5,7 +5,7 @@ import PointSystem from "./Pages/PointSystem/PointSystem";
 import SignUpPage from "./Pages/SignUpPage/Form";
 import UserDashboardPage from "./Pages/UserDashboardPage/UserDashboardPage";
 import AboutUsPage from "./Pages/AboutUsPage/AboutUsPage";
-import SlotSelect from "./Pages/SlotSelect/Slot";
+import SlotSelect from "./Pages/SlotSelect/SlotSelect";
 import BookingPage from "./Pages/BookingPage/BookingPage";
 import MyBookingsPage from "./Pages/MyBookingsPage/MyBookingsPage";
 import MyProfilePage from "./Pages/MyProfilePage/MyProfilePage";

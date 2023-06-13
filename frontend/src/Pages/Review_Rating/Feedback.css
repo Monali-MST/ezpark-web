@@ -1,17 +1,11 @@
-.container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-  }
+
   
   h1 {
     text-align: center;
     margin-bottom: 20px;
   }
   
-  form {
+  .Feedback_form {
     display: flex;
     flex-direction: column;
   }
@@ -69,7 +63,7 @@
     color: #ff9800;
   }
   
- .form {
+ .Feedback_form {
     width: 800px;
     height: 550px;
     background-color: white;

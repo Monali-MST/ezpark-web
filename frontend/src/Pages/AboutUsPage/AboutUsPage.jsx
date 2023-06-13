@@ -1,11 +1,24 @@
 import React from 'react'
-import Sidebar from "../../Components/Sidebar/Sidebar";
+import NavBar from "../../Components/NavBar/NavBar";
+import MyImage from "../../Assets/About_Img.jpg";
 
 const AboutUsPage = () => {
   return (
     <div>
-      <Sidebar/>
-      <h1>About Us</h1>
+      <NavBar/>
+     
+      <div
+          style={{
+            backgroundImage: `url(${MyImage})`,
+            backgroundSize: "cover",
+            height: "25vh",
+          
+            
+          }}
+          
+        >
+
+    </div>
     </div>
   )
 }

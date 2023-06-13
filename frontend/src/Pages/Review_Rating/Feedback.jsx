@@ -26,7 +26,7 @@ const ReviewPage = () => {
 
   return (
     <div>
-        <div className="form">
+        <div className="Feedback_form">
       <h1>Rate your Experience</h1>
       <form onSubmit={handleSubmit}>
         <div>

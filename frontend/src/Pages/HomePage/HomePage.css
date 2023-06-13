@@ -2,7 +2,7 @@
 .logo-section{
     display: flex;
     justify-content: center;
-    
+    padding: 30px;
 }
   
 .logo{
@@ -64,7 +64,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 8vh;
-    padding-top: 5vh;
+    padding-top: 12vh;
     padding-left: 1vh;
     padding-right: 1vh;
   }

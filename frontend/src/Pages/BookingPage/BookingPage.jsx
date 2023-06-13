@@ -7,7 +7,7 @@ import myImage from "../../Assets/parking-booking.jpg";
 
 import "./BookingPage.css";
 
-function GridComplexExample() {
+function BookingPage() {
   return (
     
     <div
@@ -106,4 +106,4 @@ function GridComplexExample() {
   );
 }
 
-export default GridComplexExample;
+export default BookingPage;
