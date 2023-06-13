@@ -9,8 +9,6 @@ const chartJSNodeCanvas = new ChartJSNodeCanvas({ width: 500, height: 300 });
 
 module.exports = async function testPdf(req, res) {
   const { fromDate, toDate, email } = req.body;
-
-
   try {
     const revenueData = await fetchTotalRevenue(fromDate, toDate);
     const refundData = await fetchTotalRefund(fromDate, toDate);
@@ -139,15 +137,15 @@ module.exports = async function testPdf(req, res) {
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         console.error('Error sending email:', error);
-        res.status(500).json({ error: 'Failed to send email' });
+        res.status(500).json({success:false, error: 'Failed to send email' });
       } else {
         console.log('Email sent:', info.response);
-        res.status(200).json({ message: 'Email sent successfully' });
+        res.status(200).json({ success:true, message: 'Email sent successfully' });
       }
-    });
+    }); 
   } catch (error) {
     console.error('Error generating PDF:', error);
-    res.status(500).json({ error: 'Failed to generate PDF' });
+    res.status(500).json({ success:false,error: 'Failed to generate PDF' });
   }
 };
 

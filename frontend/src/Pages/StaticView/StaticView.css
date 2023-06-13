@@ -1,54 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Saira:wght@300;400;600&display=swap');
 
-.stacticv-top{
-    margin-top: 2rem;
-    margin-left: 8rem;
-    display: inline-flex;
-    
-  
-}
-.b-a-loading{
-  font-size: 1rem;
-}
-.booked-slots-container{
-    /* background-color: rgb(207, 10, 10); */
-    width:20rem;
-    height: 8.5rem;
-    margin-right: 5rem;
-    padding-left: 1.5rem;
-    box-shadow: 0.313rem 0.625rem 0.5rem #888888;
-    font-family: 'Saira', sans-serif;
-   
+.stacticv-top {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  display: inline-flex;
+
+
 }
 
-.booked-slots-container .booked-slots-contain2{
+.b-a-loading {
+  font-size: 1rem;
+}
+
+.booked-slots-container {
+  /* background-color: rgb(207, 10, 10); */
+  width: 20rem;
+  height: 8.5rem;
+  margin-right: 6rem;
+  padding-left: 1.5rem;
+  box-shadow: 0.313rem 0.625rem 0.5rem #888888;
+  font-family: 'Saira', sans-serif;
+
+}
+
+.booked-slots-container .booked-slots-contain2 {
   display: flex;
   flex-wrap: wrap;
   column-gap: 10rem;
 }
 
 
-.booked-slots-container .booked-slots-contain2 .booked-slots-num{
-    font-size: 3.438rem;
-    font-weight: bold; 
-    
-}
-.booked-slots-container .booked-slots{
-    text-align: right; 
-    margin-right: 2rem; 
+.booked-slots-container .booked-slots-contain2 .booked-slots-num {
+  font-size: 3.438rem;
+  font-weight: bold;
 
 }
 
+.booked-slots-container .booked-slots {
+  text-align: right;
+  margin-right: 2rem;
 
-.available-slots-container{
-    /* background-color: green; */
-    width:20rem;
-    height: 8.5rem;
-    margin-right: 5rem;
-    padding-left: 1.5rem;
-    box-shadow: 0.313rem 0.625rem 0.5rem #888888;
-    font-family: 'Saira', sans-serif;
+}
+
+
+.available-slots-container {
+  /* background-color: green; */
+  width: 20rem;
+  height: 8.5rem;
+  margin-right: 6rem;
+  padding-left: 1.5rem;
+  box-shadow: 0.313rem 0.625rem 0.5rem #888888;
+  font-family: 'Saira', sans-serif;
 }
 
 .available-slots-container .available-slot-contain2 {
@@ -57,254 +60,295 @@
   column-gap: 8rem;
 }
 
-.available-slots-container .available-slot-contain2 .available-slots-num{
+.available-slots-container .available-slot-contain2 .available-slots-num {
   font-size: 3.438rem;
-  font-weight: bold; 
-  
-}
-.available-slots-container .available-slots{
-  text-align: right; 
-  margin-right: 2rem; 
+  font-weight: bold;
 
 }
 
+.available-slots-container .available-slots {
+  text-align: right;
+  margin-right: 2rem;
 
-.date-time-container{
-    /* background-color: yellow; */
-    width:20rem;
-    height: 8.5rem;
-    margin-right: 5rem;
-    padding-left: 3rem;
-    padding-top: 2rem;
-    box-shadow: 0.313rem 0.625rem 0.5rem #888888;
-    font-family: 'Saira', sans-serif;
-    font-size: 1.4rem;
 }
 
-.date-time-container .date-container{
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 1.5rem;
+
+.date-time-container {
+  /* background-color: yellow; */
+  width: 20rem;
+  height: 8.5rem;
+  margin-right: 6rem;
+  padding-left: 3rem;
+  padding-top: 2rem;
+  box-shadow: 0.313rem 0.625rem 0.5rem #888888;
+  font-family: 'Saira', sans-serif;
+  font-size: 1.4rem;
 }
 
-.date-time-container .time-container{
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 1.5rem;
+.date-time-container .date-container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.5rem;
+}
+
+.date-time-container .time-container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.5rem;
 }
 
 .date-time-container .date-container .date-time-dnum,
-.date-time-container .time-container .date-time-tnum{
-    font-weight: bold;
-}
-
-
-.booking-and-cancel{
-  width:33rem;
-  height: 21rem;
-  margin-left: 8rem;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    padding-left: 1.5rem;
-    box-shadow: 0.313rem 0.625rem 0.5rem #888888;
-    font-family: 'Saira', sans-serif;
-    
-}
-
-.drop-down-bc h3{
+.date-time-container .time-container .date-time-tnum {
   font-weight: bold;
 }
-.drop-down-bc-container{
+
+
+.booking-and-cancel {
+  width: 33rem;
+  height: 21rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-left: 1.5rem;
+  box-shadow: 0.313rem 0.625rem 0.5rem #888888;
+  font-family: 'Saira', sans-serif;
+
+}
+
+.drop-down-bc h3 {
+  font-weight: bold;
+}
+
+.drop-down-bc-container {
   display: flex;
   flex-wrap: wrap;
   column-gap: 12rem;
 }
 
 
-.total-revenue{
-    width:33rem;
-    height: 21rem;
-    margin-left: 3rem;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    padding-left: 1.5rem;
-    box-shadow: 0.313rem 0.625rem 0.5rem #888888;
-    font-family: 'Saira', sans-serif;
-    
-}
-.drop-down-tr h3{
-  font-weight: bold;
-}
-.drop-down-tr-container{
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 16rem;
-}
-
-
-.refund{
-  width:33rem;
+.total-revenue {
+  width: 33rem;
   height: 21rem;
-  margin-left: 45rem;
+  margin-left: 3rem;
   margin-top: 2rem;
   padding-top: 1rem;
   padding-left: 1.5rem;
   box-shadow: 0.313rem 0.625rem 0.5rem #888888;
-  font-family: 'Saira', sans-serif; 
- 
+  font-family: 'Saira', sans-serif;
+
 }
-.drop-down-rm h3{
+
+.drop-down-tr h3 {
   font-weight: bold;
 }
-.drop-down-rm-container{
+
+.drop-down-tr-container {
   display: flex;
   flex-wrap: wrap;
   column-gap: 16rem;
 }
 
-.chart-drop-downs{
+
+.refund {
+  width: 33rem;
+  height: 21rem;
+  margin-left: 41rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-left: 1.5rem;
+  box-shadow: 0.313rem 0.625rem 0.5rem #888888;
+  font-family: 'Saira', sans-serif;
+
+}
+
+.drop-down-rm h3 {
+  font-weight: bold;
+}
+
+.drop-down-rm-container {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 1rem;
+  column-gap: 16rem;
 }
 
-.btn-gen-report{
-    background-color: rgba(222,139,9,0.5);
-    border: none;
-    font-family: 'Saira Condensed', sans-serif;
-    letter-spacing: .08rem;
-    color: black;
-    font-size: 1.3rem;
-    font-weight:bold;
-    text-align: center;
-    padding: .6rem 2rem;
-    text-decoration: none;
-    margin: .25rem .125rem;
-    cursor: pointer;
-    border-radius: 1.0625rem;
-    margin-left: 8rem;
-    margin-top: 2rem; 
+.chart-drop-downs {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 3rem;
+}
+
+.btn-gen-report {
+  background-color: rgba(222, 139, 9, 0.5);
+  border: none;
+  font-family: 'Saira Condensed', sans-serif;
+  letter-spacing: .08rem;
+  color: black;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  padding: .6rem 2rem;
+  text-decoration: none;
+  margin: .25rem .125rem;
+  cursor: pointer;
+  border-radius: 1.0625rem;
+  margin-left: 8rem;
+
 }
 
 
 
- .btn-gen-report:hover{
-    background-color:rgba(211,211,211,0.5);
-  }
+.btn-gen-report:hover {
+  background-color: rgba(211, 211, 211, 0.5);
+}
 
 .popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .popup-content {
-    background-color: white;
-    background-image: url("../../Assets/report-pana.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 1.25rem;
-    border-radius: 0.313rem;
-    box-shadow: 0 0.125rem .25rem rgba(0, 0, 0, 0.2);
-    width: 30%;
-    height: 40%
-  }
-  
-  .popup-content .close-button {
-    margin-top: 0.5rem;
-    margin-left: 18rem;
-    padding: .1rem .2rem;
-    border-radius:10% ;
-    background-color: rgba(222,139,9,0.5);
-  }
-  .popup-content .close-button:hover{
-    background-color:rgba(238, 193, 193, 0.59);
-  }
-  
-  .date-range-picker {
-    font-family: 'Saira Condensed', sans-serif;
-    margin-left: 2rem;
-    font-weight: 600;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  
+.popup-content {
+  background-color: white;
+  background-image: url("../../Assets/report-pana.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1.25rem;
+  border-radius: 0.313rem;
+  box-shadow: 0 0.125rem .25rem rgba(0, 0, 0, 0.2);
+  width: 30%;
+  height: 40%
+}
 
-  .date-range-picker .form-group{
-    margin-left: 4rem;
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: .7rem;
-    row-gap: 0.1rem;
-  }
+.popup-content .close-button {
+  margin-top: 0.5rem;
+  margin-left: 18rem;
+  padding: .1rem .2rem;
+  border-radius: 10%;
+  background-color: rgba(222, 139, 9, 0.5);
+}
 
-  .date-range-picker .form-group .to-date{
-    margin-left: 1rem;
-  }
-  
-  .date-range-picker .form-group #from-date{
-    width: 100%;
-    background: rgba(211,211,211,0.5);
-    border-radius: .2rem;
-    padding: .1rem;
-    padding-left: .4rem;
-    font-family: 'Saira Condensed', sans-serif;
-    letter-spacing: .15rem;
-  }
-  
-  .date-range-picker .form-group #to-date{
-    width: 100%;
-    background: rgba(211,211,211,0.5);
-    border-radius: .2rem;
-    padding: .1rem;
-    padding-left: .4rem;
-    font-family: 'Saira Condensed', sans-serif;
-    letter-spacing: .15rem;
-  }
+.popup-content .close-button:hover {
+  background-color: rgba(238, 193, 193, 0.59);
+}
 
-  .date-range-picker .btn-containter{
-   padding-top: 10%;
-   padding-left:38% ;
-  }
+.popup-content .popup-content-success{
+  text-align: center;
+}
+.popup-content .popup-content-success .tick-icon{
+  padding-bottom: 1rem;
+  margin-top: 2rem;
+  margin-left: 8rem;
+}
 
-  .date-range-picker .btn-cancel{
-    background-color: black;
-    border: none;
-    font-family: 'Saira Condensed', sans-serif;
-    letter-spacing: .07rem;
-    color: white;
-    font-weight:600;
-    padding: .3rem .8rem;
-    text-align: center;
-    text-decoration: none;
-    margin: .25rem .125rem;
-    cursor: pointer;
-    border-radius: 17px;
-  }
-  .date-range-picker .btn-cancel:hover{
-    background-color:rgba(238, 193, 193, 0.59);
-  }
+.popup-content .popup-content-success h3{
+  font-family: 'Saira', sans-serif;
+  font-weight: bold;
+}
 
-  .date-range-picker .btn-generate{
-    background-color: rgba(222,139,9,0.5);
-      border: none;
-      font-family: 'Saira Condensed', sans-serif;
-      letter-spacing: .07rem;
-      color: black;
-      font-weight:600;
-      padding: .3rem .5rem;
-      text-align: center;
-      text-decoration: none;
-      margin: .25rem .125rem;
-      cursor: pointer;
-      border-radius: 17px;
-    }
+.popup-content .popup-content-success .btn-OK{
+  background-color: rgba(222, 139, 9, 0.5);
+  border: none;
+  font-family: 'Saira Condensed', sans-serif;
+  letter-spacing: .07rem;
+  color: black;
+  font-weight: 600;
+  padding: .3rem .5rem;
+  text-align: center;
+  text-decoration: none;
+  margin: .25rem .125rem;
+  cursor: pointer;
+  border-radius: 17px;
+}
 
-    .date-range-picker .btn-generate:hover{
-        background-color:rgba(211,211,211,0.5);
-      }
+.popup-content .popup-content-success .btn-OK:hover {
+  background-color: rgba(211, 211, 211, 0.5);
+}
+
+.date-range-picker {
+  font-family: 'Saira Condensed', sans-serif;
+  margin-left: 2rem;
+  font-weight: 600;
+}
+
+
+
+.date-range-picker .form-group {
+  margin-left: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: .7rem;
+  row-gap: 0.1rem;
+}
+
+.date-range-picker .form-group .to-date {
+  margin-left: 1rem;
+}
+
+.date-range-picker .form-group #from-date {
+  width: 100%;
+  background: rgba(211, 211, 211, 0.5);
+  border-radius: .2rem;
+  padding: .1rem;
+  padding-left: .4rem;
+  font-family: 'Saira Condensed', sans-serif;
+  letter-spacing: .15rem;
+}
+
+.date-range-picker .form-group #to-date {
+  width: 100%;
+  background: rgba(211, 211, 211, 0.5);
+  border-radius: .2rem;
+  padding: .1rem;
+  padding-left: .4rem;
+  font-family: 'Saira Condensed', sans-serif;
+  letter-spacing: .15rem;
+}
+
+.date-range-picker .btn-containter {
+  padding-top: 10%;
+  padding-left: 38%;
+}
+
+.date-range-picker .btn-cancel {
+  background-color: black;
+  border: none;
+  font-family: 'Saira Condensed', sans-serif;
+  letter-spacing: .07rem;
+  color: white;
+  font-weight: 600;
+  padding: .3rem .8rem;
+  text-align: center;
+  text-decoration: none;
+  margin: .25rem .125rem;
+  cursor: pointer;
+  border-radius: 17px;
+}
+
+.date-range-picker .btn-cancel:hover {
+  background-color: rgba(238, 193, 193, 0.59);
+}
+
+.date-range-picker .btn-generate {
+  background-color: rgba(222, 139, 9, 0.5);
+  border: none;
+  font-family: 'Saira Condensed', sans-serif;
+  letter-spacing: .07rem;
+  color: black;
+  font-weight: 600;
+  padding: .3rem .5rem;
+  text-align: center;
+  text-decoration: none;
+  margin: .25rem .125rem;
+  cursor: pointer;
+  border-radius: 17px;
+}
+
+.date-range-picker .btn-generate:hover {
+  background-color: rgba(211, 211, 211, 0.5);
+}

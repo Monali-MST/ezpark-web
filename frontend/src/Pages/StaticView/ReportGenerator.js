@@ -13,13 +13,11 @@ function DateRangePicker(props) {
       toDate: "",
       email: localStorage.getItem('email')
     })
-    //var [revenueData, setRevenueData] = useState([]);
-    //var [refData, setRefundData] = useState([]);
+
     
     const handleGenerate = async () => {
     if (dates.fromDate && dates.toDate) {
 
-      
         await axios.post('http://localhost:8800/testPdf', dates)
         .then(response =>{
             //console.log(response.data);
@@ -52,16 +50,14 @@ function DateRangePicker(props) {
   }
 
   const handleCancel = () => {
-    //setShowPopup(false);
     setShowFromPop(false);
     props.onCancel();
   }
 
   const handleReport = () => {
     setShowFromPop(true);
-    
-    //setShowPopup(true);
   }
+
   const handleChange =  (name, value)=>{
     if(name==="toDate"){
       setDates((prev) => ({...prev, toDate: value}));
@@ -70,7 +66,90 @@ function DateRangePicker(props) {
     } 
   }
 
-  
+
+  useEffect(()=>{
+    localStorage.setItem('email',"nathalifernando70@gmail.com");
+  },[])
+
+
+  return (
+    <div>
+      <button className="btn-gen-report" onClick={handleReport}>Generate Report</button>
+
+      {/* success message */}
+      {showSuccessPopup ? <div className="popup-overlay">
+        <div className='popup-content'>
+          <div className='popup-content-success'>
+          <img src={TickIcon} alt='tick' className="tick-icon" style={{width:60}}></img>
+          <h3>Email Sent Successfully</h3>
+          <button className="btn-OK" onClick={() => popUpOK()}>OK</button>
+        </div>
+        </div>
+      </div> :null}
+
+
+      {showFormPop ? <div className="popup-overlay">
+      <div className="popup-content">
+        {/* Your popup content goes here */}
+          <button  class="close-button" aria-label="Close">
+            <span aria-hidden="true" onClick={() => popUpClose()}>&times;</span>
+          </button>
+
+        <div className="date-range-picker">
+          <h3>Dates</h3>
+          <div className="form-group">
+            <div><label htmlFor="from-date">From :</label></div>
+            <div className='from-date-box'><DatePicker
+              id="from-date"
+              selected={dates.fromDate}
+              onChange={(date) => handleChange("fromDate", date)}
+              dateFormat="dd/MM/yyyy"
+            /></div>
+          </div>
+          <div className="form-group">
+            <div className='to-date'><label htmlFor="to-date">To :</label></div>
+            <div className='to-date-box'><DatePicker
+              id="to-date"
+              selected={dates.toDate}
+              onChange={(date) => handleChange("toDate", date)}
+              dateFormat="dd/MM/yyyy"
+            /></div>
+          </div>
+          <div className='btn-containter'>
+            <button className="btn-cancel" onClick={handleCancel}>Cancel</button>
+            <button className="btn-generate" onClick={handleGenerate}>Generate</button>
+          </div>
+        </div>
+
+      </div>
+    </div> : null}
+
+  </div>
+  );
+}
+export default DateRangePicker;
+
+
+// const totalRevenue = responseRevenue.data.totalRevenue;
+        // console.log(totalRevenue);
+
+        // Step 3: Fetch total refunds
+        //const responseRefunds = await axios.post('http://localhost:8800/reportRefundsFetch', {
+        // });
+        //const totalRefunds = responseRefunds.data.totalRefunds;
+        
+        // Pass the total revenue and refunds to the parent component
+        // props.onFinancialData(totalRevenue, totalRefunds);
+          // await axios.post('http://localhost:8800/reportRefundsFetch', dates)
+        // .then(response =>{
+        //   setRefundData(response.data);
+        // })
+        // .catch(error => {
+        //   console.log(error);
+        // }
+        // )
+
+
   //Revenue chart
   // const chartDataRev={
   //   labels: revenueData.map((data) => {
@@ -118,64 +197,6 @@ function DateRangePicker(props) {
   //   }]
   // }
 
-  useEffect(()=>{
-    localStorage.setItem('email',"nathalifernando70@gmail.com");
-  },[])
-
-
-  return (
-    <div>
-      <button className="btn-gen-report" onClick={handleReport}>Generate Report</button>
-
-      {/* success message */}
-      {showSuccessPopup ? <div className="popup-overlay">
-        <div className='popup-content'>
-          <div className='popup-content-success'>
-          <img src={TickIcon} alt='tick' className="tick-icon" style={{width:60}}></img>
-          <h3>Email Sent Successfully</h3>
-          <button className="btn-OK" onClick={() => popUpOK()}>OK</button>
-        </div>
-        </div>
-      </div> :null}
-
-
-      {showFormPop ? <div className="popup-overlay">
-      <div className="popup-content">
-        {/* Your popup content goes here */}
-        {/* <button className="close-button" onClick={() => popUpClose()}></button> */}
-          <button  class="close-button" aria-label="Close">
-            <span aria-hidden="true" onClick={() => popUpClose()}>&times;</span>
-          </button>
-
-        <div className="date-range-picker">
-          <h3>Dates</h3>
-          <div className="form-group">
-            <div><label htmlFor="from-date">From :</label></div>
-            <div className='from-date-box'><DatePicker
-              id="from-date"
-              selected={dates.fromDate}
-              onChange={(date) => handleChange("fromDate", date)}
-              dateFormat="dd/MM/yyyy"
-            /></div>
-          </div>
-          <div className="form-group">
-            <div className='to-date'><label htmlFor="to-date">To :</label></div>
-            <div className='to-date-box'><DatePicker
-              id="to-date"
-              selected={dates.toDate}
-              onChange={(date) => handleChange("toDate", date)}
-              dateFormat="dd/MM/yyyy"
-            /></div>
-          </div>
-          <div className='btn-containter'>
-            <button className="btn-cancel" onClick={handleCancel}>Cancel</button>
-            <button className="btn-generate" onClick={handleGenerate}>Generate</button>
-          </div>
-        </div>
-
-      </div>
-    </div> : null}
-
      {/* <div>
         <div style={{width:700}}>
           <BarChart chartData={chartDataRev}/>
@@ -187,28 +208,3 @@ function DateRangePicker(props) {
           <BarChart chartData={chartDataRef}/>
         </div>
       </div> */}
-
-  </div>
-  );
-}
-export default DateRangePicker;
-
-
-// const totalRevenue = responseRevenue.data.totalRevenue;
-        // console.log(totalRevenue);
-
-        // Step 3: Fetch total refunds
-        //const responseRefunds = await axios.post('http://localhost:8800/reportRefundsFetch', {
-        // });
-        //const totalRefunds = responseRefunds.data.totalRefunds;
-        
-        // Pass the total revenue and refunds to the parent component
-        // props.onFinancialData(totalRevenue, totalRefunds);
-          // await axios.post('http://localhost:8800/reportRefundsFetch', dates)
-        // .then(response =>{
-        //   setRefundData(response.data);
-        // })
-        // .catch(error => {
-        //   console.log(error);
-        // }
-        // )
