@@ -19,76 +19,75 @@ const StaticView = () => {
         <section>
             <div className="stacticv-top">
                 {/* booked slot count box*/}
-                <div className="booked-slots-container"> 
+                <div className="booked-slots-container">
                     <div className="booked-slots-contain2">
-                        <div className="booked-slots-icon"> 
-                            <img src={CarIcon} alt="caricon" style={{width:70,paddingTop:19}}/>
+                        <div className="booked-slots-icon">
+                            <img src={CarIcon} alt="caricon" style={{ width: 70, paddingTop: 19 }} />
                         </div>
-                        <div className="booked-slots-num"> 
-                            <BookedSlots/>
+                        <div className="booked-slots-num">
+                            <BookedSlots />
                         </div>
                     </div>
-                    
-                    <div className="booked-slots"> 
-                        Booked Slots  
+
+                    <div className="booked-slots">
+                        Booked Slots
                     </div>
                 </div>
 
-                 {/* available slot count box */}
+                {/* available slot count box */}
                 <div className="available-slots-container">
                     <div className="available-slot-contain2">
-                        <div className="available-slots-icon"> 
-                        <img src={ToggleIcon} alt="toggle" style={{width:70, paddingTop:23}}/>
+                        <div className="available-slots-icon">
+                            <img src={ToggleIcon} alt="toggle" style={{ width: 70, paddingTop: 23 }} />
                         </div>
-                        <div className="available-slots-num"> 
-                            <AvailableSlots/>
+                        <div className="available-slots-num">
+                            <AvailableSlots />
                         </div>
                     </div>
-                    
-                    <div className="available-slots"> 
-                        Available Slots  
+
+                    <div className="available-slots">
+                        Available Slots
                     </div>
                 </div>
 
-                 {/* current date and time box */}
+                {/* current date and time box */}
                 <div className="date-time-container">
                     <div className="date-container">
-                        <div className="date-time-date"> 
+                        <div className="date-time-date">
                             Date:
                         </div>
-                        <div className="date-time-dnum"> 
+                        <div className="date-time-dnum">
                             <CurrentDate />
                         </div>
                     </div>
-                        
+
                     <div className="time-container">
-                        <div className="date-time-time"> 
+                        <div className="date-time-time">
                             Time:
                         </div>
-                        <div className="date-time-tnum"> 
+                        <div className="date-time-tnum">
                             <CurrentTime />
-                        </div>   
+                        </div>
                     </div>
-                                      
+
                 </div>
             </div>
 
-            <div className="chart-drop-downs">
             {/* Chart drop downs... */}
-            <div className="booking-and-cancel"><DropDownBC/></div>
-            <div className="total-revenue"><DropDownTR/></div>
+            <div className="chart-drop-downs">
+                <div className="booking-and-cancel"><DropDownBC /></div>
+                <div className="total-revenue"><DropDownTR /></div>
             </div>
-            <div className="refund"><DropDownRM/></div>
+            <div className="refund"><DropDownRM /></div>
 
+              {/* Generating report */}
+            <div className="report-generator"><DateRangePicker /></div>
 
-            <div className= "report-generator"><DateRangePicker/></div>
-           
 
         </section>
 
-   
+
     );
-  };
-  
-  export default StaticView;
-  
+};
+
+export default StaticView;

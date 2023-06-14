@@ -124,7 +124,7 @@ module.exports = async function testPdf(req, res) {
       from: 'fernandownm.20@itfac.mrt.ac.lk',
       to: email,
       subject: 'Financial Report',
-      text: 'Please find the attached financial report.',
+      text: 'Please find the attached financial report. This is an auto generated mail, do not reply.',
       attachments: [
         {
           filename: 'output.pdf',

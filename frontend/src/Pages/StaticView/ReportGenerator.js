@@ -68,7 +68,7 @@ function DateRangePicker(props) {
 
 
   useEffect(() => {
-    localStorage.setItem('email', "ezparkv@gmail.com");
+    localStorage.setItem('email', " ");
   }, [])
 
 
