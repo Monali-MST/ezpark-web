@@ -68,7 +68,7 @@ function DateRangePicker(props) {
 
 
   useEffect(() => {
-    localStorage.setItem('email', "nathalifernando70@gmail.com");
+    localStorage.setItem('email', "ezparkv@gmail.com");
   }, [])
 
 
@@ -96,7 +96,7 @@ function DateRangePicker(props) {
 
           <div className="date-range-picker">
             <h3>Dates</h3>
-            
+
             <div className="form-group">
               <div><label htmlFor="from-date">From :</label></div>
               <div className='from-date-box'><DatePicker
