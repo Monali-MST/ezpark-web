@@ -30,7 +30,7 @@ function RevenueFunctionD(){
     datasets:[{
       label: "Total Revenue",
       data: userData.map((data)=> data.TotalRevenueDaily),
-      backgroundColor:"#f8ba59",
+      backgroundColor:"#face8a",
     }]
   }
 

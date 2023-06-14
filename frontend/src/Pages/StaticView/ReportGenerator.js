@@ -25,7 +25,7 @@ function DateRangePicker(props) {
             //console.log("setRevenueData");
 
             if(response.status===200){
-              console.log("email sent successfully");
+              console.log("Report Successfully Generated.");
               setShowSuccessPopup(true); 
             }else{
               alert("Sending email faild.");

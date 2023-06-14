@@ -31,7 +31,7 @@ function RevenueFunctionM(){
     datasets:[{
       label: "Total Revenue",
       data: userData.map((data)=> data.TotalRevenueMonthly),
-      backgroundColor:"#E7AD52", //better color
+      backgroundColor:"#face8a", 
     }]
   }
 
