@@ -1,14 +1,16 @@
+//Preparing a Bar Chart to display Daily Bookings
+
 import { useEffect, useState } from "react";
 import BarChart from "./BarChart";
 import axios from "axios";
 
 
-function BarFunctionD(){
+function BarFunctionD() {
   var [userData, setUserData] = useState([]);
-  useEffect(()=>{
+  useEffect(() => {
     axios
       .get("http://localhost:8800/bookingDaily")
-      .then(response =>{
+      .then(response => {
         setUserData(response.data);
       })
       .catch(error => {
@@ -16,20 +18,20 @@ function BarFunctionD(){
       });
   }, []);
 
-  const chartData={
-    labels: ["Bookings","Cancelations"],
-    datasets:[{
+  const chartData = {
+    labels: ["Bookings", "Cancelations"],
+    datasets: [{
       label: ["Bookings"],
       data: [userData.Booking, userData.Cancellation],
-      backgroundColor: [ "black", "#FAA41E "],
+      backgroundColor: ["black", "#FAA41E "],
     }]
   }
 
 
-  return(
+  return (
     <div>
-      <div style={{width:700}}>
-      <BarChart chartData={chartData}/>
+      <div style={{ width: 700 }}>
+        <BarChart chartData={chartData} />
       </div>
     </div>
   );

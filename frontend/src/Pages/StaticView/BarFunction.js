@@ -1,7 +1,8 @@
+//Preparing a Bar Chart to display Monthly Bookings
+
 import { useEffect, useState } from "react";
 import BarChart from "./BarChart";
 import axios from "axios";
-
 
 function BarFunction(){
   var [userData, setUserData] = useState([]);
@@ -25,7 +26,6 @@ function BarFunction(){
     }]
   }
 
-
   return(
     <div>
       <div style={{width:700}}>
@@ -37,41 +37,3 @@ function BarFunction(){
 export default BarFunction;
 
 
-
-// import { useEffect, useState } from "react";
-// import BarChart from "./BarChart";
-// import axios from "axios";
-
-// var i=null;
-
-// function BarFunction(){
-  
-//   var [userData, setUserData] = useState([]);
-//   useEffect(()=>{
-//     axios.get("http://localhost:8800/Test")
-//     .then(response =>{
-//       setUserData(response.data);
-//     })
-//     .catch(error => {
-//       console.log(error);
-//     });
-//   }, []);
-
-//   const chartData={
-//     labels: userData.map((data)=>data.year),
-//     datasets:[{
-//       label: "User Gain",
-//       data: userData.map((data)=> data.userGain),
-//     }]
-//   }
-
-
-//   return(
-//     <div>
-//       <div style={{width:700}}>
-//       <BarChart chartData={chartData}/>
-//       </div>
-//     </div>
-//   );
-// }
-// export default BarFunction;

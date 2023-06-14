@@ -3,40 +3,35 @@ import DatePicker from 'react-datepicker';
 import axios from 'axios';
 import 'react-datepicker/dist/react-datepicker.css';
 import TickIcon from "./../../Assets/tick.png";
-//import BarChart from "./BarChart";
 
 function DateRangePicker(props) {
-    const [showFormPop, setShowFromPop] = useState(false);
-    const [showSuccessPopup, setShowSuccessPopup] = useState(false);
-    const [dates, setDates] = useState({
-      fromDate: "",
-      toDate: "",
-      email: localStorage.getItem('email')
-    })
+  const [showFormPop, setShowFromPop] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [dates, setDates] = useState({
+    fromDate: "",
+    toDate: "",
+    email: localStorage.getItem('email')
+  })
 
-    
-    const handleGenerate = async () => {
+
+  const handleGenerate = async () => {
     if (dates.fromDate && dates.toDate) {
 
-        await axios.post('http://localhost:8800/testPdf', dates)
-        .then(response =>{
-            //console.log(response.data);
-            // setRevenueData(response.data);
-            //console.log("setRevenueData");
-
-            if(response.status===200){
-              console.log("Report Successfully Generated.");
-              setShowSuccessPopup(true); 
-            }else{
-              alert("Sending email faild.");
-            }
-          })
-          .catch(error => {
-            console.log(error);
-            alert("Error occured while generating report");
+      await axios.post('http://localhost:8800/testPdf', dates)
+        .then(response => {
+          if (response.status === 200) {
+            console.log("Report Successfully Generated.");
+            setShowSuccessPopup(true);
+          } else {
+            alert("Sending email faild.");
           }
-        )    
-        setShowFromPop(false); 
+        })
+        .catch(error => {
+          console.log(error);
+          alert("Error occured while generating report");
+        }
+        )
+      setShowFromPop(false);
     } else {
       alert('Please select both "from" and "to" dates');
     }
@@ -58,18 +53,18 @@ function DateRangePicker(props) {
     setShowFromPop(true);
   }
 
-  const handleChange =  (name, value)=>{
-    if(name==="toDate"){
-      setDates((prev) => ({...prev, toDate: value}));
-    }else{
-      setDates((prev) => ({...prev, fromDate: value}));
-    } 
+  const handleChange = (name, value) => {
+    if (name === "toDate") {
+      setDates((prev) => ({ ...prev, toDate: value }));
+    } else {
+      setDates((prev) => ({ ...prev, fromDate: value }));
+    }
   }
 
 
-  useEffect(()=>{
-    localStorage.setItem('email',"nathalifernando70@gmail.com");
-  },[])
+  useEffect(() => {
+    localStorage.setItem('email', "nathalifernando70@gmail.com");
+  }, [])
 
 
   return (
@@ -80,51 +75,50 @@ function DateRangePicker(props) {
       {showSuccessPopup ? <div className="popup-overlay">
         <div className='popup-content'>
           <div className='popup-content-success'>
-          <img src={TickIcon} alt='tick' className="tick-icon" style={{width:60}}></img>
-          <h3>Email Sent Successfully</h3>
-          <button className="btn-OK" onClick={() => popUpOK()}>OK</button>
+            <img src={TickIcon} alt='tick' className="tick-icon" style={{ width: 60 }}></img>
+            <h3>Email Sent Successfully</h3>
+            <button className="btn-OK" onClick={() => popUpOK()}>OK</button>
+          </div>
         </div>
-        </div>
-      </div> :null}
+      </div> : null}
 
-
+      {/* Date picking form */}
       {showFormPop ? <div className="popup-overlay">
-      <div className="popup-content">
-        {/* Your popup content goes here */}
-          <button  class="close-button" aria-label="Close">
+        <div className="popup-content">
+          <button class="close-button" aria-label="Close">
             <span aria-hidden="true" onClick={() => popUpClose()}>&times;</span>
           </button>
 
-        <div className="date-range-picker">
-          <h3>Dates</h3>
-          <div className="form-group">
-            <div><label htmlFor="from-date">From :</label></div>
-            <div className='from-date-box'><DatePicker
-              id="from-date"
-              selected={dates.fromDate}
-              onChange={(date) => handleChange("fromDate", date)}
-              dateFormat="dd/MM/yyyy"
-            /></div>
+          <div className="date-range-picker">
+            <h3>Dates</h3>
+            <div className="form-group">
+              <div><label htmlFor="from-date">From :</label></div>
+              <div className='from-date-box'><DatePicker
+                id="from-date"
+                selected={dates.fromDate}
+                onChange={(date) => handleChange("fromDate", date)}
+                dateFormat="dd/MM/yyyy"
+              /></div>
+            </div>
+            <div className="form-group">
+              <div className='to-date'><label htmlFor="to-date">To :</label></div>
+              <div className='to-date-box'><DatePicker
+                id="to-date"
+                selected={dates.toDate}
+                onChange={(date) => handleChange("toDate", date)}
+                dateFormat="dd/MM/yyyy"
+              /></div>
+            </div>
+            <div className='btn-containter'>
+              <button className="btn-cancel" onClick={handleCancel}>Cancel</button>
+              <button className="btn-generate" onClick={handleGenerate}>Generate</button>
+            </div>
           </div>
-          <div className="form-group">
-            <div className='to-date'><label htmlFor="to-date">To :</label></div>
-            <div className='to-date-box'><DatePicker
-              id="to-date"
-              selected={dates.toDate}
-              onChange={(date) => handleChange("toDate", date)}
-              dateFormat="dd/MM/yyyy"
-            /></div>
-          </div>
-          <div className='btn-containter'>
-            <button className="btn-cancel" onClick={handleCancel}>Cancel</button>
-            <button className="btn-generate" onClick={handleGenerate}>Generate</button>
-          </div>
+
         </div>
+      </div> : null}
 
-      </div>
-    </div> : null}
-
-  </div>
+    </div>
   );
 }
 export default DateRangePicker;

@@ -1,4 +1,4 @@
-//count available slots which are not disabled...
+//Counting the available slots that are not disabed
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -26,4 +26,4 @@ function AvailableSlots() {
 export default AvailableSlots;
 
 
-//--------------------------------------------
+

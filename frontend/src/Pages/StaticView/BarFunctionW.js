@@ -1,3 +1,5 @@
+//Preparing a Bar Chart to display Weekly Bookings
+
 import { useEffect, useState } from "react";
 import BarChart from "./BarChart";
 import axios from "axios";

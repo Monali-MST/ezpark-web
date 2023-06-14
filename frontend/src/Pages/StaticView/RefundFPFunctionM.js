@@ -2,20 +2,20 @@ import { useEffect, useState } from "react";
 import BarChart from "./BarChart";
 import axios from "axios";
 
-function RefundFPFunctionM(){
-  
+function RefundFPFunctionM() {
+
   var [userData, setUserData] = useState([]);
-  useEffect(()=>{
+  useEffect(() => {
     axios.get("http://localhost:8800/refundFPMonthly")
-    .then(response =>{
-      setUserData(response.data);
-    })
-    .catch(error => {
-      console.log(error);
-    });
+      .then(response => {
+        setUserData(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }, []);
 
-  const chartData={
+  const chartData = {
     labels: userData.map((data) => {
       const refundDate = data.RefundDate;
       if (refundDate) {
@@ -27,23 +27,22 @@ function RefundFPFunctionM(){
       }
       return '';
     }),
-    datasets:[{
+    datasets: [{
       label: "Full Refunds",
-      data: userData.map((data)=> data.TotalFullRefunds),
-      backgroundColor:"#E7AD52", //better color
+      data: userData.map((data) => data.TotalFullRefunds),
+      backgroundColor: "#E7AD52", //better color
     },
     {
-        label: "Parital Refunds",
-        data: userData.map((data)=> data.TotalPartialRefunds),
-        backgroundColor:"black", 
-      }]
+      label: "Parital Refunds",
+      data: userData.map((data) => data.TotalPartialRefunds),
+      backgroundColor: "black",
+    }]
   }
 
-
-  return(
+  return (
     <div>
-      <div style={{width:400, height:400}}>
-      <BarChart chartData={chartData}/>
+      <div style={{ width: 400, height: 400 }}>
+        <BarChart chartData={chartData} />
       </div>
     </div>
   );
