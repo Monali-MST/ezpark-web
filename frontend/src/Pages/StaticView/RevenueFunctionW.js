@@ -2,20 +2,20 @@ import { useEffect, useState } from "react";
 import BarChart from "./BarChart";
 import axios from "axios";
 
-function RevenueFunctionW(){
-  
+function RevenueFunctionW() {
+
   var [userData, setUserData] = useState([]);
-  useEffect(()=>{
+  useEffect(() => {
     axios.get("http://localhost:8800/revenueWeekly")
-    .then(response =>{
-      setUserData(response.data);
-    })
-    .catch(error => {
-      console.log(error);  
-        });
+      .then(response => {
+        setUserData(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }, []);
 
-  const chartData={
+  const chartData = {
     labels: userData.map((data) => {
       const paymentDate = data.PaymentDate;
       if (paymentDate) {
@@ -27,19 +27,19 @@ function RevenueFunctionW(){
       }
       return '';
     }),
-    
-    datasets:[{
+
+    datasets: [{
       label: "Total Revenue",
-      data: userData.map((data)=> data.TotalRevenueWeekly),
-      backgroundColor:"#face8a",
+      data: userData.map((data) => data.TotalRevenueWeekly),
+      backgroundColor: "#face8a",
     }]
   }
 
 
-  return(
+  return (
     <div>
-      <div style={{width:400, height:400}}>
-      <BarChart chartData={chartData}/>
+      <div style={{ width: 400, height: 400 }}>
+        <BarChart chartData={chartData} />
       </div>
     </div>
   );

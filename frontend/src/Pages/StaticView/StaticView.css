@@ -177,6 +177,8 @@
   column-gap: 3rem;
 }
 
+
+
 .btn-gen-report {
   background-color: rgba(222, 139, 9, 0.5);
   border: none;
@@ -195,11 +197,11 @@
 
 }
 
-
-
 .btn-gen-report:hover {
   background-color: rgba(211, 211, 211, 0.5);
 }
+
+
 
 .popup-overlay {
   position: fixed;
@@ -237,21 +239,22 @@
   background-color: rgba(238, 193, 193, 0.59);
 }
 
-.popup-content .popup-content-success{
+.popup-content .popup-content-success {
   text-align: center;
 }
-.popup-content .popup-content-success .tick-icon{
+
+.popup-content .popup-content-success .tick-icon {
   padding-bottom: 1rem;
   margin-top: 2rem;
   margin-left: 8.5rem;
 }
 
-.popup-content .popup-content-success h3{
+.popup-content .popup-content-success h3 {
   font-family: 'Saira', sans-serif;
   font-weight: bold;
 }
 
-.popup-content .popup-content-success .btn-OK{
+.popup-content .popup-content-success .btn-OK {
   background-color: rgba(222, 139, 9, 0.5);
   border: none;
   font-family: 'Saira Condensed', sans-serif;
@@ -270,13 +273,13 @@
   background-color: rgba(211, 211, 211, 0.5);
 }
 
+
+
 .date-range-picker {
   font-family: 'Saira Condensed', sans-serif;
   margin-left: 2rem;
   font-weight: 600;
 }
-
-
 
 .date-range-picker .form-group {
   margin-left: 4rem;
