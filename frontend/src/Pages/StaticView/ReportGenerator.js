@@ -16,22 +16,27 @@ function DateRangePicker(props) {
 
   const handleGenerate = async () => {
     if (dates.fromDate && dates.toDate) {
-
-      await axios.post('http://localhost:8800/testPdf', dates)
-        .then(response => {
-          if (response.status === 200) {
-            console.log("Report Successfully Generated.");
-            setShowSuccessPopup(true);
-          } else {
-            alert("Sending email faild.");
+      if (dates.fromDate < dates.toDate) {
+        await axios.post('http://localhost:8800/testPdf', dates)
+          .then(response => {
+            if (response.status === 200) {
+              console.log("Report Successfully Generated.");
+              setShowSuccessPopup(true);
+            } else {
+              alert("Sending email faild.");
+            }
+          })
+          .catch(error => {
+            console.log(error);
+            alert("Error occured while generating report");
           }
-        })
-        .catch(error => {
-          console.log(error);
-          alert("Error occured while generating report");
-        }
-        )
-      setShowFromPop(false);
+          )
+        setShowFromPop(false);
+
+      } else {
+        alert('From date should be less than To date');
+      }
+
     } else {
       alert('Please select both "from" and "to" dates');
     }
@@ -91,6 +96,7 @@ function DateRangePicker(props) {
 
           <div className="date-range-picker">
             <h3>Dates</h3>
+            
             <div className="form-group">
               <div><label htmlFor="from-date">From :</label></div>
               <div className='from-date-box'><DatePicker
@@ -100,6 +106,7 @@ function DateRangePicker(props) {
                 dateFormat="dd/MM/yyyy"
               /></div>
             </div>
+
             <div className="form-group">
               <div className='to-date'><label htmlFor="to-date">To :</label></div>
               <div className='to-date-box'><DatePicker
@@ -109,6 +116,7 @@ function DateRangePicker(props) {
                 dateFormat="dd/MM/yyyy"
               /></div>
             </div>
+
             <div className='btn-containter'>
               <button className="btn-cancel" onClick={handleCancel}>Cancel</button>
               <button className="btn-generate" onClick={handleGenerate}>Generate</button>
