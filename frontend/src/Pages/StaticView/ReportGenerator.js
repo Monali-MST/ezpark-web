@@ -56,6 +56,7 @@ function DateRangePicker(props) {
 
   const handleReport = () => {
     setShowFromPop(true);
+    //setShowSuccessPopup(true);
   }
 
   const handleChange = (name, value) => {
@@ -68,7 +69,7 @@ function DateRangePicker(props) {
 
 
   useEffect(() => {
-    localStorage.setItem('email', " ");
+    localStorage.setItem('email', "");
   }, [])
 
 
@@ -80,7 +81,7 @@ function DateRangePicker(props) {
       {showSuccessPopup ? <div className="popup-overlay">
         <div className='popup-content'>
           <div className='popup-content-success'>
-            <img src={TickIcon} alt='tick' className="tick-icon" style={{ width: 60 }}></img>
+            <img src={TickIcon} alt='tick' className="tick-icon"></img>
             <h3>Email Sent Successfully</h3>
             <button className="btn-OK" onClick={() => popUpOK()}>OK</button>
           </div>

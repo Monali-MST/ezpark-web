@@ -230,7 +230,7 @@
 .popup-content .close-button {
   margin-top: 0.5rem;
   margin-left: 18rem;
-  padding: .1rem .2rem;
+  padding: .1rem .3rem;
   border-radius: 10%;
   background-color: rgba(222, 139, 9, 0.5);
 }
@@ -244,9 +244,11 @@
 }
 
 .popup-content .popup-content-success .tick-icon {
+  width: 17%;
   padding-bottom: 1rem;
   margin-top: 2rem;
   margin-left: 8.5rem;
+  
 }
 
 .popup-content .popup-content-success h3 {
@@ -261,10 +263,10 @@
   letter-spacing: .07rem;
   color: black;
   font-weight: 600;
-  padding: .3rem .6rem;
+  padding: .3rem .8rem;
   text-align: center;
   text-decoration: none;
-  margin: .25rem .125rem;
+  margin-top: .25rem ;
   cursor: pointer;
   border-radius: 17px;
 }

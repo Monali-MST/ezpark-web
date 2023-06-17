@@ -4,11 +4,11 @@ import axios from "axios";
 
 function RefundFPFunctionW() {
 
-  var [userData, setUserData] = useState([]);
+  var [refundFP, setRefundFP] = useState([]);
   useEffect(() => {
     axios.get("http://localhost:8800/refundFPWeekly")
       .then(response => {
-        setUserData(response.data);
+        setRefundFP(response.data);
       })
       .catch(error => {
         console.log(error);
@@ -16,7 +16,7 @@ function RefundFPFunctionW() {
   }, []);
 
   const chartData = {
-    labels: userData.map((data) => {
+    labels: refundFP.map((data) => {
       const refundDate = data.RefundDate;
       if (refundDate) {
         const date = new Date(refundDate);
@@ -29,12 +29,12 @@ function RefundFPFunctionW() {
     }),
     datasets: [{
       label: "Full Refunds",
-      data: userData.map((data) => data.TotalFullRefunds),
+      data: refundFP.map((data) => data.TotalFullRefunds),
       backgroundColor: "#E7AD52",
     },
     {
       label: "Parital Refunds",
-      data: userData.map((data) => data.TotalPartialRefunds),
+      data: refundFP.map((data) => data.TotalPartialRefunds),
       backgroundColor: "black",
     }]
   }

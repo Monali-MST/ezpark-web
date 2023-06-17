@@ -9,8 +9,8 @@ class CurrentTime extends Component {
   }
 
   componentDidMount() {
-    this.intervalID = setInterval(//update the time every second without refreshing the page.
-      () => this.tick(),//calls the tick method every second
+    this.intervalID = setInterval(
+      () => this.tick(),
       1000
     );
   }

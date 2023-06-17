@@ -27,7 +27,6 @@ function BookedSlots() {
       fetchBookedSlots();
     }, 6000)
 
-    // Clean up the interval when component unmounts
     return () => clearInterval(interval);
   }, []);
 

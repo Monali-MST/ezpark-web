@@ -4,11 +4,11 @@ import axios from "axios";
 
 function RevenueFunctionW() {
 
-  var [userData, setUserData] = useState([]);
+  var [revenueData, setRevenueData] = useState([]);
   useEffect(() => {
     axios.get("http://localhost:8800/revenueWeekly")
       .then(response => {
-        setUserData(response.data);
+        setRevenueData(response.data);
       })
       .catch(error => {
         console.log(error);
@@ -16,7 +16,7 @@ function RevenueFunctionW() {
   }, []);
 
   const chartData = {
-    labels: userData.map((data) => {
+    labels: revenueData.map((data) => {
       const paymentDate = data.PaymentDate;
       if (paymentDate) {
         const date = new Date(paymentDate);
@@ -30,7 +30,7 @@ function RevenueFunctionW() {
 
     datasets: [{
       label: "Total Revenue",
-      data: userData.map((data) => data.TotalRevenueWeekly),
+      data: revenueData.map((data) => data.TotalRevenueWeekly),
       backgroundColor: "#face8a",
     }]
   }

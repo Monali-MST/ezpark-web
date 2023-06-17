@@ -5,12 +5,12 @@ import DoughnutChart from "./DoughnutChart";
 import axios from "axios";
 
 function DoughnutFunctionD() {
-  var [userData, setUserData] = useState([]);
+  var [bookCancel, setBookCancel] = useState([]);
   useEffect(() => {
     axios
       .get("http://localhost:8800/bookingDaily")
       .then(response => {
-        setUserData(response.data);
+        setBookCancel(response.data);
       })
       .catch(error => {
         console.log(error);
@@ -21,7 +21,7 @@ function DoughnutFunctionD() {
     labels: ["Bookings", "Cancelations"],
     datasets: [{
       //label: ["Bookings","Cancelations"],
-      data: [userData.Booking, userData.Cancellation],
+      data: [bookCancel.Booking, bookCancel.Cancellation],
       backgroundColor: ["black", "#FAA41E "],
       borderColot: ["black", "#FAA41E "]
     }]
