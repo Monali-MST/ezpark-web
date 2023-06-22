@@ -3,12 +3,14 @@
 import { useEffect, useState } from "react";
 import BarChart from "./BarChart";
 import axios from "axios";
+import { server } from "../../Service/Server_con";
 
 function BarFunction(){
   var [userData, setUserData] = useState([]);
   useEffect(()=>{
     axios
-      .get("http://localhost:8800/bookingMonthly")
+      // .get("http://localhost:8800/bookingMonthly")
+      .get(server + "bookingMonthly")
       .then(response =>{
         setUserData(response.data);
       })

@@ -3,12 +3,14 @@
 import { useEffect, useState } from "react";
 import DoughnutChart from "./DoughnutChart";
 import axios from "axios";
+import { server } from "../../Service/Server_con";
 
 function DoughnutFunctionD() {
   var [bookCancel, setBookCancel] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:8800/bookingDaily")
+      // .get("http://localhost:8800/bookingDaily")
+      .get(server + "bookingDaily")
       .then(response => {
         setBookCancel(response.data);
       })

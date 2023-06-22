@@ -115,18 +115,18 @@ module.exports = async function testPdf(req, res) {
       port: 587,
       secure: false,
       auth: {
-        user: 'fernandownm.20@itfac.mrt.ac.lk',
-        pass: 'rovzjxkjiflfntkv',
+        // user: 'fernandownm.20@itfac.mrt.ac.lk',
+        // pass: 'rovzjxkjiflfntkv',
 
-        // user: 'ezparkv@gmail.com',
-        // pass: 'yqlueyohvlfqfmkk',
+        user: 'ezparkv@gmail.com',
+        pass: 'yqlueyohvlfqfmkk',
 
       },
     });
 
     const mailOptions = {
-      from: 'fernandownm.20@itfac.mrt.ac.lk',
-      //from: 'ezparkv@gmail.com',
+      //from: 'fernandownm.20@itfac.mrt.ac.lk',
+      from: 'ezparkv@gmail.com',
       to: email,
       subject: 'Financial Report',
       text: 'Please find the attached financial report. This is an auto generated mail, do not reply.',

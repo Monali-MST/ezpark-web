@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
+import { server } from "../../Service/Server_con";
 
 function BookedSlots() {
   const [bookedSlots, setBookedSlots] = useState(null);
@@ -14,7 +15,9 @@ function BookedSlots() {
       const currentTime = new Date().toLocaleTimeString([], { hour12: false });
       console.log(date);
       console.log(currentTime);
-      axios.post("http://localhost:8800/bookedSlots", { "date": date, "currentTime": currentTime })
+      // axios.post("http://localhost:8800/bookedSlots", 
+      axios.post( server + "bookedSlots", 
+      { "date": date, "currentTime": currentTime })
         .then(response => {
           setBookedSlots(response.data);
         })

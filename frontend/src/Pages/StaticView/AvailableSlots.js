@@ -2,12 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { server } from "../../Service/Server_con";
 
 function AvailableSlots() {
   const [availableSlots, setAvailableSlots] = useState(null);
 
   useEffect(() => {
-    axios.post("http://localhost:8800/availableSlots")
+    // axios.post("http://localhost:8800/availableSlots")
+    axios.post(server + "availableSlots")
       .then(response => {
         setAvailableSlots(response.data);
       })

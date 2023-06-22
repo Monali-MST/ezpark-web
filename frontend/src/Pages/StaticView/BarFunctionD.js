@@ -9,7 +9,8 @@ function BarFunctionD() {
   var [userData, setUserData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:8800/bookingDaily")
+      // .get("http://localhost:8800/bookingDaily")
+      .get(server + "bookingDaily")
       .then(response => {
         setUserData(response.data);
       })

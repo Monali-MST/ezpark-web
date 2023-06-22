@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import BarChart from "./BarChart";
 import axios from "axios";
+import { server } from "../../Service/Server_con";
 
 function RefundFPFunctionM() {
 
   var [refundFP, setRefundFP] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8800/refundFPMonthly")
+    // axios.get("http://localhost:8800/refundFPMonthly")
+    axios.get(server + "refundFPMonthly")
       .then(response => {
         setRefundFP(response.data);
       })

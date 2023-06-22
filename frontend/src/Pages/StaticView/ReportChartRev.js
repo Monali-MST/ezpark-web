@@ -1,11 +1,12 @@
 // import { useEffect, useState } from "react";
 // import BarChart from "./BarChart";
 // import axios from "axios";
+// import { server } from "../../Service/Server_con";
 
 // function ReportChartRev() {
 //     var [userData, setUserData] = useState([]);
 //     useEffect(() => {
-//         axios.post("http://localhost:8800/reportRevenueFetch")
+//         axios.post(server + "reportRevenueFetch")
 //             .then(response => {
 //                 setUserData(response.data);
 //             })

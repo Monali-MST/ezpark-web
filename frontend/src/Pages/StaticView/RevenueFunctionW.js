@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import BarChart from "./BarChart";
 import axios from "axios";
+import { server } from "../../Service/Server_con";
 
 function RevenueFunctionW() {
 
   var [revenueData, setRevenueData] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:8800/revenueWeekly")
+    //axios.get("http://localhost:8800/revenueWeekly")
+    axios.get(server + "revenueWeekly")
       .then(response => {
         setRevenueData(response.data);
       })

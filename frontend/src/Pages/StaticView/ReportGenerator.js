@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import axios from 'axios';
 import 'react-datepicker/dist/react-datepicker.css';
 import TickIcon from "./../../Assets/tick.png";
+import { server } from '../../Service/Server_con';
 
 function DateRangePicker(props) {
   const [showFormPop, setShowFromPop] = useState(false);
@@ -17,7 +18,9 @@ function DateRangePicker(props) {
   const handleGenerate = async () => {
     if (dates.fromDate && dates.toDate) {
       if (dates.fromDate < dates.toDate) {
-        await axios.post('http://localhost:8800/testPdf', dates)
+        //await axios.post('http://localhost:8800/testPdf', 
+        await axios.post(server + 'testPdf',
+        dates)
           .then(response => {
             if (response.status === 200) {
               console.log("Report Successfully Generated.");
@@ -69,8 +72,8 @@ function DateRangePicker(props) {
 
 
   useEffect(() => {
-    localStorage.setItem('email', "ezparkv@gmail.com");
-  }, [])
+    localStorage.setItem('email', "");
+  }, []) //ezparkv@gmail.com
 
 
   return (
