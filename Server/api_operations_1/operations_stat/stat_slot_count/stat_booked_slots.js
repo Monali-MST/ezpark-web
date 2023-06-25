@@ -27,6 +27,7 @@
 
   var connection = require('../../../service/connection');
   const statQuery = require ('../stat_sql/stat_sql');
+  
     module.exports = function stat_booked_slots(req, res) {
       const currentTime = req.body.currentTime;
       const date = req.body.date;
