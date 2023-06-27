@@ -1,74 +1,36 @@
+label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
 
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .Feedback_form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  
-  textarea {
-    height: 150px;
-    resize: vertical;
-    margin-bottom: 20px;
-  }
-  
-  button {
-    background-color:#FAA41E;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: black;
-  }
-  
-  .star-rating {
-    display: flex;
-    align-items: center;
-  }
-  
-  .star-rating label {
-    margin-right: 5px;
-  }
-  
-  .star-rating input[type="radio"] {
-    display: none;
-  }
-  
-  .star-rating label i {
-    font-size: 24px;
-    color: #ffc107;
-    cursor: pointer;
-  }
-  
-  .star-rating label i:hover,
-  .star-rating label i:hover ~ i {
-    color: #ff9800;
-  }
-  
-  .star-rating input[type="radio"]:checked ~ label i {
-    color: #ff9800;
-  }
-  
- .Feedback_form {
-    width: 800px;
-    height: 550px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-   
-  }
-  
+textarea {
+  height: 150px;
+  resize: vertical;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #faa41e;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: black;
+}
+
+.Feedback_form {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  height: 550px;
+  background-color: white;
+  border-radius: 8px;
+  margin-left: -300px;
+  margin-top: 5vh;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import Header from "../../Components/Header/Header";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row,Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import {
   FaRegEdit,
@@ -14,6 +14,17 @@ import {
 import "./UserDashboardPage.css";
 
 const UserDashboard = () => {
+  const [UserDashboard, setUserDashboard] = useState([]);
+  useEffect(() => {
+    const getUserDashboard = async () => {
+      const reqData = await fetch("http://localhost:8800/review");
+      const resData = await reqData.json();
+      setUserDashboard(resData);
+      console.log(reqData);
+    };
+    getUserDashboard();
+  }, []);
+  
   return (
     <div>
       <Header />
@@ -110,6 +121,14 @@ const UserDashboard = () => {
               </div>
             </div>
           </div>
+          <Form.Group>
+     
+      <Form.Control type="text" plaintext readOnly style={{borderColor:"black",width:"400px",height:"70px",marginRight:"100px"}} value={UserDashboard.Review}/>
+    </Form.Group>
+    <Form.Group>
+      
+      <Form.Control type="text" plaintext readOnly style={{borderColor:"black",width:"400px",height:"70px"}} value={UserDashboard.Review}  />
+    </Form.Group>
         </div>
       
       

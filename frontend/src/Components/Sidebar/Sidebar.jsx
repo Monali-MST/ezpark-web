@@ -1,56 +1,51 @@
 import React from "react";
 import "./Sidebar.css";
-import { Navbar } from 'react-bootstrap';
+
 
 const NavBar = () => {
   return (
     <section>
-      <nav class="navbar">
+      <nav className="navbar">
         <div className="navbar-container">
 
           <div className="item-list">
             <ul className="menu">
               <li className="navbar-item">
-                <a href="/userdashboard/:id" class="menu-btn active">
+                <a href="/userdashboard/:id" className="menu-btn active">
                 Dashboard
                 </a>
               </li>
               <li className="navbar-item">
-                <a href="/myaccount" class="menu-btn">
+                <a href="/myaccount" className="menu-btn">
                 Profile
                 </a>
               </li>
               <li className="navbar-item">
-                <a href="/Slotselection" class="menu-btn">
+                <a href="/Slotselection" className="menu-btn">
                 Bookings
                 </a>
               </li>
               <li className="navbar-item">
-                <a href="/mybooking" class="menu-btn">
+                <a href="/mybooking" className="menu-btn">
                 My Bookings
                 </a>
               </li>
               <li className="navbar-item">
-                <a href="/vehicledetails" class="menu-btn">
+                <a href="/vehicledetails" className="menu-btn">
                 Vehicle Details
                 </a>
               </li>
               <li className="navbar-item">
-                <a href="/about" class="menu-btn">
+                <a href="/about" className="menu-btn">
                 About Us
                 </a>
               </li>
               <li className="navbar-item">
-                <a href="/supoort" class="menu-btn">
+                <a href="/supoort" className="menu-btn">
                 Support
                 </a>
               </li>
-              <li className="navbar-item">
-                <a href="/rating" class="menu-btn">
-                Review & Rating
-                </a>
-              </li>
-              
+             
             </ul>
           </div>
         </div>
