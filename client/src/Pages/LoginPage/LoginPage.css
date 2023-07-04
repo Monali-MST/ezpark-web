@@ -1,0 +1,55 @@
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.left-column {
+  width: 50%;
+  height: 100%;
+}
+.login_logo{
+width: 420px;
+height: 426px;
+margin-top:8vh;
+margin-left: 25vh;
+}
+
+.right-column {
+  background-color: black;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  
+}
+
+
+.log_btn {
+  width: 25vh;
+  padding: 10px;
+  background-color: #FAA41E;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 45px;
+  cursor: pointer;
+  margin-left: 12vh;
+}
+
+.h2{
+  margin-top:0px;
+  text-align: center;
+  color: white;
+}
