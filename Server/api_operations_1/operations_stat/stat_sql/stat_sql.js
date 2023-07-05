@@ -1,8 +1,10 @@
 const statQuery = {
+
   //booked slots count
   bookedSlots: "SELECT COUNT(BookingID) as bookedSlots FROM ezpark.booking WHERE BookedDate=(?) AND  (StartTime<=(?) AND EndTime >=(?)) AND cancel=0;",
   //count of enabled slots which are enabled
   availableSlots: "SELECT count(slot_id) AS availableSlots FROM ezpark.slot WHERE Enability=1;",
+
 
 //booking and cancel starts
   //daily
@@ -19,6 +21,7 @@ const statQuery = {
   
 //booking and cancel end
 
+
 //total revenue start
   revenueDaily : "SELECT p.PaymentDate, SUM(p.PaymentAmount - COALESCE(r.Refund_amount,0)) AS TotalRevenueDaily FROM payment_details p LEFT JOIN refund_details r ON p.Booking_id= r.Booking_id WHERE p.PaymentDate=date (now()) GROUP BY p.PaymentDate;",
   
@@ -27,12 +30,13 @@ const statQuery = {
   revenueMonthly:"SELECT p.PaymentDate, SUM(p.PaymentAmount - COALESCE(r.Refund_amount,0)) AS TotalRevenueMonthly FROM payment_details p LEFT JOIN refund_details r ON p.Booking_id = r.Booking_id WHERE MONTH(p.PaymentDate)=MONTH(now()) GROUP BY p.PaymentDate ORDER BY p.PaymentDate;",
 //total revenue end
   
+
 //refund starts
  refundDaily:
       `SELECT 
         rd.RefundDate, 
-        COALESCE(full.TotalFullRefunds, 0) AS TotalFullRefunds, 
-        COALESCE(partial.TotalPartialRefunds, 0) AS TotalPartialRefunds 
+        IFNULL(full.TotalFullRefunds, 0) AS TotalFullRefunds, 
+        IFNULL(partial.TotalPartialRefunds, 0) AS TotalPartialRefunds 
       FROM 
         Refund_Details rd 
         LEFT JOIN (
@@ -71,8 +75,8 @@ const statQuery = {
   refundWeekly:
      `SELECT 
         rd.RefundDate, 
-        COALESCE(full.TotalFullRefunds, 0) AS TotalFullRefunds, 
-        COALESCE(partial.TotalPartialRefunds, 0) AS TotalPartialRefunds 
+        IFNULL(full.TotalFullRefunds, 0) AS TotalFullRefunds, 
+        IFNULL(partial.TotalPartialRefunds, 0) AS TotalPartialRefunds 
       FROM 
         Refund_Details rd 
         LEFT JOIN (
@@ -110,8 +114,8 @@ const statQuery = {
  refundMonthly: 
       `SELECT 
         rd.RefundDate,
-        COALESCE(full.TotalFullRefunds, 0) AS TotalFullRefunds, 
-        COALESCE(partial.TotalPartialRefunds, 0) AS TotalPartialRefunds 
+        IFNULL(full.TotalFullRefunds, 0) AS TotalFullRefunds, 
+        IFNULL(partial.TotalPartialRefunds, 0) AS TotalPartialRefunds 
       FROM 
         Refund_Details rd 
         LEFT JOIN (
@@ -145,6 +149,7 @@ const statQuery = {
         rd.RefundDate;`,
 //refund ends
 
+
 //report revenue and refund fetching starts
   //fetch revenue
   getRevenue:'SELECT p.PaymentDate, SUM(p.PaymentAmount - COALESCE(r.Refund_amount,0)) AS TotalRevenue FROM payment_details p LEFT JOIN refund_details r ON p.Booking_id=r.Booking_id WHERE p.PaymentDate  BETWEEN (?) AND (?) GROUP BY p.PaymentDate ORDER BY p.PaymentDate;',
@@ -152,8 +157,8 @@ const statQuery = {
   getRefund: `
       SELECT
         rd.RefundDate,
-        COALESCE(full.TotalFullRefunds, 0) AS TotalFullRefunds,
-        COALESCE(partial.TotalPartialRefunds, 0) AS TotalPartialRefunds
+        IFNULL(full.TotalFullRefunds, 0) AS TotalFullRefunds,
+        IFNULL(partial.TotalPartialRefunds, 0) AS TotalPartialRefunds
       FROM
         Refund_Details rd
         LEFT JOIN (
@@ -194,6 +199,11 @@ const statQuery = {
 };
 
 module.exports = statQuery;
+
+
+
+
+
 
 
 

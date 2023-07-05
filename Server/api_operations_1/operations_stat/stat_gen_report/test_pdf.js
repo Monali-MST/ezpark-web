@@ -65,7 +65,7 @@ module.exports = async function testPdf(req, res) {
     }
     doc.moveDown();
 
-    doc.fontSize(16).text('Full and Partial Refunds', { align: 'center', marginTop: 20 });
+    doc.fontSize(16).fillColor('black').text('Full and Partial Refunds', { align: 'center', marginTop: 20 });
     doc.moveDown();
     if (refundData.length > 0) {
       const chartConfiguration = {
