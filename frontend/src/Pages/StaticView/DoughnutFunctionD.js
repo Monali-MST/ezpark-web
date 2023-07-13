@@ -22,7 +22,7 @@ function DoughnutFunctionD() {
   const chartData = {
     labels: ["Bookings", "Cancelations"],
     datasets: [{
-      //label: ["Bookings","Cancelations"],
+      
       data: [bookCancel.Booking, bookCancel.Cancellation],
       backgroundColor: ["black", "#FAA41E "],
       borderColot: ["black", "#FAA41E "]
